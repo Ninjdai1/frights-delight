@@ -1,0 +1,11 @@
+{
+  "block_drinkable_feast_remove": {
+    "subtitle": "frights.subtitles.block_drinkable_feast.remove",
+    "sounds": [
+      {
+        "name": "entity.item_frame.remove_item",
+        "type": "event"
+      }
+    ]
+  }
+}

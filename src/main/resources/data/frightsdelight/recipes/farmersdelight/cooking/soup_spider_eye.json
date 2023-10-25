@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 75,
+  "experience": 0.35,
+  "recipie_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:vegetables"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    }
+  ],
+  "result": {
+    "item": "frightsdelight:soup_spider_eye",
+    "count": 1
+  },
+  "container": {
+    "item": "minecraft:bowl"
+  }
+}

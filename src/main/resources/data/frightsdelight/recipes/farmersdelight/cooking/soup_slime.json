@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 75,
+  "experience": 0.35,
+  "recipie_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:vegetables"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    }
+  ],
+  "result": {
+    "item": "frightsdelight:soup_slime",
+    "count": 1
+  },
+  "container": {
+    "item": "minecraft:bowl"
+  }
+}

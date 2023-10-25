@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "frightsdelight:block/crate_bottom",
+    "side": "frightsdelight:block/web_crate_side",
+    "top": "frightsdelight:block/web_crate_top"
+  }
+}

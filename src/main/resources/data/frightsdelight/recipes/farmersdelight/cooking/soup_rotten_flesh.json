@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 75,
+  "experience": 0.35,
+  "recipie_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:vegetables"
+    },
+    {
+      "item": "minecraft:rotten_flesh"
+    }
+  ],
+  "result": {
+    "item": "frightsdelight:soup_rotten_flesh",
+    "count": 1
+  },
+  "container": {
+    "item": "minecraft:bowl"
+  }
+}

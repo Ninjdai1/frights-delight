@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "frightsdelight",
+	"version": "${version}",
+	"name": "Frights Delight",
+	"description": "Fright’s Delight is an add-on mod for Farmer’s Delight Fabric that adds food made from mob drops. Dishes are created with a “Horror” theme, consume with caution.",
+	"authors": [
+		"ChefMooon"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/frightsdelight/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "com.chefmooon.frightsdelight.FrightsDelight"
+		],
+		"client":  [
+			"com.chefmooon.frightsdelight.FrightsDelightClient"
+		],
+		"fabric-datagen": [
+			"com.chefmooon.frightsdelight.FrightsDelightDataGenerator"
+		]
+	},
+	"mixins": [
+		"frights-delight.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"farmersdelight": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

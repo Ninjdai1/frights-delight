@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 75,
+  "experience": 0.35,
+  "recipie_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "item": "minecraft:phantom_membrane"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    }
+  ],
+  "result": {
+    "item": "frightsdelight:undead_kebab",
+    "count": 1
+  },
+  "container": {
+    "item": "minecraft:stick"
+  }
+}

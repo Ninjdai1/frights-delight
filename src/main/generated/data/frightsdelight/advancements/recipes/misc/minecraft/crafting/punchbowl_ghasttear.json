@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_punch_spidereye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punch_spidereye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:minecraft/crafting/punchbowl_ghasttear"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_punch_spidereye",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:minecraft/crafting/punchbowl_ghasttear"
+    ]
+  },
+  "sends_telemetry_event": false
+}

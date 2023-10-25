@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 50,
+  "experience": 0.25,
+  "recipie_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "minecraft:cobweb"
+    },
+    {
+      "item": "minecraft:cobweb"
+    }
+  ],
+  "result": {
+    "item": "frightsdelight:web_on_stick",
+    "count": 1
+  },
+  "container": {
+    "item": "minecraft:stick"
+  }
+}

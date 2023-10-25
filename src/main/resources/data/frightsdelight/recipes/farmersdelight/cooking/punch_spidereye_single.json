@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 50,
+  "experience": 0.25,
+  "recipie_book_tab": "drinks",
+  "ingredients": [
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "item": "frightsdelight:punch_spidereye",
+    "count": 4
+  },
+  "container": {
+    "item": "minecraft:glass_bottle",
+    "count": 4
+  }
+}
