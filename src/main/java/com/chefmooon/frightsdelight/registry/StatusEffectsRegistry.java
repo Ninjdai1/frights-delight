@@ -1,8 +1,7 @@
 package com.chefmooon.frightsdelight.registry;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
-import com.chefmooon.frightsdelight.effect.SlimeWalk;
-import com.chefmooon.frightsdelight.effect.UndeadHunger;
+import com.chefmooon.frightsdelight.effect.*;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
@@ -12,8 +11,13 @@ import net.minecraft.util.Identifier;
 
 public enum StatusEffectsRegistry {
 
-    UNDEAD_HUNGER("undead_hunger", new UndeadHunger()),
-    SLIME_WALK("slime_walk", new SlimeWalk().addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.05000000596046448, EntityAttributeModifier.Operation.MULTIPLY_TOTAL))
+    FORTIFIED_MIND("fortified_mind", new FortifiedMindEffect(0x66d0e9)),
+    CHILLS("chills", new ChillsEffect(0x000000)),
+    INFECTED("infected", new InfectedEffect(0x4f8c29)),
+    UNDEAD_HUNGER("undead_hunger", new UndeadHungerEffect(0x6f4d1b).addAttributeModifier(EntityAttributes.ZOMBIE_SPAWN_REINFORCEMENTS, "7107DE5E-7CE8-4030-940E-514C1F160890", 0.5, EntityAttributeModifier.Operation.MULTIPLY_TOTAL)),
+    HYSTERIA("hysteria", new HysteriaEffect(0x5b4538)),
+    COBWEBBED("cobwebbed", new CobwebbedEffect(0xe4e9e9).addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.05, EntityAttributeModifier.Operation.MULTIPLY_TOTAL)),
+    SLIMED("slimed", new SlimedEffect(0x76be6d).addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.05, EntityAttributeModifier.Operation.MULTIPLY_TOTAL))
     ;
 
     private final String pathName;

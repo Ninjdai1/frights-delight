@@ -1,9 +1,69 @@
 {
   "block_drinkable_feast_remove": {
-    "subtitle": "frights.subtitles.block_drinkable_feast.remove",
+    "subtitle": "frightsdelight.subtitles.block_drinkable_feast.remove",
     "sounds": [
       {
         "name": "entity.item_frame.remove_item",
+        "type": "event"
+      }
+    ]
+  },
+  "block_drinkable_feast_bubble": {
+    "subtitle": "frightsdelight.subtitles.block_drinkable_feast.bubble",
+    "sounds": [
+      {
+        "name": "block.bubble_column.bubble_pop",
+        "type": "event"
+      }
+    ]
+  },
+  "effect_hysteria_close": {
+    "subtitle": "frightsdelight.subtitles.effect_hysteria.close",
+    "sounds": [
+      {
+        "name": "entity.skeleton.ambient",
+        "type": "event"
+      },
+      {
+        "name": "entity.zombie.ambient",
+        "type": "event"
+      },
+      {
+        "name": "entity.spider.ambient",
+        "type": "event"
+      }
+    ]
+  },
+  "effect_hysteria_mid": {
+    "subtitle": "frightsdelight.subtitles.effect_hysteria.mid",
+    "sounds": [
+      {
+        "name": "entity.skeleton.ambient",
+        "type": "event"
+      },
+      {
+        "name": "entity.zombie.ambient",
+        "type": "event"
+      },
+      {
+        "name": "entity.spider.ambient",
+        "type": "event"
+      }
+    ]
+  },
+  "effect_hysteria_far": {
+    "subtitle": "frightsdelight.subtitles.effect_hysteria.far",
+    "sounds": [
+      {
+        "name": "entity.skeleton.ambient",
+        "type": "event"
+      },
+      {
+        "name": "entity.zombie.ambient",
+        "type": "event"
+      },
+      {
+        "name": "entity.spider.ambient",
         "type": "event"
       }
     ]

@@ -11,13 +11,12 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 
 import java.util.function.Supplier;
 
 public enum ItemsRegistry {
-
-
     FLESH_CRATE("flesh_crate", () -> new BlockItem(BlocksRegistry.FLESH_CRATE.get(), base())),
     BONE_CRATE("bone_crate", () -> new BlockItem(BlocksRegistry.BONE_CRATE.get(), base())),
     PHANTOM_CRATE("phantom_crate", () -> new BlockItem(BlocksRegistry.PHANTOM_CRATE.get(), base())),
@@ -30,26 +29,26 @@ public enum ItemsRegistry {
     SOUL_BERRY("soul_berry", () -> new AliasedBlockItem(BlocksRegistry.SOUL_BERRY_BUSH.get(), food(FoodItem.SOUL_BERRY.get()))),
     WITHER_BERRY("wither_berry", () -> new AliasedBlockItem(BlocksRegistry.WITHER_BERRY_BUSH.get(), food(FoodItem.WITHER_BERRY.get()))),
 
-    APPLE_SLIME("apple_slime", () -> new FrDConsumableItem(food(FoodItem.APPLE_SLIME.get()))),
-    UNDEAD_KEBAB("undead_kebab", () -> new FrDConsumableItem(food(FoodItem.UNDEAD_KEBAB.get(), Items.STICK, 16))),
-    WEB_ON_STICK("web_on_stick", () -> new FrDConsumableItem(food(FoodItem.WEB_ON_STICK.get(), Items.STICK, 16))),
+    APPLE_SLIME("apple_slime", () -> new FrDConsumableItem(food(FoodItem.APPLE_SLIME.get()), true)),
+    UNDEAD_KEBAB("undead_kebab", () -> new FrDConsumableItem(food(FoodItem.UNDEAD_KEBAB.get(), Items.STICK, 16), true)),
+    WEB_ON_STICK("web_on_stick", () -> new FrDConsumableItem(food(FoodItem.WEB_ON_STICK.get(), Items.STICK, 16), true)),
 
-    MONSTER_MASH("monster_mash", () -> new FrDConsumableItem(food(FoodItem.MONSTER_MASH.get(), Items.BOWL, 16))),
-    PASTA_WITH_SLIMEBALLS("pasta_with_slimeballs", () -> new FrDConsumableItem(food(FoodItem.PASTA_WITH_SLIMEBALLS.get(), Items.BOWL, 16))),
-    SOUP_ROTTEN_FLESH("soup_rotten_flesh", () -> new FrDConsumableItem(food(FoodItem.SOUP_ROTTEN_FLESH.get(), Items.BOWL, 16))),
-    SOUP_SPIDER_EYE("soup_spider_eye", () -> new FrDConsumableItem(food(FoodItem.SOUP_SPIDER_EYE.get(), Items.BOWL, 16))),
-    SOUP_SLIME("soup_slime", () -> new FrDConsumableItem(food(FoodItem.SOUP_SLIME.get(), Items.BOWL, 16))),
+    MONSTER_MASH("monster_mash", () -> new FrDConsumableItem(food(FoodItem.MONSTER_MASH.get(), Items.BOWL, 16), true)),
+    PASTA_WITH_SLIMEBALLS("pasta_with_slimeballs", () -> new FrDConsumableItem(food(FoodItem.PASTA_WITH_SLIMEBALLS.get(), Items.BOWL, 16), true)),
+    SOUP_ROTTEN_FLESH("soup_rotten_flesh", () -> new FrDConsumableItem(food(FoodItem.SOUP_ROTTEN_FLESH.get(), Items.BOWL, 16), true)),
+    SOUP_SPIDER_EYE("soup_spider_eye", () -> new FrDConsumableItem(food(FoodItem.SOUP_SPIDER_EYE.get(), Items.BOWL, 16), true)),
+    SOUP_SLIME("soup_slime", () -> new FrDConsumableItem(food(FoodItem.SOUP_SLIME.get(), Items.BOWL, 16), true)),
 
 
-    COOKIE_SOUL_BERRY("cookie_soul_berry", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SOUL_BERRY.get()))),
-    COOKIE_FLESH("cookie_flesh", () -> new FrDConsumableItem(food(FoodItem.COOKIE_FLESH.get()))),
-    COOKIE_SPIDEREYE("cookie_spidereye", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SPIDEREYE.get()))),
+    COOKIE_SOUL_BERRY("cookie_soul_berry", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SOUL_BERRY.get()), true)),
+    COOKIE_FLESH("cookie_flesh", () -> new FrDConsumableItem(food(FoodItem.COOKIE_FLESH.get()), true)),
+    COOKIE_SPIDEREYE("cookie_spidereye", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SPIDEREYE.get()), true)),
 
-    PUNCH_SLIMEAPPLE("punch_slimeapple", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SLIMEAPPLE.get()))),
-    PUNCH_SPIDEREYE("punch_spidereye", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SPIDEREYE.get()))),
-    PUNCH_GHASTTEAR("punch_ghasttear", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_GHASTTEAR.get()))),
-    PUNCH_SOUL_BERRY("punch_soul_berry", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SOUL_BERRY.get()))),
-    PUNCH_WITHER_BERRY("punch_wither_berry", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_WITHER_BERRY.get()))),
+    PUNCH_SLIMEAPPLE("punch_slimeapple", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SLIMEAPPLE.get()), SoundEvents.ENTITY_SLIME_SQUISH, 4, true)),
+    PUNCH_SPIDEREYE("punch_spidereye", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SPIDEREYE.get()), SoundEvents.ENTITY_SPIDER_AMBIENT, 6, true)),
+    PUNCH_GHASTTEAR("punch_ghasttear", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_GHASTTEAR.get()), SoundEvents.ENTITY_GHAST_AMBIENT, 4, true)),
+    PUNCH_SOUL_BERRY("punch_soul_berry", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SOUL_BERRY.get()), true)),
+    PUNCH_WITHER_BERRY("punch_wither_berry", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_WITHER_BERRY.get()), true)),
 
     PUNCHBOWL_SLIMEAPPLE("punchbowl_slimeapple", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_SLIMEAPPLE.get(), base())),
     PUNCHBOWL_SPIDEREYE("punchbowl_spidereye", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_SPIDEREYE.get(), base())),

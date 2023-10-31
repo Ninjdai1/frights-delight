@@ -2,8 +2,10 @@ package com.chefmooon.frightsdelight.data;
 
 import com.chefmooon.frightsdelight.registry.BlocksRegistry;
 import com.chefmooon.frightsdelight.tag.CommonTags;
+import com.chefmooon.frightsdelight.tag.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
@@ -16,8 +18,23 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
+        registerModTags();
         registerCommonBlockTags();
         registerMinecraftBlockTags();
+    }
+
+    private void registerModTags() {
+        getOrCreateTagBuilder(ModTags.SOUL_BERRY_BUSH_GROW_CONDITIION)
+                .add(Blocks.SOUL_FIRE)
+                .add(Blocks.SOUL_LANTERN)
+                .add(Blocks.SOUL_TORCH)
+                .add(Blocks.SOUL_WALL_TORCH)
+                .add(Blocks.SOUL_CAMPFIRE);
+
+        getOrCreateTagBuilder(ModTags.WITHER_BERRY_BUSH_GROW_CONDITIION)
+                .add(Blocks.WITHER_ROSE)
+                .add(Blocks.WITHER_SKELETON_SKULL)
+                .add(Blocks.WITHER_SKELETON_WALL_SKULL);
     }
 
     private void registerCommonBlockTags() {

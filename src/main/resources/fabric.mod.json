@@ -8,8 +8,8 @@
 		"ChefMooon"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://legacy.curseforge.com/minecraft/mc-mods/frights-delight",
+		"sources": "https://github.com/ChefMooon/frights-delight/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/frightsdelight/icon.png",
@@ -26,7 +26,7 @@
 		]
 	},
 	"mixins": [
-		"frights-delight.mixins.json"
+		"frightsdelight.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",

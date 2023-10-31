@@ -1,14 +1,14 @@
 {
   "type": "farmersdelight:cooking",
-  "cookingtime": 50,
-  "experience": 0.25,
+  "cookingtime": 200,
+  "experience": 1.0,
   "recipie_book_tab": "drinks",
   "ingredients": [
     {
-      "item": "minecraft:ghast_tear"
+      "item": "frightsdelight:soul_berry"
     },
     {
-      "item": "minecraft:ghast_tear"
+      "item": "frightsdelight:soul_berry"
     },
     {
       "item": "minecraft:sugar"
@@ -18,7 +18,7 @@
     }
   ],
   "result": {
-    "item": "frightsdelight:punch_ghasttear",
+    "item": "frightsdelight:punch_soul_berry",
     "count": 4
   },
   "container": {

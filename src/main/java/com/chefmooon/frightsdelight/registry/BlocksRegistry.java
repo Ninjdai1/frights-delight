@@ -22,8 +22,8 @@ import java.util.function.Supplier;
 
 public enum BlocksRegistry {
 
-    SOUL_BERRY_BUSH("soul_berry_bush", () -> new SoulBerryBushBlock(FabricBlockSettings.copy(Blocks.SWEET_BERRY_BUSH)), true),
-    WITHER_BERRY_BUSH("wither_berry_bush", () -> new WitherBerryBushBlock(FabricBlockSettings.copy(Blocks.SWEET_BERRY_BUSH)), true),
+    SOUL_BERRY_BUSH("soul_berry_bush", SoulBerryBushBlock::new, true, flammable(100,60)),
+    WITHER_BERRY_BUSH("wither_berry_bush", WitherBerryBushBlock::new, true, flammable(100,60)),
 
     FLESH_CRATE("flesh_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
     BONE_CRATE("bone_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
@@ -34,7 +34,7 @@ public enum BlocksRegistry {
     POISONOUS_POTATO_CRATE("poisonous_potato_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
     ROTTEN_TOMATO_CRATE("rotten_tomato_crate", () -> new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).hardness(2.f).resistance(3.f).sounds(BlockSoundGroup.WOOD))),
 
-    PUNCHBOWL_SLIMEAPPLE("punchbowl_slimeapple", () -> new SlimeApplePunch(ItemsRegistry.PUNCH_SLIMEAPPLE.get()), true),
+    PUNCHBOWL_SLIMEAPPLE("punchbowl_slimeapple", () -> new SlimeApplePunch(ItemsRegistry.PUNCH_SLIMEAPPLE.get(), ParticleEffectsRegistry.SLIME_BUBBLE.get()), true),
     PUNCHBOWL_SPIDEREYE("punchbowl_spidereye", () -> new DrinkableFeastBlock(ItemsRegistry.PUNCH_SPIDEREYE.get()), true),
     PUNCHBOWL_GHASTTEAR("punchbowl_ghasttear", () -> new DrinkableFeastBlock(ItemsRegistry.PUNCH_GHASTTEAR.get()), true),
     PUNCHBOWL_SOUL_BERRY("punchbowl_soul_berry", () -> new DrinkableFeastBlock(ItemsRegistry.PUNCH_SOUL_BERRY.get()), true),

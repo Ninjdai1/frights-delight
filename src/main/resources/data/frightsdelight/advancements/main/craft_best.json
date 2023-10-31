@@ -1,0 +1,51 @@
+{
+  "parent": "frightsdelight:main/craft_cookie",
+  "criteria": {
+    "has_bowl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bowl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:glass_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "frightsdelight.advancement.craft_best.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "frightsdelight:pasta_with_slimeballs"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "frightsdelight.advancement.craft_best"
+    }
+  },
+  "requirements": [
+    [
+      "has_bowl",
+      "has_bottle"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

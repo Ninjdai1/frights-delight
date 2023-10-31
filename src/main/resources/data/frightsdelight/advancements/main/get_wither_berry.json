@@ -1,0 +1,41 @@
+{
+  "parent": "frightsdelight:main/get_soul_berry",
+  "criteria": {
+    "has_wither_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:wither_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "frightsdelight.advancement.get_wither_berry.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "frightsdelight:wither_berry"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "frightsdelight.advancement.get_wither_berry"
+    }
+  },
+  "requirements": [
+    [
+      "has_wither_berry"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}

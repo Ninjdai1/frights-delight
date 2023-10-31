@@ -1,0 +1,38 @@
+{
+  "parent": "frightsdelight:main/root",
+  "criteria": {
+    "has_soul_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soul_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "frightsdelight.advancement.get_soul_berry.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "frightsdelight:soul_berry"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "frightsdelight.advancement.get_soul_berry"
+    }
+  },
+  "requirements": [
+    [
+      "has_soul_berry"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

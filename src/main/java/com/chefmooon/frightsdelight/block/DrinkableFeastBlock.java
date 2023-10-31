@@ -14,6 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
@@ -26,6 +27,8 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -38,20 +41,35 @@ public class DrinkableFeastBlock extends Block {
     public static final int MAX_SERVINGS = 4;
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static final IntProperty SERVINGS = IntProperty.of("servings", 0, MAX_SERVINGS);
-
     protected static final VoxelShape SHAPE = Block.createCuboidShape(1.d, .0d, 1.d, 15.d, 8.d, 15.d);
-
     public Item servingItem;
+    private final DefaultParticleType defaultParticleType;
 
     public DrinkableFeastBlock(Item servingItem) {
         super(FabricBlockSettings.copyOf(Blocks.GLASS));
         this.servingItem = servingItem;
+        this.defaultParticleType = null;
+        setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(SERVINGS, MAX_SERVINGS));
+    }
+
+    public DrinkableFeastBlock(Item servingItem, DefaultParticleType particle) {
+        super(FabricBlockSettings.copyOf(Blocks.GLASS));
+        this.servingItem = servingItem;
+        this.defaultParticleType = particle;
         setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(SERVINGS, MAX_SERVINGS));
     }
 
     public DrinkableFeastBlock(Item servingItem, Settings settings) {
         super(settings);
         this.servingItem = servingItem;
+        this.defaultParticleType = null;
+        setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(SERVINGS, MAX_SERVINGS));
+    }
+
+    public DrinkableFeastBlock(Item servingItem, DefaultParticleType particle, Settings settings) {
+        super(settings);
+        this.servingItem = servingItem;
+        this.defaultParticleType = particle;
         setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(SERVINGS, MAX_SERVINGS));
     }
 
@@ -155,5 +173,24 @@ public class DrinkableFeastBlock extends Block {
         }
 
         return ActionResult.SUCCESS;
+    }
+
+    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+        if (defaultParticleType != null && state.get(SERVINGS) > 0) {
+            VoxelShape voxelShape = this.getOutlineShape(state, world, pos, ShapeContext.absent());
+            Vec3d vec3d = voxelShape.getBoundingBox().getCenter();
+            double d = (double)pos.getX() + vec3d.x;
+            double e = (double)pos.getY() + (state.get(SERVINGS) / 6.0);
+            double f = (double)pos.getZ() + vec3d.z;
+
+            for(int i = 0; i < 1; ++i) {
+                if (random.nextBoolean()) {
+                    world.addParticle(defaultParticleType, d + (random.nextDouble() - 0.5) / 2.0, e + ((1.0 - random.nextDouble()) / 20.0), f + (random.nextDouble() - 0.5) / 2.0, 0.0, 0.0, 0.0);
+                    if (new java.util.Random().nextInt(10) == 0) {
+                        world.playSound(d, e, f, SoundsRegistry.BLOCK_DRINKABLE_FEAST_BUBBLE.get(), SoundCategory.BLOCKS, 0.2F, 0.8F, false);
+                    }
+                }
+            }
+        }
     }
 }

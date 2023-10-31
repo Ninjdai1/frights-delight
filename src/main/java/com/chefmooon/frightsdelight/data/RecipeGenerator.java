@@ -57,7 +57,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(ROOT + RecipeProvider.getRecipeName(ItemsRegistry.COOKIE_SPIDEREYE.get())));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ItemsRegistry.PUNCHBOWL_SPIDEREYE.get())
-                .pattern("   ")
+                .pattern(" A ")
                 .pattern("A A")
                 .pattern(" A ")
                 .input('A', ItemsRegistry.PUNCH_SPIDEREYE.get())
@@ -66,7 +66,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(ROOT + RecipeProvider.getRecipeName(ItemsRegistry.PUNCHBOWL_SPIDEREYE.get())));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ItemsRegistry.PUNCHBOWL_SLIMEAPPLE.get())
-                .pattern("   ")
+                .pattern(" A ")
                 .pattern("A A")
                 .pattern(" A ")
                 .input('A', ItemsRegistry.PUNCH_SLIMEAPPLE.get())
@@ -75,7 +75,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(ROOT + RecipeProvider.getRecipeName(ItemsRegistry.PUNCHBOWL_SLIMEAPPLE.get())));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ItemsRegistry.PUNCHBOWL_GHASTTEAR.get())
-                .pattern("   ")
+                .pattern(" A ")
                 .pattern("A A")
                 .pattern(" A ")
                 .input('A', ItemsRegistry.PUNCH_GHASTTEAR.get())
@@ -84,7 +84,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(ROOT + RecipeProvider.getRecipeName(ItemsRegistry.PUNCHBOWL_GHASTTEAR.get())));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ItemsRegistry.PUNCHBOWL_SOUL_BERRY.get())
-                .pattern("   ")
+                .pattern(" A ")
                 .pattern("A A")
                 .pattern(" A ")
                 .input('A', ItemsRegistry.PUNCH_SOUL_BERRY.get())
@@ -93,7 +93,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(ROOT + RecipeProvider.getRecipeName(ItemsRegistry.PUNCHBOWL_SOUL_BERRY.get())));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ItemsRegistry.PUNCHBOWL_WITHER_BERRY.get())
-                .pattern("   ")
+                .pattern(" A ")
                 .pattern("A A")
                 .pattern(" A ")
                 .input('A', ItemsRegistry.PUNCH_WITHER_BERRY.get())

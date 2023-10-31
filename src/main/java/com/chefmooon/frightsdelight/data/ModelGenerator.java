@@ -5,9 +5,7 @@ import com.chefmooon.frightsdelight.registry.BlocksRegistry;
 import com.chefmooon.frightsdelight.registry.ItemsRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 
 public class ModelGenerator extends FabricModelProvider {
@@ -37,8 +35,8 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ItemsRegistry.WITHER_BERRY.get(), Models.GENERATED);
 
         itemModelGenerator.register(ItemsRegistry.APPLE_SLIME.get(), Models.GENERATED);
-        itemModelGenerator.register(ItemsRegistry.UNDEAD_KEBAB.get(), Models.GENERATED);
-        itemModelGenerator.register(ItemsRegistry.WEB_ON_STICK.get(), Models.GENERATED);
+        itemModelGenerator.register(ItemsRegistry.UNDEAD_KEBAB.get(), Models.HANDHELD);
+        itemModelGenerator.register(ItemsRegistry.WEB_ON_STICK.get(), Models.HANDHELD);
 
         itemModelGenerator.register(ItemsRegistry.MONSTER_MASH.get(), Models.GENERATED);
         itemModelGenerator.register(ItemsRegistry.PASTA_WITH_SLIMEBALLS.get(), Models.GENERATED);

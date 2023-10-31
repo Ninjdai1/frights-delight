@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "has_monster_drop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:dirt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/block/soul_sand.png",
+    "description": {
+      "translate": "frightsdelight.advancement.root.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "frightsdelight:apple_slime"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "frightsdelight.advancement.root"
+    }
+  },
+  "requirements": [
+    [
+      "has_monster_drop"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

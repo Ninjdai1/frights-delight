@@ -3,7 +3,7 @@
 	"package": "com.chefmooon.frightsdelight.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"accessors.StructurePoolAccessorMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

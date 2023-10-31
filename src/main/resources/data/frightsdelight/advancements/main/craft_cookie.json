@@ -1,0 +1,51 @@
+{
+  "parent": "frightsdelight:main/get_monster_drop",
+  "criteria": {
+    "has_cookie_flesh": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_flesh"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_spidereye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_spidereye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "frightsdelight.advancement.craft_cookie.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "frightsdelight:cookie_flesh"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "frightsdelight.advancement.craft_cookie"
+    }
+  },
+  "requirements": [
+    [
+      "has_cookie_flesh",
+      "has_cookie_spidereye"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

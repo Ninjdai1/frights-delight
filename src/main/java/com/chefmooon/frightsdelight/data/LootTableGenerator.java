@@ -12,7 +12,6 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
 
-
         addDrop(BlocksRegistry.FLESH_CRATE.get());
         addDrop(BlocksRegistry.BONE_CRATE.get());
         addDrop(BlocksRegistry.PHANTOM_CRATE.get());
