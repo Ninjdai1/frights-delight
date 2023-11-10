@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-31T15:38:57.2720354	Frights Delight/Model Definitions
+// 1.20.1	2023-11-10T11:28:04.2788002	Frights Delight/Model Definitions
 69121f37468d7f815a1336ca97402d1c877c38db assets\frightsdelight\blockstates\bone_crate.json
 1bfa50f8cbb2f785e11a8d6720a5b1dd661aca4c assets\frightsdelight\models\item\cookie_flesh.json
 b537d871a62b8446f7a39dec3e4da882cf15d351 assets\frightsdelight\models\block\spider_eye_crate.json
@@ -24,9 +24,9 @@ ac8bb95094ae6cd0378f2bf125e59e65bad6eb4a assets\frightsdelight\models\item\ferme
 a37f775b2466646d986bfebeee8d84f4c824108b assets\frightsdelight\models\block\fermented_spider_eye_crate.json
 4dcbd054e19312d193dc2e773148e8ba77b6c910 assets\frightsdelight\models\item\rotten_tomato_crate.json
 397cc3b898867893c59d371173fae642022b41be assets\frightsdelight\models\item\soup_rotten_flesh.json
-98c58b6e815cd05b3d137303bf55b12abc9d2225 assets\frightsdelight\models\item\punch_slimeapple.json
-085576dac3db13f6a072790bd396bb5b7c69d75e assets\frightsdelight\models\item\cookie_soul_berry.json
 8b4396fbcca91ac2e85787cf566fb6046018e78e assets\frightsdelight\models\item\punch_soul_berry.json
+085576dac3db13f6a072790bd396bb5b7c69d75e assets\frightsdelight\models\item\cookie_soul_berry.json
+98c58b6e815cd05b3d137303bf55b12abc9d2225 assets\frightsdelight\models\item\punch_slimeapple.json
 4c22c5a7204056c43ed0bbedc9612cc3ded3094a assets\frightsdelight\models\item\punch_spidereye.json
 7f68fa566ad89cfb36a041e2545d58a509fb26fa assets\frightsdelight\models\item\monster_mash.json
 ec50fb2d578ef66f48c3ed25c4391c82e6afb85b assets\frightsdelight\models\item\phantom_crate.json

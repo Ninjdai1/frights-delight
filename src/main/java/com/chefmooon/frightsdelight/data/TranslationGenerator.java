@@ -48,7 +48,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ItemsRegistry.COOKIE_FLESH.get(), "Rotten Flesh Cookie");
         translationBuilder.add(ItemsRegistry.COOKIE_SPIDEREYE.get(), "Spider Eye Cookie");
 
-        translationBuilder.add(ItemsRegistry.PUNCH_SLIMEAPPLE.get(), "Slime-Apple Cide");
+        translationBuilder.add(ItemsRegistry.PUNCH_SLIMEAPPLE.get(), "Slime-Apple Cider");
         translationBuilder.add(ItemsRegistry.PUNCH_SPIDEREYE.get(), "Spider-Eye Punch");
         translationBuilder.add(ItemsRegistry.PUNCH_GHASTTEAR.get(), "Ghast Tear Punch");
         translationBuilder.add(ItemsRegistry.PUNCH_SOUL_BERRY.get(), "Soul Berry Punch");

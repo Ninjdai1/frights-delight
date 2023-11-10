@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-31T15:38:57.2740354	Frights Delight/Recipes
+// 1.20.1	2023-11-10T11:28:04.2808014	Frights Delight/Recipes
 f63f3625395e7d4895afddc375e9118a3cbac53c data\frightsdelight\advancements\recipes\misc\web_crate.json
 f582c04f42078b3d8537395c262869f707017a5b data\frightsdelight\recipes\rotten_flesh.json
 dd19d22aebb960f7b086f4b1abef4e5e41fc28da data\frightsdelight\recipes\poisonous_potato.json
@@ -41,8 +41,8 @@ c96c0d99a87ddc59c63a4f18f8ea5d1fda6209fe data\frightsdelight\advancements\recipe
 11a31b81d35b4ab09238a2efc072fdef11b2a2d7 data\frightsdelight\recipes\spider_eye.json
 3e14a91fbedbab3feff9c6d601dfe69d9e098f59 data\frightsdelight\advancements\recipes\misc\minecraft\crafting\punchbowl_wither_berry.json
 f6833deb93f093f562ea7af987b80c18d1e00425 data\frightsdelight\advancements\recipes\misc\rotten_flesh.json
-ce4ddf681b13d4e4cb66fcced41106c7429f2113 data\frightsdelight\recipes\phantom_crate.json
 97c84a2c25b2026caf61bf58ec7bcaa256932f72 data\frightsdelight\recipes\minecraft\crafting\punchbowl_slimeapple.json
+ce4ddf681b13d4e4cb66fcced41106c7429f2113 data\frightsdelight\recipes\phantom_crate.json
 56b6f3179314fd979144bcd4df6354d3f2d38a4e data\frightsdelight\recipes\minecraft\crafting\cookie_flesh.json
 0d60eec4d37050e31fc909786a311ccc92981fd9 data\frightsdelight\advancements\recipes\misc\flesh_crate.json
 9ba33f76ce028e9f02569e250af4706a734e4c48 data\frightsdelight\recipes\fermented_spider_eye_crate.json

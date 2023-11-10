@@ -26,10 +26,10 @@ public enum ItemsRegistry {
     POISONOUS_POTATO_CRATE("poisonous_potato_crate", () -> new BlockItem(BlocksRegistry.POISONOUS_POTATO_CRATE.get(), base())),
     ROTTEN_TOMATO_CRATE("rotten_tomato_crate", () -> new BlockItem(BlocksRegistry.ROTTEN_TOMATO_CRATE.get(), base())),
 
-    SOUL_BERRY("soul_berry", () -> new AliasedBlockItem(BlocksRegistry.SOUL_BERRY_BUSH.get(), food(FoodItem.SOUL_BERRY.get()))),
-    WITHER_BERRY("wither_berry", () -> new AliasedBlockItem(BlocksRegistry.WITHER_BERRY_BUSH.get(), food(FoodItem.WITHER_BERRY.get()))),
+    SOUL_BERRY("soul_berry", () -> new AliasedBlockItem(BlocksRegistry.SOUL_BERRY_BUSH.get(), food(FoodItem.SOUL_BERRY.get())), null, .3f),
+    WITHER_BERRY("wither_berry", () -> new AliasedBlockItem(BlocksRegistry.WITHER_BERRY_BUSH.get(), food(FoodItem.WITHER_BERRY.get())), null, .3f),
 
-    APPLE_SLIME("apple_slime", () -> new FrDConsumableItem(food(FoodItem.APPLE_SLIME.get()), true)),
+    APPLE_SLIME("apple_slime", () -> new FrDConsumableItem(food(FoodItem.APPLE_SLIME.get(), Items.AIR), true)),
     UNDEAD_KEBAB("undead_kebab", () -> new FrDConsumableItem(food(FoodItem.UNDEAD_KEBAB.get(), Items.STICK, 16), true)),
     WEB_ON_STICK("web_on_stick", () -> new FrDConsumableItem(food(FoodItem.WEB_ON_STICK.get(), Items.STICK, 16), true)),
 
@@ -40,15 +40,15 @@ public enum ItemsRegistry {
     SOUP_SLIME("soup_slime", () -> new FrDConsumableItem(food(FoodItem.SOUP_SLIME.get(), Items.BOWL, 16), true)),
 
 
-    COOKIE_SOUL_BERRY("cookie_soul_berry", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SOUL_BERRY.get()), true)),
-    COOKIE_FLESH("cookie_flesh", () -> new FrDConsumableItem(food(FoodItem.COOKIE_FLESH.get()), true)),
-    COOKIE_SPIDEREYE("cookie_spidereye", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SPIDEREYE.get()), true)),
+    COOKIE_SOUL_BERRY("cookie_soul_berry", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SOUL_BERRY.get(), Items.AIR), true), null, .85f),
+    COOKIE_FLESH("cookie_flesh", () -> new FrDConsumableItem(food(FoodItem.COOKIE_FLESH.get(), Items.AIR), true), null, .85f),
+    COOKIE_SPIDEREYE("cookie_spidereye", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SPIDEREYE.get(), Items.AIR), true), null, .85f),
 
-    PUNCH_SLIMEAPPLE("punch_slimeapple", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SLIMEAPPLE.get()), SoundEvents.ENTITY_SLIME_SQUISH, 4, true)),
-    PUNCH_SPIDEREYE("punch_spidereye", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SPIDEREYE.get()), SoundEvents.ENTITY_SPIDER_AMBIENT, 6, true)),
-    PUNCH_GHASTTEAR("punch_ghasttear", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_GHASTTEAR.get()), SoundEvents.ENTITY_GHAST_AMBIENT, 4, true)),
-    PUNCH_SOUL_BERRY("punch_soul_berry", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SOUL_BERRY.get()), true)),
-    PUNCH_WITHER_BERRY("punch_wither_berry", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_WITHER_BERRY.get()), true)),
+    PUNCH_SLIMEAPPLE("punch_slimeapple", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SLIMEAPPLE.get(), Items.GLASS_BOTTLE, 16), SoundEvents.ENTITY_SLIME_SQUISH, 4, true)),
+    PUNCH_SPIDEREYE("punch_spidereye", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SPIDEREYE.get(), Items.GLASS_BOTTLE, 16), SoundEvents.ENTITY_SPIDER_AMBIENT, 6, true)),
+    PUNCH_GHASTTEAR("punch_ghasttear", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_GHASTTEAR.get(), Items.GLASS_BOTTLE, 16), SoundEvents.ENTITY_GHAST_AMBIENT, 4, true)),
+    PUNCH_SOUL_BERRY("punch_soul_berry", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SOUL_BERRY.get(), Items.GLASS_BOTTLE, 16), true)),
+    PUNCH_WITHER_BERRY("punch_wither_berry", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_WITHER_BERRY.get(), Items.GLASS_BOTTLE, 16), true)),
 
     PUNCHBOWL_SLIMEAPPLE("punchbowl_slimeapple", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_SLIMEAPPLE.get(), base())),
     PUNCHBOWL_SPIDEREYE("punchbowl_spidereye", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_SPIDEREYE.get(), base())),
@@ -118,6 +118,9 @@ public enum ItemsRegistry {
     }
     private static FabricItemSettings food(FoodComponent food) {
         return new FabricItemSettings().food(food);
+    }
+    private static FabricItemSettings food(FoodComponent food, Item remainder) {
+        return new FabricItemSettings().food(food).recipeRemainder(remainder);
     }
     private static FabricItemSettings food(FoodComponent food, Item remainder, int maxCount) {
         return new FabricItemSettings().food(food).recipeRemainder(remainder).maxCount(maxCount);
