@@ -1,6 +1,7 @@
 package com.chefmooon.frightsdelight.data;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
+import com.chefmooon.frightsdelight.registry.BlocksRegistry;
 import com.chefmooon.frightsdelight.registry.ItemsRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -21,6 +22,9 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(FrightsDelight.ITEM_GROUP, "Fright's Delight");
 
         translationBuilder.add(MOD_ID + ".container.punch_bowl", "Glass Bottle Required.");
+
+        translationBuilder.add(BlocksRegistry.WITHER_BERRY_BUSH.get(), "Wither Berry Bush");
+        translationBuilder.add(BlocksRegistry.SOUL_BERRY_BUSH.get(), "Soul Berry Bush");
         
         translationBuilder.add(ItemsRegistry.SOUL_BERRY.get(), "Soul Berries");
         translationBuilder.add(ItemsRegistry.WITHER_BERRY.get(), "Wither Berries");
@@ -77,6 +81,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(SUBTITLE + ".effect_hysteria.mid", "Mid Hysteria");
         translationBuilder.add(SUBTITLE + ".effect_hysteria.far", "Distant Hysteria");
 
+        translationBuilder.add(SUBTITLE + ".block_drinkable_feast.add", "Drink Added");
         translationBuilder.add(SUBTITLE + ".block_drinkable_feast.remove", "Drink Removed");
         translationBuilder.add(SUBTITLE + ".block_drinkable_feast.bubble", "Slimy Bubble");
 

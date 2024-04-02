@@ -50,11 +50,11 @@ public enum ItemsRegistry {
     PUNCH_SOUL_BERRY("punch_soul_berry", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SOUL_BERRY.get(), Items.GLASS_BOTTLE, 16), true)),
     PUNCH_WITHER_BERRY("punch_wither_berry", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_WITHER_BERRY.get(), Items.GLASS_BOTTLE, 16), true)),
 
-    PUNCHBOWL_SLIMEAPPLE("punchbowl_slimeapple", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_SLIMEAPPLE.get(), base())),
-    PUNCHBOWL_SPIDEREYE("punchbowl_spidereye", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_SPIDEREYE.get(), base())),
-    PUNCHBOWL_GHASTTEAR("punchbowl_ghasttear", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_GHASTTEAR.get(), base())),
-    PUNCHBOWL_SOUL_BERRY("punchbowl_soul_berry", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_SOUL_BERRY.get(), base())),
-    PUNCHBOWL_WITHER_BERRY("punchbowl_wither_berry", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_WITHER_BERRY.get(), base()))
+    PUNCHBOWL_SLIMEAPPLE("punchbowl_slimeapple", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_SLIMEAPPLE.get(), noStack())),
+    PUNCHBOWL_SPIDEREYE("punchbowl_spidereye", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_SPIDEREYE.get(), noStack())),
+    PUNCHBOWL_GHASTTEAR("punchbowl_ghasttear", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_GHASTTEAR.get(), noStack())),
+    PUNCHBOWL_SOUL_BERRY("punchbowl_soul_berry", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_SOUL_BERRY.get(), noStack())),
+    PUNCHBOWL_WITHER_BERRY("punchbowl_wither_berry", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_WITHER_BERRY.get(), noStack()))
     ;
 
 

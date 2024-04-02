@@ -40,5 +40,25 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(ItemsRegistry.COOKIE_SOUL_BERRY.get())
                 .add(ItemsRegistry.COOKIE_FLESH.get())
                 .add(ItemsRegistry.COOKIE_SPIDEREYE.get());
+
+        // Dehydration Item Tags
+        getOrCreateTagBuilder(CompatibilityTags.DEHYDRATION_HYDRATING_DRINKS)
+                .add(ItemsRegistry.PUNCH_SLIMEAPPLE.get())
+                .add(ItemsRegistry.PUNCH_SPIDEREYE.get())
+                .add(ItemsRegistry.PUNCH_GHASTTEAR.get())
+                .add(ItemsRegistry.PUNCH_SOUL_BERRY.get())
+                .add(ItemsRegistry.PUNCH_WITHER_BERRY.get());
+
+        getOrCreateTagBuilder(CompatibilityTags.DEHYDRATION_HYDRATING_STEW)
+                .add(ItemsRegistry.SOUP_ROTTEN_FLESH.get())
+                .add(ItemsRegistry.SOUP_SPIDER_EYE.get())
+                .add(ItemsRegistry.SOUP_SLIME.get());
+
+        // Origins Item Tags
+        getOrCreateTagBuilder(CompatibilityTags.ORIGINS_MEAT)
+                .add(ItemsRegistry.UNDEAD_KEBAB.get())
+                .add(ItemsRegistry.MONSTER_MASH.get())
+                .add(ItemsRegistry.COOKIE_FLESH.get())
+                .add(ItemsRegistry.COOKIE_SPIDEREYE.get());
     }
 }

@@ -15,4 +15,12 @@ public class CompatibilityTags {
     public static final String SUPPLEMENTARIES = "supplementaries";
     public static final TagKey<Item> SUPPLEMENTARIES_COOKIES = TagUtil.getItemTagKey(SUPPLEMENTARIES, "cookies");
 
+    public static final String DEHYDRATION = "dehydration";
+    public static final TagKey<Item> DEHYDRATION_HYDRATING_DRINKS = TagUtil.getItemTagKey(DEHYDRATION, "hydrating_drinks");
+    public static final TagKey<Item> DEHYDRATION_HYDRATING_STEW = TagUtil.getItemTagKey(DEHYDRATION, "hydrating_stew");
+
+    public static final String ORIGINS = "origins";
+    public static final TagKey<Item> ORIGINS_MEAT = TagUtil.getItemTagKey(ORIGINS, "meat");
+    public static final TagKey<Item> ORIGINS_IGNORE_DIET = TagUtil.getItemTagKey(ORIGINS, "ignore_diet");
+
 }
