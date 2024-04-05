@@ -27,5 +27,9 @@ Fright’s Delight is an add-on mod for [Farmer’s Delight Fabric](https://modr
 Detailed information can be found on the [Wiki](https://github.com/ChefMooon/frights-delight/wiki)
 
 ### Links
-[Farmer's Delight Fabric](https://modrinth.com/mod/farmers-delight-fabric)<br>
+
+[Farmer's Delight Refabricated](https://modrinth.com/mod/farmers-delight-refabricated)<br>
+[[Deprecated]Farmer's Delight Fabric](https://modrinth.com/mod/farmers-delight-fabric)<br>
 [Original Forge Farmer's Delight](https://modrinth.com/mod/farmers-delight)
+
+Thank you Farmer's Delight Developers and Community!
