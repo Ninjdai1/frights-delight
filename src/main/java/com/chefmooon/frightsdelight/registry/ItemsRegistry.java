@@ -29,7 +29,7 @@ public enum ItemsRegistry {
     SOUL_BERRY("soul_berry", () -> new AliasedBlockItem(BlocksRegistry.SOUL_BERRY_BUSH.get(), food(FoodItem.SOUL_BERRY.get())), null, .3f),
     WITHER_BERRY("wither_berry", () -> new AliasedBlockItem(BlocksRegistry.WITHER_BERRY_BUSH.get(), food(FoodItem.WITHER_BERRY.get())), null, .3f),
 
-    APPLE_SLIME("apple_slime", () -> new FrDConsumableItem(food(FoodItem.APPLE_SLIME.get(), Items.AIR), true)),
+    APPLE_SLIME("apple_slime", () -> new FrDConsumableItem(food(FoodItem.APPLE_SLIME.get()), true)),
     UNDEAD_KEBAB("undead_kebab", () -> new FrDConsumableItem(food(FoodItem.UNDEAD_KEBAB.get(), Items.STICK, 16), true)),
     WEB_ON_STICK("web_on_stick", () -> new FrDConsumableItem(food(FoodItem.WEB_ON_STICK.get(), Items.STICK, 16), true)),
 
@@ -39,10 +39,9 @@ public enum ItemsRegistry {
     SOUP_SPIDER_EYE("soup_spider_eye", () -> new FrDConsumableItem(food(FoodItem.SOUP_SPIDER_EYE.get(), Items.BOWL, 16), true)),
     SOUP_SLIME("soup_slime", () -> new FrDConsumableItem(food(FoodItem.SOUP_SLIME.get(), Items.BOWL, 16), true)),
 
-
-    COOKIE_SOUL_BERRY("cookie_soul_berry", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SOUL_BERRY.get(), Items.AIR), true), null, .85f),
-    COOKIE_FLESH("cookie_flesh", () -> new FrDConsumableItem(food(FoodItem.COOKIE_FLESH.get(), Items.AIR), true), null, .85f),
-    COOKIE_SPIDEREYE("cookie_spidereye", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SPIDEREYE.get(), Items.AIR), true), null, .85f),
+    COOKIE_SOUL_BERRY("cookie_soul_berry", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SOUL_BERRY.get()), true), null, .85f),
+    COOKIE_FLESH("cookie_flesh", () -> new FrDConsumableItem(food(FoodItem.COOKIE_FLESH.get()), true), null, .85f),
+    COOKIE_SPIDEREYE("cookie_spidereye", () -> new FrDConsumableItem(food(FoodItem.COOKIE_SPIDEREYE.get()), true), null, .85f),
 
     PUNCH_SLIMEAPPLE("punch_slimeapple", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SLIMEAPPLE.get(), Items.GLASS_BOTTLE, 16), SoundEvents.ENTITY_SLIME_SQUISH, 4, true)),
     PUNCH_SPIDEREYE("punch_spidereye", () -> new FrDDrinkableItem(food(FoodItem.PUNCH_SPIDEREYE.get(), Items.GLASS_BOTTLE, 16), SoundEvents.ENTITY_SPIDER_AMBIENT, 6, true)),
@@ -56,7 +55,6 @@ public enum ItemsRegistry {
     PUNCHBOWL_SOUL_BERRY("punchbowl_soul_berry", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_SOUL_BERRY.get(), noStack())),
     PUNCHBOWL_WITHER_BERRY("punchbowl_wither_berry", () -> new BlockItem(BlocksRegistry.PUNCHBOWL_WITHER_BERRY.get(), noStack()))
     ;
-
 
     private final String pathName;
     private final Supplier<Item> itemSupplier;
