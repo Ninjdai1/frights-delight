@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0,grow_condition=false": {
+      "model": "frightsdelight:block/soul_berry_bush_stage0"
+    },
+    "age=0,grow_condition=true": {
+      "model": "frightsdelight:block/soul_berry_bush_stage0"
+    },
+    "age=1,grow_condition=false": {
+      "model": "frightsdelight:block/soul_berry_bush_stage1"
+    },
+    "age=1,grow_condition=true": {
+      "model": "frightsdelight:block/soul_berry_bush_stage1"
+    },
+    "age=2,grow_condition=false": {
+      "model": "frightsdelight:block/soul_berry_bush_stage2"
+    },
+    "age=2,grow_condition=true": {
+      "model": "frightsdelight:block/soul_berry_bush_stage2_grow"
+    },
+    "age=3,grow_condition=false": {
+      "model": "frightsdelight:block/soul_berry_bush_stage3"
+    },
+    "age=3,grow_condition=true": {
+      "model": "frightsdelight:block/soul_berry_bush_stage3_grow"
+    }
+  }
+}

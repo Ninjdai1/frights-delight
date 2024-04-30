@@ -1,0 +1,6 @@
+{
+  "parent": "frightsdelight:block/template_crop_cross",
+  "textures": {
+    "cross": "frightsdelight:block/soul_berry_bush_stage2_grow"
+  }
+}

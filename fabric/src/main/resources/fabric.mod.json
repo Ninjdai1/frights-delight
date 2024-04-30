@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "authors": [
+    "${mod_authors}"
+  ],
+  "contact": {
+    "homepage": "${mod_homepage}",
+    "issues": "${mod_issues}",
+    "sources": "${mod_github}"
+  },
+  "license": "${mod_license}",
+  "icon": "assets/frightsdelight/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.chefmooon.frightsdelight.fabric.FrightsDelightImpl"
+    ],
+    "client": [
+      "com.chefmooon.frightsdelight.client.fabric.FrightsDelightClientImpl"
+    ],
+    "fabric-datagen": [
+      "com.chefmooon.frightsdelight.data.fabric.DataGenerationFabric"
+    ]
+  },
+  "mixins": [
+    "frightsdelight.mixins.json",
+    "frightsdelight-common.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=${minecraft_min_version} <${minecraft_max_version}",
+    "farmersdelight": ">=1.20.1-2.0.0"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.wiki": "${mod_homepage}",
+        "modmenu.discord": "${mod_discord}"
+      }
+    }
+  }
+}
