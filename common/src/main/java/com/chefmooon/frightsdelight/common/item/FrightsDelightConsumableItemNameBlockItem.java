@@ -1,6 +1,7 @@
 package com.chefmooon.frightsdelight.common.item;
 
 import com.chefmooon.frightsdelight.common.Configuration;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -8,7 +9,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.Nullable;
-import vectorwing.farmersdelight.common.utility.TextUtils;
 
 import java.util.List;
 
@@ -28,7 +28,7 @@ public class FrightsDelightConsumableItemNameBlockItem extends ItemNameBlockItem
         super.appendHoverText(stack, level, tooltip, isAdvanced);
         if ((Boolean) Configuration.foodEffectTooltip()) {
             if (this.hasFoodEffectTooltip) {
-                TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+                TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip, 1.0F);
             }
         }
     }

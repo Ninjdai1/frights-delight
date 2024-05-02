@@ -5,7 +5,7 @@
     }
   ],
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:rotten_flesh"

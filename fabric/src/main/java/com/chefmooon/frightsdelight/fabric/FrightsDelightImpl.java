@@ -9,8 +9,11 @@ import io.github.fabricators_of_create.porting_lib.config.ConfigRegistry;
 import io.github.fabricators_of_create.porting_lib.config.ConfigType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FrightsDelightImpl implements ModInitializer {
+    public static final Logger LOGGER = LoggerFactory.getLogger(FrightsDelight.MOD_ID);
     @Override
     public void onInitialize() {
         FrightsDelight.init();
@@ -29,6 +32,10 @@ public class FrightsDelightImpl implements ModInitializer {
         VillagerEventsImpl.init();
 
         CommonSetupImpl.init();
+    }
+
+    public static void loggerInfo(String s) {
+        LOGGER.info(s);
     }
 
     public static String findVersion() {

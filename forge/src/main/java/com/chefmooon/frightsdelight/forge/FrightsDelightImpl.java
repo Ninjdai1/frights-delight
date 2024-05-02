@@ -15,11 +15,14 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.forgespi.language.IModInfo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
 @Mod(FrightsDelight.MOD_ID)
 public class FrightsDelightImpl {
+    public static final Logger LOGGER = LogManager.getLogger();
 
     public FrightsDelightImpl() {
         FrightsDelight.init();
@@ -45,6 +48,10 @@ public class FrightsDelightImpl {
         FrightsDelightLootModifiersImpl.LOOT_MODIFIERS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    public static void loggerInfo(String s) {
+        LOGGER.warn(s);
     }
 
     public static String findVersion() {

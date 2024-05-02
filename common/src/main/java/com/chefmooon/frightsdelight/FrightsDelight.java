@@ -31,6 +31,10 @@ public class FrightsDelight {
         CommonSetup.init();
 
     }
+    @ExpectPlatform
+    public static void loggerInfo(String s) {
+        throw new AssertionError();
+    }
 
     @ExpectPlatform
     public static String findVersion() {

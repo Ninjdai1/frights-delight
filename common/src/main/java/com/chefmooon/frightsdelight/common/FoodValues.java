@@ -90,6 +90,7 @@ public class FoodValues {
     }
 
     // In Dev only? stops null pointer before effects are fully registered, I think.
+    // TODO: needs more testing, possible bug.
     public static MobEffect nonNullEffect(MobEffect effect) {
         return effect != null ? effect : MobEffects.HEAL;
     }

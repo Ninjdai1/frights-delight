@@ -1,12 +1,14 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rotten_flesh": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:rotten_flesh"
+              "frightsdelight:soul_berry",
+              "minecraft:sugar",
+              "minecraft:water_bucket"
             ]
           }
         ]
@@ -15,21 +17,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:flesh_crate"
+        "recipe": "farmersdelight:cooking/punch_spidereye_multiple"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_rotten_flesh",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:flesh_crate"
+      "farmersdelight:cooking/punch_spidereye_multiple"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

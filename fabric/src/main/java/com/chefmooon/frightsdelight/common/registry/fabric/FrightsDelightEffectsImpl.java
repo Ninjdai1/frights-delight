@@ -13,5 +13,4 @@ public class FrightsDelightEffectsImpl {
     public static <T extends MobEffect> Supplier<T> registerEffect(String id, Supplier<T> supplier) {
         return MOB_EFFECTS.register(id, supplier);
     }
-
 }

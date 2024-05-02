@@ -1,12 +1,14 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rotten_tomato": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
             "items": [
-              "farmersdelight:rotten_tomato"
+              "minecraft:phantom_membrane",
+              "minecraft:spider_eye",
+              "minecraft:rotten_flesh"
             ]
           }
         ]
@@ -15,21 +17,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:rotten_tomato_crate"
+        "recipe": "farmersdelight:cooking/monster_mash"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_rotten_tomato",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:rotten_tomato_crate"
+      "farmersdelight:cooking/monster_mash"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

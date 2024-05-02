@@ -1,6 +1,9 @@
 package com.chefmooon.frightsdelight.common.item;
 
+import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.Configuration;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -11,22 +14,35 @@ import vectorwing.farmersdelight.common.item.ConsumableItem;
 import java.util.List;
 
 public class FrightsDelightConsumableItem extends ConsumableItem {
+    private final boolean hasFoodEffectTooltip;
+    private final boolean hasCustomTooltip;
     public FrightsDelightConsumableItem(Properties properties) {
         super(properties);
+        this.hasFoodEffectTooltip = false;
+        this.hasCustomTooltip = false;
     }
 
     public FrightsDelightConsumableItem(Properties properties, boolean hasFoodEffectTooltip) {
-        super(properties, hasFoodEffectTooltip);
+        super(properties);
+        this.hasFoodEffectTooltip = hasFoodEffectTooltip;
+        this.hasCustomTooltip = false;
     }
 
     public FrightsDelightConsumableItem(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
-        super(properties, hasFoodEffectTooltip, hasCustomTooltip);
+        super(properties);
+        this.hasFoodEffectTooltip = hasFoodEffectTooltip;
+        this.hasCustomTooltip = hasCustomTooltip;
     }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
         if ((Boolean) Configuration.foodEffectTooltip()) {
-            super.appendHoverText(stack, level, tooltip, isAdvanced);
+            if (this.hasCustomTooltip) {
+                tooltip.add(FrightsDelight.tooltip("tooltip." + this).withStyle(ChatFormatting.BLUE));
+            }
+            if (this.hasFoodEffectTooltip) {
+                TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip, 1.0F);
+            }
         }
     }
 }

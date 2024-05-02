@@ -1,12 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_spider_eye": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:spider_eye"
+              "minecraft:apple",
+              "minecraft:slime_ball"
             ]
           }
         ]
@@ -15,21 +16,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:spider_eye_crate"
+        "recipe": "farmersdelight:cooking/apple_slime"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_spider_eye",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:spider_eye_crate"
+      "farmersdelight:cooking/apple_slime"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

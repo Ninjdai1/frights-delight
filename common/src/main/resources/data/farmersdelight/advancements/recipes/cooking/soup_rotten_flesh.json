@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_fermented_spider_eye": {
+    "has_rotten_flesh": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:fermented_spider_eye"
+              "minecraft:rotten_flesh"
             ]
           }
         ]
@@ -15,21 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:fermented_spider_eye_crate"
+        "recipe": "farmersdelight:cooking/soup_rotten_flesh"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_fermented_spider_eye",
+      "has_rotten_flesh",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:fermented_spider_eye_crate"
+      "farmersdelight:cooking/soup_rotten_flesh"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

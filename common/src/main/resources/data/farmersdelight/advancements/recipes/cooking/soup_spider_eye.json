@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_phantom_membrane": {
+    "has_spider_eye": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:phantom_membrane"
+              "minecraft:spider_eye"
             ]
           }
         ]
@@ -15,21 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:phantom_crate"
+        "recipe": "farmersdelight:cooking/soup_spider_eye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_phantom_membrane",
+      "has_spider_eye",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:phantom_crate"
+      "farmersdelight:cooking/soup_spider_eye"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

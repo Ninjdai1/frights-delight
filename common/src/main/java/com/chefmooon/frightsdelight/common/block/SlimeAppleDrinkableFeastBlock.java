@@ -4,7 +4,7 @@ import net.minecraft.world.item.Item;
 
 import java.util.function.Supplier;
 
-public class SlimeAppleDrinkableFeastBlock extends DrinkableFeastBlock{
+public class SlimeAppleDrinkableFeastBlock extends DrinkableFeastBlock {
     // TODO: maybe remove, testing for forge particles
     public SlimeAppleDrinkableFeastBlock(Supplier<Item> servingItem, Properties properties) {
         super(servingItem, properties);

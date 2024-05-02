@@ -5,6 +5,9 @@ import com.chefmooon.frightsdelight.common.FoodValues;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItemNameBlockItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableItem;
+import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightConsumableItemImpl;
+import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightConsumableItemNameBlockItemImpl;
+import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightDrinkableItemImpl;
 import com.google.common.collect.Sets;
 import io.github.fabricators_of_create.porting_lib.util.LazyRegistrar;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -38,45 +41,45 @@ public class FrightsDelightItemsImpl {
             () -> new BlockItem(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get(), basicItem()));
 
     public static final Supplier<Item> SOUL_BERRY = registerItemWithTab("soul_berry",
-            () -> new FrightsDelightConsumableItemNameBlockItem(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), foodItem(FoodValues.SOUL_BERRY), true));
+            () -> new FrightsDelightConsumableItemNameBlockItemImpl(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), foodItem(FoodValues.SOUL_BERRY), true));
     public static final Supplier<Item> WITHER_BERRY = registerItemWithTab("wither_berry",
-            () -> new FrightsDelightConsumableItemNameBlockItem(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), foodItem(FoodValues.WITHER_BERRY), true));
+            () -> new FrightsDelightConsumableItemNameBlockItemImpl(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), foodItem(FoodValues.WITHER_BERRY), true));
 
     public static final Supplier<Item> APPLE_SLIME = registerItemWithTab("apple_slime",
-            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.APPLE_SLIME), true));
+            () -> new FrightsDelightConsumableItemImpl(foodItem(FoodValues.APPLE_SLIME), true));
     public static final Supplier<Item> UNDEAD_KEBAB = registerItemWithTab("undead_kebab",
-            () -> new FrightsDelightConsumableItem(stickFoodItem(FoodValues.UNDEAD_KEBAB), true));
+            () -> new FrightsDelightConsumableItemImpl(stickFoodItem(FoodValues.UNDEAD_KEBAB), true));
     public static final Supplier<Item> WEB_ON_STICK = registerItemWithTab("web_on_stick",
-            () -> new FrightsDelightConsumableItem(stickFoodItem(FoodValues.WEB_ON_STICK), true));
+            () -> new FrightsDelightConsumableItemImpl(stickFoodItem(FoodValues.WEB_ON_STICK), true));
 
     public static final Supplier<Item> MONSTER_MASH = registerItemWithTab("monster_mash",
-            () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.MONSTER_MASH), true));
+            () -> new FrightsDelightConsumableItemImpl(bowlFoodItem(FoodValues.MONSTER_MASH), true));
     public static final Supplier<Item> PASTA_WITH_SLIMEBALLS = registerItemWithTab("pasta_with_slimeballs",
-            () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.PASTA_WITH_SLIMEBALLS), true));
+            () -> new FrightsDelightConsumableItemImpl(bowlFoodItem(FoodValues.PASTA_WITH_SLIMEBALLS), true));
     public static final Supplier<Item> SOUP_ROTTEN_FLESH = registerItemWithTab("soup_rotten_flesh",
-            () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_ROTTEN_FLESH), true));
+            () -> new FrightsDelightConsumableItemImpl(bowlFoodItem(FoodValues.SOUP_ROTTEN_FLESH), true));
     public static final Supplier<Item> SOUP_SPIDER_EYE = registerItemWithTab("soup_spider_eye",
-            () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_SPIDER_EYE), true));
+            () -> new FrightsDelightConsumableItemImpl(bowlFoodItem(FoodValues.SOUP_SPIDER_EYE), true));
     public static final Supplier<Item> SOUP_SLIME = registerItemWithTab("soup_slime",
-            () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_SLIME), true));
+            () -> new FrightsDelightConsumableItemImpl(bowlFoodItem(FoodValues.SOUP_SLIME), true));
 
     public static final Supplier<Item> COOKIE_SOUL_BERRY = registerItemWithTab("cookie_soul_berry",
-            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.COOKIE_SOUL_BERRY), true));
+            () -> new FrightsDelightConsumableItemImpl(foodItem(FoodValues.COOKIE_SOUL_BERRY), true));
     public static final Supplier<Item> COOKIE_ROTTEN_FLESH = registerItemWithTab("cookie_flesh",
-            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.COOKIE_ROTTEN_FLESH), true));
+            () -> new FrightsDelightConsumableItemImpl(foodItem(FoodValues.COOKIE_ROTTEN_FLESH), true));
     public static final Supplier<Item> COOKIE_SPIDER_EYE = registerItemWithTab("cookie_spidereye",
-            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.COOKIE_SPIDER_EYE), true));
+            () -> new FrightsDelightConsumableItemImpl(foodItem(FoodValues.COOKIE_SPIDER_EYE), true));
 
     public static final Supplier<Item> PUNCH_SLIMEAPPLE = registerItemWithTab("punch_slimeapple",
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_SLIME_APPLE), true));
+            () -> new FrightsDelightDrinkableItemImpl(drinkItem(FoodValues.PUNCH_SLIME_APPLE), true));
     public static final Supplier<Item> PUNCH_SPIDEREYE = registerItemWithTab("punch_spidereye",
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_SPIDER_EYE), true));
+            () -> new FrightsDelightDrinkableItemImpl(drinkItem(FoodValues.PUNCH_SPIDER_EYE), true));
     public static final Supplier<Item> PUNCH_GHASTTEAR = registerItemWithTab("punch_ghasttear",
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_GHAST_TEAR), true));
+            () -> new FrightsDelightDrinkableItemImpl(drinkItem(FoodValues.PUNCH_GHAST_TEAR), true));
     public static final Supplier<Item> PUNCH_SOUL_BERRY = registerItemWithTab("punch_soul_berry",
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_SOUL_BERRY), true));
+            () -> new FrightsDelightDrinkableItemImpl(drinkItem(FoodValues.PUNCH_SOUL_BERRY), true));
     public static final Supplier<Item> PUNCH_WITHER_BERRY = registerItemWithTab("punch_wither_berry",
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_WITHER_BERRY), true));
+            () -> new FrightsDelightDrinkableItemImpl(drinkItem(FoodValues.PUNCH_WITHER_BERRY), true));
 
     public static final Supplier<Item> PUNCHBOWL_SLIMEAPPLE = registerItemWithTab("punchbowl_slimeapple",
             () -> new BlockItem(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE.get(), basicItem()));

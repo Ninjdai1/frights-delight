@@ -15,7 +15,7 @@ public class FoodValuesImpl {
                 .saturationMod(saturation);
 
         for (MobEffectInfo effectInfo : effects) {
-            builder.effect(() -> new MobEffectInstance(FoodValues.nonNullEffect(effectInfo.getEffect()), effectInfo.getDuration()), effectInfo.getProbability());
+            builder.effect(() -> new MobEffectInstance(FoodValues.nonNullEffect(effectInfo.effect()), effectInfo.duration()), effectInfo.probability());
         }
 
         if (isMeat) {

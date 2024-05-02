@@ -14,7 +14,9 @@ dependencies {
     //modApi "dev.architectury:architectury:${rootProject.architectury_version}"
 
     // FD Refabricated
-    modImplementation "vectorwing:FarmersDelight-Refabricated:${minecraft_version}-${fdrf_version}"
+    modImplementation ("vectorwing:FarmersDelight:${minecraft_version}-${fdrf_version}") {
+        exclude(group: "net.fabricmc")
+    }
 
     // Porting Lib
     for (String module in porting_lib_modules.split(",")) {
