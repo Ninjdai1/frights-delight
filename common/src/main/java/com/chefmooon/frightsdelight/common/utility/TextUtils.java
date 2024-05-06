@@ -66,9 +66,7 @@ public class TextUtils {
                 }
 
                 if (detail) {
-                    if (effectChance < 99) {
-                        iformattabletextcomponent = iformattabletextcomponent.append(Component.literal(" " + effectChance + "%"));
-                    }
+                    iformattabletextcomponent = iformattabletextcomponent.append(Component.literal(" " + effectChance + "%"));
                 }
 
                 lores.add(iformattabletextcomponent.withStyle(effect.getCategory().getTooltipFormatting()));

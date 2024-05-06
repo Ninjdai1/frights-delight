@@ -18,6 +18,7 @@ public class ConfigurationImpl extends MidnightConfig {
 
     @Entry(category = "client") public static boolean effectOverlays = true;
     @Entry(category = "client") public static boolean foodEffectTooltip = true;
+    @Entry(category = "client") public static boolean foodEffectChanceTooltip = true;
 
     public static boolean isEnableFrDCrates() {
         return enableFrDCrates;
@@ -49,6 +50,9 @@ public class ConfigurationImpl extends MidnightConfig {
 
     public static boolean foodEffectTooltip() {
         return foodEffectTooltip;
+    }
+    public static boolean foodEffectChanceTooltip() {
+        return foodEffectChanceTooltip;
     }
 
     public static void init() {

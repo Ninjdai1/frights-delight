@@ -41,7 +41,11 @@ public class FrightsDelightConsumableItem extends ConsumableItem {
                 tooltip.add(FrightsDelight.tooltip("tooltip." + this).withStyle(ChatFormatting.BLUE));
             }
             if (this.hasFoodEffectTooltip) {
-                TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip, 1.0F);
+                if ((Boolean) Configuration.foodEffectChanceTooltip()) {
+                    TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip, 1.0F);
+                } else {
+                    TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+                }
             }
         }
     }
