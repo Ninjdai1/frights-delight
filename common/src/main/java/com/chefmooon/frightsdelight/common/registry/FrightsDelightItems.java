@@ -28,7 +28,6 @@ public class FrightsDelightItems {
         return new Item.Properties().food(food).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
     }
 
-    // TODO: Maybe use?
     public static final ResourceLocation FLESH_CRATE = FrightsDelight.res("flesh_crate");
     public static final ResourceLocation BONE_CRATE = FrightsDelight.res("bone_crate");
     public static final ResourceLocation PHANTOM_CRATE = FrightsDelight.res("phantom_crate");

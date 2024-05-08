@@ -19,7 +19,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
@@ -31,7 +30,7 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
     public static final int GROW_RANGE = 1;
     public static final TagKey<Block> GROW_CONDITION_BLOCK = FrightsDelightTags.WITHER_BERRY_BUSH_GROW_CONDITIION;
     public WitherBerryBushBlock() {
-        super(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH));
+        super(Block.Properties.copy(Blocks.SWEET_BERRY_BUSH));
     }
 
     @Override

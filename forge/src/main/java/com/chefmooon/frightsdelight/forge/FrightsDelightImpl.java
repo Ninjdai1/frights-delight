@@ -3,15 +3,12 @@ package com.chefmooon.frightsdelight.forge;
 import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.client.forge.FrightsDelightClientImpl;
 import com.chefmooon.frightsdelight.common.forge.CommonSetupImpl;
-import com.chefmooon.frightsdelight.common.forge.ConfigurationImpl;
 import com.chefmooon.frightsdelight.common.registry.forge.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.MavenVersionStringHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.forgespi.language.IModInfo;
@@ -33,10 +30,6 @@ public class FrightsDelightImpl {
         if (FMLEnvironment.dist.isClient()) {
             modEventBus.addListener(FrightsDelightClientImpl::init);
         }
-
-        //ConfigurationImpl.init();
-        //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ConfigurationImpl.COMMON_CONFIG);
-        //ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ConfigurationImpl.CLIENT_CONFIG);
 
         FrightsDelightSoundsImpl.SOUND_EVENTS.register(modEventBus);
         FrightsDelightBlocksImpl.BLOCKS.register(modEventBus);

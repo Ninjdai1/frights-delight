@@ -32,7 +32,7 @@
   "depends": {
     "fabric": "*",
     "minecraft": ">=${minecraft_min_version} <${minecraft_max_version}",
-    "farmersdelight": ">=1.20.1-2.0.7 <2.0.0"
+    "farmersdelight": "*"
   },
   "custom": {
     "modmenu": {

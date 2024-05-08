@@ -2,8 +2,10 @@ package com.chefmooon.frightsdelight.common.forge;
 
 import com.chefmooon.frightsdelight.common.FoodValues;
 import com.chefmooon.frightsdelight.common.utility.MobEffectInfo;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
+import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.List;
 
@@ -31,5 +33,13 @@ public class FoodValuesImpl {
         }
 
         return builder.build();
+    }
+
+    public static MobEffect getComfort() {
+        return ModEffects.COMFORT.get();
+    }
+
+    public static MobEffect getNourishment() {
+        return ModEffects.NOURISHMENT.get();
     }
 }

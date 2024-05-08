@@ -18,12 +18,12 @@ public class FrightsDelightClientImpl implements ClientModInitializer {
         //CobwebbedEffectOverlayImpl.init(); // TODO: New Feature, implement in next version
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
-                FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(),
-                FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(),
-                FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE.get(),
-                FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE.get(),
-                FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR.get(),
-                FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY.get(),
-                FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY.get());
+                FrightsDelightBlocksImpl.SOUL_BERRY_BUSH,
+                FrightsDelightBlocksImpl.WITHER_BERRY_BUSH,
+                FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE,
+                FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE,
+                FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR,
+                FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY,
+                FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY);
     }
 }

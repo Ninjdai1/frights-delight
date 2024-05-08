@@ -21,10 +21,6 @@ loom {
             vmArg "-Dfabric-api.datagen.modid=${archives_base_name}"
             vmArg "-Dporting_lib.datagen.existing_resources=${common.file("src/main/resources")}"
 
-            //vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
-            //vmArg "-Dfabric-api.datagen.modid=${archives_base_name}"
-            //vmArg "-Dporting_lib.datagen.existing_resources=${file("src/main/generated")}"
-
             environmentVariable("DATAGEN", "TRUE")
         }
     }
@@ -47,11 +43,6 @@ dependencies {
     // FD Refabricated
     modImplementation ("vectorwing:FarmersDelight:${minecraft_version}-${fdrf_version}") {
         exclude(group: "net.fabricmc")
-    }
-
-    // Porting Lib
-    for (String module in porting_lib_modules.split(",")) {
-        include(modApi("io.github.fabricators_of_create.Porting-Lib:$module:$porting_lib_version"))
     }
 
     // MidnightLib

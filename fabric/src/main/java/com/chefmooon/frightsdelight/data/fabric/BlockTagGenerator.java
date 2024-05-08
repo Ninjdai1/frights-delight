@@ -38,22 +38,22 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
 
     private void registerCommonBlockTags() {
         getOrCreateTagBuilder(CommonTags.C_MINEABLE_KNIFE)
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE.get())
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE.get())
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR.get())
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY.get())
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY.get());
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE)
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE)
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR)
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY)
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY);
     }
 
     private void registerMinecraftBlockTags() {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
-                .add(FrightsDelightBlocksImpl.FLESH_CRATE.get())
-                .add(FrightsDelightBlocksImpl.BONE_CRATE.get())
-                .add(FrightsDelightBlocksImpl.PHANTOM_CRATE.get())
-                .add(FrightsDelightBlocksImpl.WEB_CRATE.get())
-                .add(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE.get())
-                .add(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE.get())
-                .add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE.get())
-                .add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get());
+                .add(FrightsDelightBlocksImpl.FLESH_CRATE)
+                .add(FrightsDelightBlocksImpl.BONE_CRATE)
+                .add(FrightsDelightBlocksImpl.PHANTOM_CRATE)
+                .add(FrightsDelightBlocksImpl.WEB_CRATE)
+                .add(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE)
+                .add(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE)
+                .add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE)
+                .add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE);
     }
 }

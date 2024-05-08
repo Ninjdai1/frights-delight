@@ -24,46 +24,46 @@ public class TranslationGenerator extends FabricLanguageProvider {
 
         translationBuilder.add(MOD_ID + ".container.punch_bowl", "Glass Bottle Required.");
 
-        translationBuilder.add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), "Wither Berry Bush");
-        translationBuilder.add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), "Soul Berry Bush");
+        translationBuilder.add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH, "Wither Berry Bush");
+        translationBuilder.add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH, "Soul Berry Bush");
 
-        translationBuilder.add(FrightsDelightItemsImpl.WITHER_BERRY.get(), "Wither Berries");
-        translationBuilder.add(FrightsDelightItemsImpl.SOUL_BERRY.get(), "Soul Berries");
+        translationBuilder.add(FrightsDelightItemsImpl.WITHER_BERRY, "Wither Berries");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUL_BERRY, "Soul Berries");
 
-        translationBuilder.add(FrightsDelightItemsImpl.FLESH_CRATE.get(), "Flesh Crate");
-        translationBuilder.add(FrightsDelightItemsImpl.BONE_CRATE.get(), "Bone Crate");
-        translationBuilder.add(FrightsDelightItemsImpl.PHANTOM_CRATE.get(), "Phantom Membrane Crate");
-        translationBuilder.add(FrightsDelightItemsImpl.WEB_CRATE.get(), "Cobweb Crate");
-        translationBuilder.add(FrightsDelightItemsImpl.SPIDER_EYE_CRATE.get(), "Spider Eye Crate");
-        translationBuilder.add(FrightsDelightItemsImpl.FERMENTED_SPIDER_EYE_CRATE.get(), "Fermented Spider Eye Crate");
-        translationBuilder.add(FrightsDelightItemsImpl.POISONOUS_POTATO_CRATE.get(), "Poisonous Potato Crate");
-        translationBuilder.add(FrightsDelightItemsImpl.ROTTEN_TOMATO_CRATE.get(), "Rotten Tomato Crate");
+        translationBuilder.add(FrightsDelightItemsImpl.FLESH_CRATE, "Flesh Crate");
+        translationBuilder.add(FrightsDelightItemsImpl.BONE_CRATE, "Bone Crate");
+        translationBuilder.add(FrightsDelightItemsImpl.PHANTOM_CRATE, "Phantom Membrane Crate");
+        translationBuilder.add(FrightsDelightItemsImpl.WEB_CRATE, "Cobweb Crate");
+        translationBuilder.add(FrightsDelightItemsImpl.SPIDER_EYE_CRATE, "Spider Eye Crate");
+        translationBuilder.add(FrightsDelightItemsImpl.FERMENTED_SPIDER_EYE_CRATE, "Fermented Spider Eye Crate");
+        translationBuilder.add(FrightsDelightItemsImpl.POISONOUS_POTATO_CRATE, "Poisonous Potato Crate");
+        translationBuilder.add(FrightsDelightItemsImpl.ROTTEN_TOMATO_CRATE, "Rotten Tomato Crate");
 
-        translationBuilder.add(FrightsDelightItemsImpl.APPLE_SLIME.get(), "Slime-Apple");
-        translationBuilder.add(FrightsDelightItemsImpl.UNDEAD_KEBAB.get(), "Undead Kebab");
-        translationBuilder.add(FrightsDelightItemsImpl.WEB_ON_STICK.get(), "Cobweb on a Stick");
+        translationBuilder.add(FrightsDelightItemsImpl.APPLE_SLIME, "Slime-Apple");
+        translationBuilder.add(FrightsDelightItemsImpl.UNDEAD_KEBAB, "Undead Kebab");
+        translationBuilder.add(FrightsDelightItemsImpl.WEB_ON_STICK, "Cobweb on a Stick");
 
-        translationBuilder.add(FrightsDelightItemsImpl.MONSTER_MASH.get(), "Monster Mash");
-        translationBuilder.add(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS.get(), "Slimeball Spaghetti");
-        translationBuilder.add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH.get(), "Rotten Flesh Soup");
-        translationBuilder.add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE.get(), "Spider Eye Soup");
-        translationBuilder.add(FrightsDelightItemsImpl.SOUP_SLIME.get(), "Slimeball Soup");
+        translationBuilder.add(FrightsDelightItemsImpl.MONSTER_MASH, "Monster Mash");
+        translationBuilder.add(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS, "Slimeball Spaghetti");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH, "Rotten Flesh Soup");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE, "Spider Eye Soup");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUP_SLIME, "Slimeball Soup");
 
-        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY.get(), "Soul Berry Cookie");
-        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH.get(), "Rotten Flesh Cookie");
-        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE.get(), "Spider Eye Cookie");
+        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY, "Soul Berry Cookie");
+        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH, "Rotten Flesh Cookie");
+        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE, "Spider Eye Cookie");
 
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get(), "Slime-Apple Cider");
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get(), "Spider-Eye Punch");
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get(), "Ghast Tear Punch");
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get(), "Soul Berry Punch");
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get(), "Wither Berry Punch");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE, "Slime-Apple Cider");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE, "Spider-Eye Punch");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR, "Ghast Tear Punch");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY, "Soul Berry Punch");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY, "Wither Berry Punch");
 
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_SLIMEAPPLE.get(), "Slime-Apple Cider Bowl");
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE.get(), "Spider-Eye Punch Bowl");
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_GHASTTEAR.get(), "Ghast Tear Punch Bowl");
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY.get(), "Soul Berry Punch Bowl");
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY.get(), "Wither Berry Punch Bowl");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_SLIMEAPPLE, "Slime-Apple Cider Bowl");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE, "Spider-Eye Punch Bowl");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_GHASTTEAR, "Ghast Tear Punch Bowl");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY, "Soul Berry Punch Bowl");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY, "Wither Berry Punch Bowl");
 
         translationBuilder.add(EFFECT + ".chills", "Chills");
         translationBuilder.add(EFFECT + ".cobwebbed", "Cobwebbed");

@@ -6,7 +6,6 @@
   "client": [
   ],
   "mixins": [
-    "accessor.fabric.LootContextAccessorImpl"
   ],
   "injectors": {
     "defaultRequire": 1

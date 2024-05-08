@@ -1,12 +1,10 @@
 package com.chefmooon.frightsdelight.fabric;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
+import com.chefmooon.frightsdelight.common.event.fabric.FrightsDelightLootTableEvents;
 import com.chefmooon.frightsdelight.common.event.fabric.VillagerEventsImpl;
 import com.chefmooon.frightsdelight.common.fabric.CommonSetupImpl;
-import com.chefmooon.frightsdelight.common.fabric.ConfigurationImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.*;
-import io.github.fabricators_of_create.porting_lib.config.ConfigRegistry;
-import io.github.fabricators_of_create.porting_lib.config.ConfigType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
@@ -17,17 +15,15 @@ public class FrightsDelightImpl implements ModInitializer {
     @Override
     public void onInitialize() {
         FrightsDelight.init();
-        //ConfigRegistry.registerConfig(FrightsDelight.MOD_ID, ConfigType.COMMON, ConfigurationImpl.COMMON_CONFIG);
-        //ConfigRegistry.registerConfig(FrightsDelight.MOD_ID, ConfigType.CLIENT, ConfigurationImpl.CLIENT_CONFIG);
 
-        FrightsDelightSoundsImpl.SOUNDS.register();
-        FrightsDelightBlocksImpl.BLOCKS.register();
-        FrightsDelightEffectsImpl.MOB_EFFECTS.register();
-        FrightsDelightParticleTypesImpl.PARTICLE_TYPES.register();
-        FrightsDelightItemsImpl.ITEMS.register();
-        FrightsDelightCreativeTabs.CREATIVE_MODE_TAB.register();
+        FrightsDelightSoundsImpl.register();
+        FrightsDelightBlocksImpl.register();
+        FrightsDelightEffectsImpl.register();
+        FrightsDelightParticleTypesImpl.register();
+        FrightsDelightItemsImpl.register();
+        FrightsDelightCreativeTabs.register();
 
-        FrightsDelightLootModifiersImpl.LOOT_MODIFIERS.register();
+        FrightsDelightLootTableEvents.registerLootTable();
 
         VillagerEventsImpl.init();
 
