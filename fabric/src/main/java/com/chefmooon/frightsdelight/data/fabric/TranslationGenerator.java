@@ -118,5 +118,6 @@ public class TranslationGenerator extends FabricLanguageProvider {
 
         translationBuilder.add(CONFIG + "effectOverlays", "Enable/Disable Effect Overlays");
         translationBuilder.add(CONFIG + "foodEffectTooltip", "Should meal and drink tooltips display which effects they provide?");
+        translationBuilder.add(CONFIG + "foodEffectChanceTooltip", "Should meal and drink tooltips display the chance the effect will be applied?");
     }
 }

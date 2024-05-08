@@ -48,6 +48,7 @@
   "frightsdelight.midnightconfig.effectOverlays": "Enable/Disable Effect Overlays",
   "frightsdelight.midnightconfig.enableFrDCrates": "Enable FrD Crop Crates?",
   "frightsdelight.midnightconfig.farmersBuyFrDCrops": "Farmer's Buy FrD Berries",
+  "frightsdelight.midnightconfig.foodEffectChanceTooltip": "Should meal and drink tooltips display the chance the effect will be applied?",
   "frightsdelight.midnightconfig.foodEffectTooltip": "Should meal and drink tooltips display which effects they provide?",
   "frightsdelight.midnightconfig.generateSoulBerryLoot": "Should Soul Berries spawn in Bastion chests?",
   "frightsdelight.midnightconfig.generateWildSoulBerry": "Should Soul Berry Bushes naturally spawn in the Nether?",

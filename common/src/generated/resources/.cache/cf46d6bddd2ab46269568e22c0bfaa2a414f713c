@@ -1,6 +1,6 @@
-// 1.20.1	2024-05-07T09:50:52.2040883	Fright's Delight/Tags for minecraft:item
+// 1.20.1	2024-05-08T15:28:01.3004793	Fright's Delight/Tags for minecraft:item
 b5a064eac4d61c8cd04e1a2a579ee4b210172799 data\dehydration\tags\items\hydrating_drinks.json
 44e97bc38beee829520f0a65301ada4eb09fcae9 data\supplementaries\tags\items\cookies.json
-413615f5f4d0ad2f3fe8db972e374fa1716458ca data\origins\tags\items\meat.json
 2b67b448046b94a01c8a0c1faeed6d9ece061b2b data\create\tags\items\upright_on_belt.json
+413615f5f4d0ad2f3fe8db972e374fa1716458ca data\origins\tags\items\meat.json
 43437a2148b8de63897be9401ff052ad22f98111 data\dehydration\tags\items\hydrating_stew.json
