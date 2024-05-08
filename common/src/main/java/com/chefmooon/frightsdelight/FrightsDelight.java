@@ -1,6 +1,5 @@
 package com.chefmooon.frightsdelight;
 
-import com.chefmooon.frightsdelight.common.CommonSetup;
 import com.chefmooon.frightsdelight.common.Configuration;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightEffects;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightParticleTypes;
@@ -18,8 +17,8 @@ public class FrightsDelight {
     public static MutableComponent tooltip(String key, Object... args) {
         return Component.translatable(MOD_ID + "." + key, args);
     }
-    public static ResourceLocation res(String name) {
-        return new ResourceLocation(MOD_ID, name);
+    public static ResourceLocation res(String path) {
+        return new ResourceLocation(MOD_ID, path);
     }
 
     public static void init() {
@@ -27,9 +26,6 @@ public class FrightsDelight {
         FrightsDelightEffects.init();
         FrightsDelightParticleTypes.init();
         Configuration.init();
-
-        CommonSetup.init();
-
     }
     @ExpectPlatform
     public static void loggerInfo(String s) {

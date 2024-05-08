@@ -5,7 +5,6 @@ import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.utility.MobEffectInfo;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -18,8 +17,8 @@ public class FoodValues {
     public static final int MEDIUM_DURATION = 3600;    // 3 minutes
     public static final int LONG_DURATION = 6000;    // 5 minutes
 
-    private static final MobEffect COMFORT = BuiltInRegistries.MOB_EFFECT.get(new ResourceLocation("farmersdelight", "comfort"));
-    private static final MobEffect NOURISHMENT = BuiltInRegistries.MOB_EFFECT.get(new ResourceLocation("farmersdelight", "nourishment"));
+    private static final MobEffect COMFORT = getComfort();
+    private static final MobEffect NOURISHMENT = getNourishment();
 
     private static final MobEffect FORTIFIED_MIND = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("fortified_mind"));
     private static final MobEffect CHILLS = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("chills"));
@@ -62,11 +61,11 @@ public class FoodValues {
             List.of(new MobEffectInfo(SLIMED, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
 
-    public static final FoodProperties COOKIE_SOUL_BERRY = foodProperty(2, 0.1f,
+    public static final FoodProperties COOKIE_SOUL_BERRY = foodProperty(2, 0.1f, false, true, false,
             List.of(new MobEffectInfo(FORTIFIED_MIND, SHORT_DURATION, 1.f)));
-    public static final FoodProperties COOKIE_ROTTEN_FLESH = foodProperty(2, 0.1f, true, false, false,
+    public static final FoodProperties COOKIE_ROTTEN_FLESH = foodProperty(2, 0.1f, true, true, false,
             List.of(new MobEffectInfo(INFECTED, SHORT_DURATION, .75f)));
-    public static final FoodProperties COOKIE_SPIDER_EYE = foodProperty(2, 0.1f,  true, false, false,
+    public static final FoodProperties COOKIE_SPIDER_EYE = foodProperty(2, 0.1f,  true, true, false,
             List.of(new MobEffectInfo(HYSTERIA, SHORT_DURATION, .75f)));
     public static final FoodProperties PUNCH_SLIME_APPLE = foodProperty(4, 0.4f,
             List.of(new MobEffectInfo(MobEffects.GLOWING, MEDIUM_DURATION, .5f)));
@@ -90,8 +89,19 @@ public class FoodValues {
     }
 
     // In Dev only? stops null pointer before effects are fully registered, I think.
+    // The below methods[getComfort()/getNourishment()] may fix this
     // TODO: needs more testing, possible bug.
     public static MobEffect nonNullEffect(MobEffect effect) {
         return effect != null ? effect : MobEffects.HEAL;
+    }
+
+    @ExpectPlatform
+    public static MobEffect getComfort() {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static MobEffect getNourishment() {
+        throw new AssertionError();
     }
 }

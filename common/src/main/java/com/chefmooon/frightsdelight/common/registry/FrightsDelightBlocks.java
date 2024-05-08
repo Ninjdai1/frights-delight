@@ -5,7 +5,6 @@ import net.minecraft.resources.ResourceLocation;
 
 public class FrightsDelightBlocks {
 
-    // TODO: Maybe use?
     public static final ResourceLocation SOUL_BERRY_BUSH = FrightsDelight.res("soul_berry_bush");
     public static final ResourceLocation WITHER_BERRY_BUSH = FrightsDelight.res("wither_berry_bush");
 

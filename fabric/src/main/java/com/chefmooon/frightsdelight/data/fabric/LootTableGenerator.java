@@ -3,7 +3,6 @@ package com.chefmooon.frightsdelight.data.fabric;
 import com.chefmooon.frightsdelight.common.block.DrinkableFeastBlock;
 import com.chefmooon.frightsdelight.common.block.FrightsDelightBushBlock;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
-import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -32,33 +31,24 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
 
-        this.dropSelf(FrightsDelightBlocksImpl.FLESH_CRATE.get());
-        this.dropSelf(FrightsDelightBlocksImpl.BONE_CRATE.get());
-        this.dropSelf(FrightsDelightBlocksImpl.PHANTOM_CRATE.get());
-        this.dropSelf(FrightsDelightBlocksImpl.WEB_CRATE.get());
-        this.dropSelf(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE.get());
-        this.dropSelf(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE.get());
-        this.dropSelf(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE.get());
-        this.dropSelf(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get());
+        this.dropSelf(FrightsDelightBlocksImpl.FLESH_CRATE);
+        this.dropSelf(FrightsDelightBlocksImpl.BONE_CRATE);
+        this.dropSelf(FrightsDelightBlocksImpl.PHANTOM_CRATE);
+        this.dropSelf(FrightsDelightBlocksImpl.WEB_CRATE);
+        this.dropSelf(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE);
+        this.dropSelf(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE);
+        this.dropSelf(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE);
+        this.dropSelf(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE);
 
-        this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE.get(), FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get());
-        this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE.get(), FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get());
-        this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR.get(), FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get());
-        this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY.get(), FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get());
-        this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY.get(), FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get());
+        // can be used to regen, must change c:tools/knives -> forge:tools/kives
+        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE, FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE);
+        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE, FrightsDelightItemsImpl.PUNCH_SPIDEREYE);
+        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR, FrightsDelightItemsImpl.PUNCH_GHASTTEAR);
+        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY, FrightsDelightItemsImpl.PUNCH_SOUL_BERRY);
+        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY, FrightsDelightItemsImpl.PUNCH_WITHER_BERRY);
 
-        this.createBushDrops(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get());
-        this.createBushDrops(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get());
-        //LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(FrightsDelightItemsImpl.SOUL_BERRY.get()).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE));
-        //add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(),
-        //        LootTable.lootTable()
-        //                .withPool(LootPool.lootPool().add(builder))
-        //                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(2.0F, 3.0F))
-        //                        .add(builder)
-        //                        //.add(LootItem.lootTableItem(FrightsDelightItemsImpl.SOUL_BERRY.get()))
-        //                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get())
-        //                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SoulBerryBushBlock.AGE, 3))))
-        //);
+        this.createBushDrops(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH);
+        this.createBushDrops(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH);
 
     }
 
