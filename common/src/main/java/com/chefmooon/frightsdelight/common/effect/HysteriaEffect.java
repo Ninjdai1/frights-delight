@@ -17,6 +17,9 @@ public class HysteriaEffect extends MobEffect {
     }
 
     public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
+        if (livingEntity.hasEffect(FrightsDelightEffects.FORTIFIED_MIND.get())) {
+            return;
+        }
         if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
             if (!player.hasEffect(FrightsDelightEffects.FORTIFIED_MIND.get())) {
                 Random random = new Random();

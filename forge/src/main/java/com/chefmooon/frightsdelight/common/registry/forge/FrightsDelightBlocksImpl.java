@@ -10,6 +10,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -38,7 +39,7 @@ public class FrightsDelightBlocksImpl {
 
     public static final RegistryObject<Block> PUNCHBOWL_SLIMEAPPLE = BLOCKS.register(FrightsDelightBlocks.PUNCHBOWL_SLIMEAPPLE.getPath(),
             () -> new SlimeAppleDrinkableFeastBlock(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE,
-                    Block.Properties.copy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS)));
+                    Block.Properties.copy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS).lightLevel(value -> 10)));
     public static final RegistryObject<Block> PUNCHBOWL_SPIDEREYE = BLOCKS.register(FrightsDelightBlocks.PUNCHBOWL_SPIDEREYE.getPath(),
             () -> new DrinkableFeastBlock(FrightsDelightItemsImpl.PUNCH_SPIDEREYE,
                     Block.Properties.copy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS)));
@@ -51,4 +52,8 @@ public class FrightsDelightBlocksImpl {
     public static final RegistryObject<Block> PUNCHBOWL_WITHER_BERRY = BLOCKS.register(FrightsDelightBlocks.PUNCHBOWL_WITHER_BERRY.getPath(),
             () -> new DrinkableFeastBlock(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY,
                     Block.Properties.copy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS)));
+
+    public static void register(IEventBus eventBus) {
+        BLOCKS.register(eventBus);
+    }
 }

@@ -1,12 +1,14 @@
 package com.chefmooon.frightsdelight.common.utility;
 
 
+import com.chefmooon.frightsdelight.FrightsDelight;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffectUtil;
@@ -20,6 +22,14 @@ import java.util.Map;
 
 public class TextUtils {
     private static final MutableComponent NO_EFFECTS = Component.translatable("effect.none").withStyle(ChatFormatting.GRAY);
+
+    public static MutableComponent getTranslatable(String string, Object... args) {
+        return Component.translatable(FrightsDelight.MOD_ID + "." + string, args);
+    }
+
+    public static ResourceLocation res(String string) {
+        return new ResourceLocation(FrightsDelight.MOD_ID, string);
+    }
 
     public static void addFoodEffectTooltip(ItemStack itemIn, List<Component> lores, float durationFactor) {
         addFoodEffectTooltipWithDetail(itemIn, lores, durationFactor, false);
@@ -66,9 +76,7 @@ public class TextUtils {
                 }
 
                 if (detail) {
-                    if (effectChance < 99) {
-                        iformattabletextcomponent = iformattabletextcomponent.append(Component.literal(" " + effectChance + "%"));
-                    }
+                    iformattabletextcomponent = iformattabletextcomponent.append(Component.literal(" " + effectChance + "%"));
                 }
 
                 lores.add(iformattabletextcomponent.withStyle(effect.getCategory().getTooltipFormatting()));

@@ -12,7 +12,6 @@ public class FortifiedMindEffect extends MobEffect {
     }
 
     public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
-
         if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
             if (player.hasEffect(FrightsDelightEffects.HYSTERIA.get())) {
                 player.removeEffect(FrightsDelightEffects.HYSTERIA.get());

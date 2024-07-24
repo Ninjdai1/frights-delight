@@ -46,14 +46,14 @@ dependencies {
     }
 
     // MidnightLib
-    modImplementation include("maven.modrinth:midnightlib:${project.midnightlib_version}-fabric")
+    modImplementation include("maven.modrinth:midnightlib:${project.midnightlib_fabric_version}")
 
     // ModMenu
     modLocalRuntime("com.terraformersmc:modmenu:${mod_menu_version}")
 
-    // Appleskin // TODO: Causes error. Maybe figure this out?
-    //modCompileOnly ("squeek.appleskin:appleskin-fabric:${appleskin_fabric_version}:api") { transitive = false }
-    //runtimeOnly ("squeek.appleskin:appleskin-fabric:${appleskin_fabric_version}") {
+    // Appleskin // hmmmm
+    //modCompileOnly("squeek.appleskin:appleskin-fabric:${appleskin_fabric_version}:api") { transitive = false }
+    //modLocalRuntime("squeek.appleskin:appleskin-fabric:${appleskin_fabric_version}") {
     //    exclude module: 'modmenu'
     //}
 
@@ -74,6 +74,11 @@ dependencies {
         case "disabled": break
         default: println("Unknown recipe viewer specified: ${recipe_viewer}. Must be JEI, REI, EMI, or disabled.")
     }
+
+    // WTHIT
+    modCompileOnly "mcp.mobius.waila:wthit-api:fabric-${wthitVersion}"
+    modRuntimeOnly "mcp.mobius.waila:wthit:fabric-${wthitVersion}"
+    modRuntimeOnly "lol.bai:badpackets:fabric-${badpacketsVersion}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }

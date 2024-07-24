@@ -17,24 +17,23 @@ public class VillagerEventsImpl {
 
     public static void addTrades() {
         if (Configuration.farmersBuyFrDCrops()) {
-            TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1, (trades) -> {
-                trades.add(itemForEmeraldTrade(FrightsDelightItemsImpl.SOUL_BERRY, 2, 10));
+            TradeOfferHelper.registerVillagerOffers(VillagerProfession.BUTCHER, 3, (trades) -> {
+                trades.add(emeraldForItemsTrade(FrightsDelightItemsImpl.SOUL_BERRY,10, 12, 30));
             });
-            TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 2, (trades) -> {
-                trades.add(itemForEmeraldTrade(FrightsDelightItemsImpl.WITHER_BERRY, 2, 10));
+            TradeOfferHelper.registerVillagerOffers(VillagerProfession.BUTCHER, 3, (trades) -> {
+                trades.add(emeraldForItemsTrade(FrightsDelightItemsImpl.WITHER_BERRY,5, 12, 40));
             });
         }
 
         if (Configuration.wanderingTraderSellsFrdDItems()) {
-            TradeOfferHelper.registerWanderingTraderOffers(3, (trades) -> {
-                trades.add(emeraldForItemsTrade(FrightsDelightItemsImpl.SOUL_BERRY, 4, 2, 10));
+            TradeOfferHelper.registerWanderingTraderOffers(1, (trades) -> {
+                trades.add(itemForEmeraldTrade(FrightsDelightItemsImpl.SOUL_BERRY,12, 1));
             });
         }
-
     }
 
-    public static VillagerTrades.ItemListing emeraldForItemsTrade(ItemLike item, int count, int maxTrades, int xp) {
-        return new VillagerTrades.EmeraldForItems(item, count, maxTrades, xp);
+    public static VillagerTrades.ItemListing emeraldForItemsTrade(ItemLike item, int cost, int maxTrades, int xp) {
+        return new VillagerTrades.EmeraldForItems(item, cost, maxTrades, xp);
     }
 
     public static VillagerTrades.ItemListing itemForEmeraldTrade(ItemLike item, int maxTrades, int xp) {

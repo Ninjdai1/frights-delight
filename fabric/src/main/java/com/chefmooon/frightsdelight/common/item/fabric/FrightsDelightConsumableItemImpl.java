@@ -1,6 +1,5 @@
 package com.chefmooon.frightsdelight.common.item.fabric;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.Configuration;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import com.nhoryzon.mc.farmersdelight.item.ConsumableItem;
@@ -39,10 +38,14 @@ public class FrightsDelightConsumableItemImpl extends ConsumableItem {
         super.appendHoverText(stack, level, tooltip, isAdvanced);
         if (Configuration.foodEffectTooltip()) {
             if (this.hasCustomTooltip) {
-                tooltip.add(FrightsDelight.tooltip("tooltip." + this).withStyle(ChatFormatting.BLUE));
+                tooltip.add(TextUtils.getTranslatable("tooltip." + this).withStyle(ChatFormatting.BLUE));
             }
             if (this.hasFoodEffectTooltip) {
-                TextUtils.addFoodEffectTooltipWithDetail(stack,tooltip, 1.0F);
+                if ((Boolean) Configuration.foodEffectChanceTooltip()) {
+                    TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip, 1.0F);
+                } else {
+                    TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+                }
             }
         }
     }

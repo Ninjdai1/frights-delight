@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "frightsdelight:soul_berry_bush",
+    "frightsdelight:wither_berry_bush",
     "frightsdelight:flesh_crate",
     "frightsdelight:bone_crate",
     "frightsdelight:phantom_crate",

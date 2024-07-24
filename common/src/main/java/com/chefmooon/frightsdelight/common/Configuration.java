@@ -30,17 +30,48 @@ public class Configuration {
     }
 
     @ExpectPlatform
-    public static int chanceWildSoulBerry() {
-        return 0;
+    public static boolean fortifiedMindOverlay() {
+        return false;
     }
 
     @ExpectPlatform
-    public static boolean effectOverlays() {
+    public static boolean undeadHungerOverlay() {
+        return false;
+    }
+
+    @ExpectPlatform
+    public static boolean slimedOverlay() {
+        return false;
+    }
+
+    @ExpectPlatform
+    public static boolean cobwebbedOverlay() {
+        return false;
+    }
+
+    @ExpectPlatform
+    public static boolean infectedOverlay() {
+        return false;
+    }
+
+    @ExpectPlatform
+    public static boolean hysteriaOverlay() {
+        return false;
+    }
+
+    @ExpectPlatform
+    public static boolean chillsOverlay() {
         return false;
     }
 
     @ExpectPlatform
     public static boolean foodEffectTooltip() {
+        return false;
+    }
+
+
+    @ExpectPlatform
+    public static boolean foodEffectChanceTooltip() {
         return false;
     }
 

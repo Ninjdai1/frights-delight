@@ -10,6 +10,7 @@ import com.google.common.collect.Sets;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -52,15 +53,15 @@ public class FrightsDelightItemsImpl {
             () -> new FrightsDelightConsumableItem(stickFoodItem(FoodValues.WEB_ON_STICK), true));
 
     public static final RegistryObject<Item> MONSTER_MASH = registerItemWithTab(FrightsDelightItems.MONSTER_MASH.getPath(),
-            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.MONSTER_MASH), true));
+            () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.MONSTER_MASH), true));
     public static final RegistryObject<Item> PASTA_WITH_SLIMEBALLS = registerItemWithTab(FrightsDelightItems.PASTA_WITH_SLIMEBALLS.getPath(),
-            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.PASTA_WITH_SLIMEBALLS), true));
+            () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.PASTA_WITH_SLIMEBALLS), true));
     public static final RegistryObject<Item> SOUP_ROTTEN_FLESH = registerItemWithTab(FrightsDelightItems.SOUP_ROTTEN_FLESH.getPath(),
-            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.SOUP_ROTTEN_FLESH), true));
+            () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_ROTTEN_FLESH), true));
     public static final RegistryObject<Item> SOUP_SPIDER_EYE = registerItemWithTab(FrightsDelightItems.SOUP_SPIDER_EYE.getPath(),
-            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.SOUP_SPIDER_EYE), true));
+            () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_SPIDER_EYE), true));
     public static final RegistryObject<Item> SOUP_SLIME = registerItemWithTab(FrightsDelightItems.SOUP_SLIME.getPath(),
-            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.SOUP_SLIME), true));
+            () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_SLIME), true));
 
     public static final RegistryObject<Item> COOKIE_SOUL_BERRY = registerItemWithTab(FrightsDelightItems.COOKIE_SOUL_BERRY.getPath(),
             () -> new FrightsDelightConsumableItem(foodItem(FoodValues.COOKIE_SOUL_BERRY), true));
@@ -95,5 +96,9 @@ public class FrightsDelightItemsImpl {
         RegistryObject<Item> item = ITEMS.register(name, supplier);
         CREATIVE_TAB_ITEMS.add(item);
         return item;
+    }
+
+    public static void register(IEventBus eventBus) {
+        ITEMS.register(eventBus);
     }
 }

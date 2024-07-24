@@ -28,7 +28,11 @@ public class FrightsDelightConsumableItemNameBlockItem extends ItemNameBlockItem
         super.appendHoverText(stack, level, tooltip, isAdvanced);
         if ((Boolean) Configuration.foodEffectTooltip()) {
             if (this.hasFoodEffectTooltip) {
-                TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip, 1.0F);
+                if ((Boolean) Configuration.foodEffectChanceTooltip()) {
+                    TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip, 1.0F);
+                } else {
+                    TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+                }
             }
         }
     }

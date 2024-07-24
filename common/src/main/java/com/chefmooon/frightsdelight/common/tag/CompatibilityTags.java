@@ -22,6 +22,9 @@ public class CompatibilityTags {
     public static final TagKey<Item> ORIGINS_MEAT = getItemTagKey(ORIGINS, "meat");
     public static final TagKey<Item> ORIGINS_IGNORE_DIET = getItemTagKey(ORIGINS, "ignore_diet");
 
+    public static final String CREATE_ADDITION = "createaddition";
+    public static final TagKey<Item> CREATE_ADDITION_PLANT_FOODS = getItemTagKey(CREATE_ADDITION, "plant_foods");
+
     public static TagKey<Item> getItemTagKey(String namespace, String path) {
         return TagKey.create(Registries.ITEM, new ResourceLocation(namespace, path));
     }

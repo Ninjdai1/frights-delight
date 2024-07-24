@@ -1,0 +1,7 @@
+{
+  "type": "farmersdelight:add_features_by_filter",
+  "allowed_biomes": "#minecraft:is_nether",
+  "denied_biomes": ["#minecraft:is_overworld"],
+  "features": "frightsdelight:patch_wild_soul_berry_bushes",
+  "step": "vegetal_decoration"
+}

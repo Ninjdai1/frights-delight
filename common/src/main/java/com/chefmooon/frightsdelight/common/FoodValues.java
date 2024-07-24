@@ -36,17 +36,18 @@ public class FoodValues {
                     new MobEffectInfo(HYSTERIA, BRIEF_DURATION,  1.f)));
 
     public static final FoodProperties APPLE_SLIME = foodProperty(5, 0.4f,
-            List.of(new MobEffectInfo(SLIMED, BRIEF_DURATION, 1.f)));
+            List.of(new MobEffectInfo(SLIMED, SHORT_DURATION, .75f)));
 
     public static final FoodProperties UNDEAD_KEBAB = foodProperty(7, 0.6f,true, false, false,
-            List.of(new MobEffectInfo(INFECTED, BRIEF_DURATION, .8f),
-                    new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .8f)));
+            List.of(new MobEffectInfo(INFECTED, SHORT_DURATION, .65f),
+                    new MobEffectInfo(HYSTERIA, SHORT_DURATION, .65f)));
 
     public static final FoodProperties WEB_ON_STICK = foodProperty(6, 0.5f,
-            List.of(new MobEffectInfo(COBWEBBED, BRIEF_DURATION, .8f)));
+            List.of(new MobEffectInfo(COBWEBBED, SHORT_DURATION, .65f)));
 
     public static final FoodProperties MONSTER_MASH = foodProperty(10, 0.6f, true, false, false,
             List.of(new MobEffectInfo(INFECTED, MEDIUM_DURATION, .5f),
+                    new MobEffectInfo(HYSTERIA, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(NOURISHMENT, LONG_DURATION, 1.f)));
     public static final FoodProperties PASTA_WITH_SLIMEBALLS = foodProperty(10, 0.6f,
             List.of(new MobEffectInfo(SLIMED, MEDIUM_DURATION, .5f),
@@ -57,16 +58,16 @@ public class FoodValues {
     public static final FoodProperties SOUP_SPIDER_EYE = foodProperty(8, 0.7f, true, false, false,
             List.of(new MobEffectInfo(HYSTERIA, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
-    public static final FoodProperties SOUP_SLIME = foodProperty(2, 0.7f,
+    public static final FoodProperties SOUP_SLIME = foodProperty(8, 0.7f,
             List.of(new MobEffectInfo(SLIMED, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
 
     public static final FoodProperties COOKIE_SOUL_BERRY = foodProperty(2, 0.1f, false, true, false,
             List.of(new MobEffectInfo(FORTIFIED_MIND, SHORT_DURATION, 1.f)));
     public static final FoodProperties COOKIE_ROTTEN_FLESH = foodProperty(2, 0.1f, true, true, false,
-            List.of(new MobEffectInfo(INFECTED, SHORT_DURATION, .75f)));
+            List.of(new MobEffectInfo(INFECTED, BRIEF_DURATION, .75f)));
     public static final FoodProperties COOKIE_SPIDER_EYE = foodProperty(2, 0.1f,  true, true, false,
-            List.of(new MobEffectInfo(HYSTERIA, SHORT_DURATION, .75f)));
+            List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .75f)));
     public static final FoodProperties PUNCH_SLIME_APPLE = foodProperty(4, 0.4f,
             List.of(new MobEffectInfo(MobEffects.GLOWING, MEDIUM_DURATION, .5f)));
     public static final FoodProperties PUNCH_SPIDER_EYE = foodProperty(4, 0.4f,
@@ -90,7 +91,7 @@ public class FoodValues {
 
     // In Dev only? stops null pointer before effects are fully registered, I think.
     // The below methods[getComfort()/getNourishment()] may fix this
-    // TODO: needs more testing, possible bug.
+    // TODO: continue testing, keep an eye on for bug
     public static MobEffect nonNullEffect(MobEffect effect) {
         return effect != null ? effect : MobEffects.HEAL;
     }
