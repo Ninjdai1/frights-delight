@@ -14,12 +14,19 @@
   "block.frightsdelight.spider_eye_crate": "Ящик с паучьими глазами",
   "block.frightsdelight.web_crate": "Ящик с паутиной",
   "block.frightsdelight.wither_berry_bush": "Куст иссушающими ягод",
+  "effect.frightsdelight.chills.description": "",
   "effect.frightsdelight.chills": "Озноб",
+  "effect.frightsdelight.cobwebbed.description": "",
   "effect.frightsdelight.cobwebbed": "Паутинный",
+  "effect.frightsdelight.fortified_mind.description": "",
   "effect.frightsdelight.fortified_mind": "Укреплённый разум",
+  "effect.frightsdelight.hysteria.description": "",
   "effect.frightsdelight.hysteria": "Истерия",
+  "effect.frightsdelight.infected.description": "",
   "effect.frightsdelight.infected": "Инфицированный",
+  "effect.frightsdelight.slimed.description": "",
   "effect.frightsdelight.slimed": "Слизистый",
+  "effect.frightsdelight.undead_hunger.description": "",
   "effect.frightsdelight.undead_hunger": "Голод нежити",
   "frightsdelight.advancement.craft_best": "Почти съедобно",
   "frightsdelight.advancement.craft_best.desc": "Еда в тарелках, мисках и напитках, по-видимому, самая «безопасная» для употребления",
@@ -66,5 +73,5 @@
   "item.frightsdelight.undead_kebab": "Шашлык из нежити",
   "item.frightsdelight.web_on_stick": "Паутинка на палочке",
   "item.frightsdelight.wither_berry": "Иссушающие ягоды",
-  "itemGroup.frightsdelight.group": "Восторг испуга"
+  "itemGroup.frightsdelight.group": "Восторг Испуга"
 }
