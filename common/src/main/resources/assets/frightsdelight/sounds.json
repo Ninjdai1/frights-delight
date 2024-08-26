@@ -76,5 +76,14 @@
         "type": "event"
       }
     ]
+  },
+  "effect_slimed": {
+    "subtitle": "frightsdelight.subtitles.effect_slimed.walk",
+    "sounds": [
+      {
+        "name": "entity.slime.squish",
+        "type": "event"
+      }
+    ]
   }
 }

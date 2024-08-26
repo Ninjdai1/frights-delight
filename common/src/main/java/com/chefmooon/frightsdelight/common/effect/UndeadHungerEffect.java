@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Player;
 
 public class UndeadHungerEffect extends MobEffect {
     public UndeadHungerEffect() {
-        super(MobEffectCategory.HARMFUL, 0x6f4d1b);
+        super(MobEffectCategory.NEUTRAL, 0x6f4d1b);
     }
 
     public void applyEffectTick(LivingEntity livingEntity, int amplifier) {

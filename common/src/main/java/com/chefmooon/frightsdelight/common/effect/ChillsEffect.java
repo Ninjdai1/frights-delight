@@ -1,7 +1,7 @@
 package com.chefmooon.frightsdelight.common.effect;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightEffects;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,23 +16,21 @@ public class ChillsEffect extends MobEffect {
     }
 
     public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
+        if (livingEntity.hasEffect(FrightsDelightEffects.FORTIFIED_MIND.get())) {
+            return;
+        }
         if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
-            if (!player.hasEffect(FrightsDelightEffects.FORTIFIED_MIND.get())) {
+            int duration = Objects.requireNonNull(player.getEffect(FrightsDelightEffects.CHILLS.get())).getDuration();
+            if (duration == 1) {
+                player.displayClientMessage(TextUtils.getTranslatable("effect.chills.end"), true);
+            }
+            if (duration >= 100) { // Buffer so encounters don't get cut off by the end
                 if (new Random().nextInt(800) == 0) {
                     if (new Random().nextInt(50) == 0) {
-                        player.displayClientMessage(FrightsDelight.tooltip("effect.chills.encounter"), true);
+                        player.displayClientMessage(TextUtils.getTranslatable("effect.chills.encounter"), true);
                     } else {
-                        player.displayClientMessage(FrightsDelight.tooltip("effect.chills.chance"), true);
+                        player.displayClientMessage(TextUtils.getTranslatable("effect.chills.chance"), true);
                     }
-                }
-            }
-            if (player.hasEffect(FrightsDelightEffects.CHILLS.get())) {
-                int duration = Objects.requireNonNull(player.getEffect(FrightsDelightEffects.CHILLS.get())).getDuration();
-                if (duration == 600) {
-                    player.displayClientMessage(FrightsDelight.tooltip("effect.chills.start"), true);
-                }
-                if (duration == 1) {
-                    player.displayClientMessage(FrightsDelight.tooltip("effect.chills.end"), true);
                 }
             }
         }

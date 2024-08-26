@@ -3,6 +3,7 @@ package com.chefmooon.frightsdelight.common.block;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.chefmooon.frightsdelight.common.tag.FrightsDelightTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
@@ -15,8 +16,10 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -34,6 +37,16 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
     }
 
     @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+
+        BlockState state = this.defaultBlockState().setValue(AGE, 0);
+
+        return state.setValue(GROW_CONDITION, hasGrowthCondition(level, pos, GROW_RANGE, GROW_CONDITION_BLOCK));
+    }
+
+    @Override
     public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
         return new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.WITHER_BERRY));
     }
@@ -41,9 +54,9 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         int i = (Integer)state.getValue(AGE);
-        updateGrowthCondition(state, level, pos, GROW_RANGE, GROW_CONDITION_BLOCK);
+        updateCondition(state, (ServerLevel)level, pos);
         if (state.getValue(GROW_CONDITION)) {
-            if (i < 3 && random.nextInt(5) == 0 && level.getRawBrightness(pos.above(), 0) >= 7) {
+            if (i < 3 && random.nextInt(5) == 0 && hasGrowBrightness(level.getRawBrightness(pos.above(), 0))) {
                 BlockState blockState = (BlockState)state.setValue(AGE, i + 1);
                 level.setBlock(pos, blockState, 2);
                 level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(blockState));
@@ -53,7 +66,7 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
 
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        if (state.getValue(GROW_CONDITION)) {
+        if (state.getValue(GROW_CONDITION) && hasGrowBrightness(level.getRawBrightness(pos.above(), 0))) {
             VoxelShape voxelShape = this.getShape(state, level, pos, CollisionContext.empty());
             Vec3 vec3 = voxelShape.bounds().getCenter();
             double d = (double)pos.getX() + vec3.x;
@@ -70,7 +83,7 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!level.isClientSide()) {
-            updateGrowthCondition(state, (ServerLevel)level, pos, GROW_RANGE, GROW_CONDITION_BLOCK);
+            updateCondition(state, (ServerLevel)level, pos);
         }
         int i = (Integer)state.getValue(AGE);
         boolean bl = i == 3;
@@ -91,9 +104,23 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        updateGrowthCondition(state, level, pos, GROW_RANGE, GROW_CONDITION_BLOCK);
-        if (state.getValue(GROW_CONDITION)) {
-            super.performBonemeal(level, random, pos, state);
+        updateCondition(state, (ServerLevel)level, pos);
+        super.performBonemeal(level, random, pos, state);
+    }
+
+    @Override
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+        if (!level.isClientSide()) {
+            updateCondition(state, (ServerLevel)level, pos);
         }
+        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+    }
+
+    public void updateCondition(BlockState state, LevelAccessor level, BlockPos pos) {
+        updateGrowthCondition(state, (ServerLevel)level, pos, GROW_RANGE, GROW_CONDITION_BLOCK, state.getValue(GROW_CONDITION));
+    }
+
+    public static boolean hasGrowBrightness(int lightLevel) {
+        return lightLevel <= 7;
     }
 }

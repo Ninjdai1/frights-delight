@@ -47,6 +47,8 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
 
     private void registerMinecraftBlockTags() {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
+                .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH)
+                .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH)
                 .add(FrightsDelightBlocksImpl.FLESH_CRATE)
                 .add(FrightsDelightBlocksImpl.BONE_CRATE)
                 .add(FrightsDelightBlocksImpl.PHANTOM_CRATE)
@@ -55,5 +57,13 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .add(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE)
                 .add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE)
                 .add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE);
+
+        getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
+                .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH)
+                .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH);
+
+        getOrCreateTagBuilder(BlockTags.FALL_DAMAGE_RESETTING)
+                .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH)
+                .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH);
     }
 }

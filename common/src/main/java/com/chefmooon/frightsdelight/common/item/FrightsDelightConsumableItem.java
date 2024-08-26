@@ -1,9 +1,7 @@
 package com.chefmooon.frightsdelight.common.item;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.Configuration;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;

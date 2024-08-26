@@ -1,0 +1,31 @@
+{
+  "feature": "frightsdelight:patch_wild_soul_berry_bushes",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 15
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+          "below_top": 4
+        },
+        "min_inclusive": {
+          "above_bottom": 0
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "frightsdelight:biome_is_nether",
+      "tag": "minecraft:is_nether"
+    }
+  ]
+}

@@ -42,6 +42,14 @@ subprojects {
         maven { url "https://maven.terraformersmc.com/" } // EMI
 
         maven { url "https://api.modrinth.com/maven" } // MidnightLib
+
+        maven {
+            url "https://maven2.bai.lol" // WTHIT
+            content {
+                includeGroup "lol.bai"
+                includeGroup "mcp.mobius.waila"
+            }
+        }
     }
 
     dependencies {
@@ -77,7 +85,7 @@ subprojects {
 
         inputs.properties replaceProperties
 
-        filesMatching(["META-INF/mods.toml", "fabric.mod.json"]) {
+        filesMatching(["META-INF/mods.toml", "fabric.mod.json", "pack.mcmeta"]) {
             expand replaceProperties + [project: project]
         }
     }
@@ -92,7 +100,11 @@ allprojects {
         archivesName = rootProject.archives_base_name
     }
 
-    version = "${project.name}-${rootProject.minecraft_version}-${rootProject.mod_version}"
+    def isBeta = true
+    def betaVersion = "-1"
+    def buildSuffix = isBeta ? "-beta" + betaVersion : ""
+
+    version = "${project.name}-${rootProject.minecraft_version}-${rootProject.mod_version}${buildSuffix}"
     group = rootProject.maven_group
 
     repositories {

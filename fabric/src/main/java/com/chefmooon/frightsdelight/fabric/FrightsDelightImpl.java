@@ -21,13 +21,16 @@ public class FrightsDelightImpl implements ModInitializer {
         FrightsDelightEffectsImpl.register();
         FrightsDelightParticleTypesImpl.register();
         FrightsDelightItemsImpl.register();
+        FrightsDelightBiomeFeaturesImpl.register();
         FrightsDelightCreativeTabs.register();
-
+        FrightsDelightPlacementModifiersImpl.register();
         FrightsDelightLootTableEvents.registerLootTable();
 
         VillagerEventsImpl.init();
 
         CommonSetupImpl.init();
+
+        FrightsDelightBiomeModifiersImpl.init();
     }
 
     public static void loggerInfo(String s) {

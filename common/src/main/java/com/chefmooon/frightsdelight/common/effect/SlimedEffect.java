@@ -1,6 +1,6 @@
 package com.chefmooon.frightsdelight.common.effect;
 
-import net.minecraft.sounds.SoundEvents;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -18,9 +18,9 @@ public class SlimedEffect extends MobEffect {
     }
 
     public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player && player.onGround() && player.getSpeed() > 0) {
+        if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player && player.onGround()) {
             if (new Random().nextInt(400) == 0) {
-                player.playNotifySound(SoundEvents.SLIME_SQUISH, SoundSource.HOSTILE, 0.3f, 0.6f);
+                player.playNotifySound(FrightsDelightSounds.EFFECT_SLIMED.get(), SoundSource.HOSTILE, 0.3f, 0.6f);
             }
         }
     }

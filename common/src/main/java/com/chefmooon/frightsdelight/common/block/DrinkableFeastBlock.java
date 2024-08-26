@@ -1,13 +1,10 @@
 package com.chefmooon.frightsdelight.common.block;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -125,7 +122,7 @@ public class DrinkableFeastBlock extends Block {
             ItemStack heldItem = player.getItemInHand(hand);
             if (heldItem.is(Items.GLASS_BOTTLE)) {
                 world.setBlock(pos, state.setValue(getServingsProperty(), servings - 1), 3);
-                world.playSound(null, pos, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_REMOVE.get(), SoundSource.PLAYERS, 0.8F, 0.8F);
+                world.playSound(null, pos, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_REMOVE.get(), SoundSource.BLOCKS, 0.8F, 0.8F);
                 if (!player.isCreative()) {
                     heldItem.shrink(1);
                     if (!player.getInventory().add(serving)) {
@@ -133,7 +130,7 @@ public class DrinkableFeastBlock extends Block {
                     }
                 }
             } else {
-                player.displayClientMessage(FrightsDelight.tooltip("container.punch_bowl"), true);
+                player.displayClientMessage(TextUtils.getTranslatable("container.punch_bowl"), true);
 
             }
         }
@@ -148,7 +145,7 @@ public class DrinkableFeastBlock extends Block {
             ItemStack heldItem = player.getItemInHand(hand);
             ItemStack container = new ItemStack(Items.GLASS_BOTTLE);
             world.setBlock(pos, state.setValue(getServingsProperty(), servings + 1), 3);
-            world.playSound(null, pos, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_ADD.get(), SoundSource.PLAYERS, 0.8F, 0.8F);
+            world.playSound(null, pos, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_ADD.get(), SoundSource.BLOCKS, 0.8F, 0.8F);
             if (!player.isCreative()) {
                 heldItem.shrink(1);
                 if (!player.getInventory().add(container)) {
@@ -161,12 +158,7 @@ public class DrinkableFeastBlock extends Block {
         return InteractionResult.FAIL;
     }
 
-    @Override
-    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        // TODO: double check this. This is a  work around, particle cannot be accessed during registration. What is the best way to reference a particle from common?
-        if (state.getBlock() instanceof SlimeAppleDrinkableFeastBlock) {
-            particleData = (SimpleParticleType) BuiltInRegistries.PARTICLE_TYPE.get(new ResourceLocation(FrightsDelight.MOD_ID, "slime_bubble"));
-        }
+    public void animate(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (particleData != null && state.getValue(getServingsProperty()) > 0) {
             double d = (double)pos.getX() + 0.5D;
             double e = (double)pos.getY() + 0.03D + (double) state.getValue(getServingsProperty()) / 6;
@@ -175,9 +167,7 @@ public class DrinkableFeastBlock extends Block {
             for(int i = 0; i < 1; ++i) {
                 if (random.nextBoolean()) {
                     level.addParticle(particleData, d + (random.nextDouble() - 0.5) / 2.0, e + ((1.0 - random.nextDouble()) / 20.0), f + (random.nextDouble() - 0.5) / 2.0, 0.0, 0.0, 0.0);
-                    if (level.random.nextInt(10) == 0) {
-                        level.playLocalSound(pos, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_BUBBLE.get(), SoundSource.BLOCKS, 0.2F, 0.8F, false);
-                    }
+                    if (level.random.nextInt(10) == 0) level.playLocalSound(pos, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_BUBBLE.get(), SoundSource.BLOCKS, 0.2F, 0.8F, false);
                 }
             }
         }
@@ -189,8 +179,12 @@ public class DrinkableFeastBlock extends Block {
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos) {
-        return blockState.getValue(getServingsProperty());
+    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
+        return getOutputSignal((Integer)state.getValue(SERVINGS));
+    }
+
+    public static int getOutputSignal(int servings) {
+        return servings * 2;
     }
 
     @Override

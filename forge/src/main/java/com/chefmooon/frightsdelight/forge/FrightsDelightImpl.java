@@ -29,16 +29,20 @@ public class FrightsDelightImpl {
         modEventBus.addListener(CommonSetupImpl::init);
         if (FMLEnvironment.dist.isClient()) {
             modEventBus.addListener(FrightsDelightClientImpl::init);
+            modEventBus.addListener(FrightsDelightClientImpl::onBuiltinPackRegistration);
         }
 
-        FrightsDelightSoundsImpl.SOUND_EVENTS.register(modEventBus);
-        FrightsDelightBlocksImpl.BLOCKS.register(modEventBus);
-        FrightsDelightEffectsImpl.MOB_EFFECTS.register(modEventBus);
-        FrightsDelightParticleTypesImpl.PARTICLE_TYPES.register(modEventBus);
-        FrightsDelightItemsImpl.ITEMS.register(modEventBus);
-        FrightsDelightCreativeTabs.CREATIVE_MODE_TAB.register(modEventBus);
+        FrightsDelightSoundsImpl.register(modEventBus);
+        FrightsDelightBlocksImpl.register(modEventBus);
+        FrightsDelightEffectsImpl.register(modEventBus);
+        FrightsDelightParticleTypesImpl.register(modEventBus);
+        FrightsDelightItemsImpl.register(modEventBus);
+        FrightsDelightBiomeFeaturesImpl.register(modEventBus);
+        FrightsDelightCreativeTabs.register(modEventBus);
+        FrightsDelightPlacementModifiersImpl.register(modEventBus);
+        FrightsDelightLootModifiersImpl.register(modEventBus);
 
-        FrightsDelightLootModifiersImpl.LOOT_MODIFIERS.register(modEventBus);
+        FrightsDelightBiomeModifiersImpl.init();
 
         MinecraftForge.EVENT_BUS.register(this);
     }

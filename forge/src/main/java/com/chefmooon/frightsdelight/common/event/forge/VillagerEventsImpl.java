@@ -32,11 +32,11 @@ public class VillagerEventsImpl {
         VillagerProfession profession = event.getType();
         ResourceLocation professionKey = ForgeRegistries.VILLAGER_PROFESSIONS.getKey(profession);
         if (professionKey == null) return;
-        if (professionKey.getPath().equals("farmer")) {
-            trades.get(1).add(itemForEmeraldTrade(FrightsDelightItemsImpl.SOUL_BERRY.get(), 2, 10));
+        if (professionKey.getPath().equals("butcher")) {
+            trades.get(3).add(emeraldForItemsTrade(FrightsDelightItemsImpl.SOUL_BERRY.get(), 10, 12, 30));
         }
-        if (professionKey.getPath().equals("farmer")) {
-            trades.get(2).add(itemForEmeraldTrade(FrightsDelightItemsImpl.WITHER_BERRY.get(), 2, 10));
+        if (professionKey.getPath().equals("butcher")) {
+            trades.get(3).add(emeraldForItemsTrade(FrightsDelightItemsImpl.WITHER_BERRY.get(),  5, 12, 40));
         }
     }
 
@@ -45,11 +45,11 @@ public class VillagerEventsImpl {
         if (!Configuration.wanderingTraderSellsFrdDItems()) return;
 
         List<VillagerTrades.ItemListing> trades = event.getGenericTrades();
-        trades.add(emeraldForItemsTrade(FrightsDelightItemsImpl.SOUL_BERRY.get(), 4, 2, 10));
+        trades.add(itemForEmeraldTrade(FrightsDelightItemsImpl.SOUL_BERRY.get(), 12, 1));
     }
 
-    public static BasicItemListing emeraldForItemsTrade(ItemLike item, int count, int maxTrades, int xp) {
-        return new BasicItemListing(new ItemStack(item, count), new ItemStack(Items.EMERALD), maxTrades, xp, 0.05F);
+    public static BasicItemListing emeraldForItemsTrade(ItemLike item, int itemCount, int maxTrades, int xp) {
+        return new BasicItemListing(new ItemStack(item, itemCount), new ItemStack(Items.EMERALD), maxTrades, xp, 0.05F);
     }
 
     public static BasicItemListing itemForEmeraldTrade(ItemLike item, int maxTrades, int xp) {

@@ -1,0 +1,7 @@
+{
+  "frightsdelight:plugin": {
+    "initializer": "com.chefmooon.frightsdelight.integration.wthit.FrightsDelightWailiaPlugin",
+    "side": "*",
+    "required": []
+  }
+}

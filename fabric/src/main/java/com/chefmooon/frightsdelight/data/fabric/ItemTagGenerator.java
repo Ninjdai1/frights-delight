@@ -15,7 +15,14 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
+        registerMinecraftItemTags();
         registerCompatibilityItemTags();
+    }
+
+    private void registerMinecraftItemTags() {
+        // Save for Fox harvesting implementation
+        //getOrCreateTagBuilder(ItemTags.FOX_FOOD)
+        //        .add(FrightsDelightItemsImpl.SOUL_BERRY);
     }
 
     private void registerCompatibilityItemTags() {
@@ -34,6 +41,11 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH)
                 .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE)
                 .add(FrightsDelightItemsImpl.SOUP_SLIME);
+
+        // Create: Craft's and Additions
+        getOrCreateTagBuilder(CompatibilityTags.CREATE_ADDITION_PLANT_FOODS)
+                .add(FrightsDelightItemsImpl.SOUL_BERRY)
+                .add(FrightsDelightItemsImpl.WITHER_BERRY);
 
         // Supplementaries Item Tags
         getOrCreateTagBuilder(CompatibilityTags.SUPPLEMENTARIES_COOKIES)
