@@ -66,17 +66,15 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
 
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        if (state.getValue(GROW_CONDITION)) {
-            if (hasGrowBrightness(level.getRawBrightness(pos.above(), 0))) {
-                VoxelShape voxelShape = this.getShape(state, level, pos, CollisionContext.empty());
-                Vec3 vec3 = voxelShape.bounds().getCenter();
-                double d = (double)pos.getX() + vec3.x;
-                double e = (double)pos.getZ() + vec3.z;
+        if (state.getValue(GROW_CONDITION) && hasGrowBrightness(level.getRawBrightness(pos.above(), 0))) {
+            VoxelShape voxelShape = this.getShape(state, level, pos, CollisionContext.empty());
+            Vec3 vec3 = voxelShape.bounds().getCenter();
+            double d = (double)pos.getX() + vec3.x;
+            double e = (double)pos.getZ() + vec3.z;
 
-                for(int i = 0; i < 3; ++i) {
-                    if (random.nextBoolean()) {
-                        level.addParticle(ParticleTypes.SMOKE, d + random.nextDouble() / 5.0, (double)pos.getY() + (0.5 - random.nextDouble()), e + random.nextDouble() / 5.0, 0.0, 0.0, 0.0);
-                    }
+            for(int i = 0; i < 3; ++i) {
+                if (random.nextBoolean()) {
+                    level.addParticle(ParticleTypes.SMOKE, d + random.nextDouble() / 5.0, (double)pos.getY() + (0.5 - random.nextDouble()), e + random.nextDouble() / 5.0, 0.0, 0.0, 0.0);
                 }
             }
         }

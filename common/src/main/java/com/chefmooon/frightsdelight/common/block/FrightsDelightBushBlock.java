@@ -96,11 +96,6 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
         return false;
     }
 
-    //TODO: decide implementation
-    public void updateGrowthCondition(BlockState state, ServerLevel level, BlockPos pos, int range, TagKey<Block> growCondition) {
-        level.setBlock(pos, (BlockState)state.setValue(GROW_CONDITION, hasGrowthCondition(level, pos, range, growCondition)), 2);
-    }
-
     public void updateGrowthCondition(BlockState state, ServerLevel level, BlockPos pos, int range, TagKey<Block> growCondition, boolean oldCondition) {
         boolean newCondition = hasGrowthCondition(level, pos, range, growCondition);
         if (newCondition != oldCondition) {
@@ -120,8 +115,7 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        int i = Math.min(3, (Integer)state.getValue(AGE) + 1);
-        level.setBlock(pos, (BlockState)state.setValue(AGE, i), 2);
+        if (state.getValue(GROW_CONDITION)) level.setBlock(pos, (BlockState)state.setValue(AGE, Math.min(3, (Integer)state.getValue(AGE) + 1)), 2);
     }
 
     public int getMaxAge() {
