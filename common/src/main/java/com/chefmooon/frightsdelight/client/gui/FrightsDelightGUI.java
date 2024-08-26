@@ -12,13 +12,6 @@ import net.minecraft.world.food.FoodData;
 
 import java.util.Random;
 
-/*
-* Current implementation will display the most recently applied effect's overlay on top (to be changed?)
-* TODO Overlay
-*  - more overlay conflict testing must be done
-*  - Checks for FD and Priority Overlay's
- */
-
 public class FrightsDelightGUI {
     public static final ResourceLocation RESOURCE_LOCATION = new ResourceLocation(FrightsDelight.MOD_ID, "textures/gui/frd_icons.png");
     public static final ResourceLocation FOOD_LEVEL_ELEMENT = new ResourceLocation("minecraft", "food_level");

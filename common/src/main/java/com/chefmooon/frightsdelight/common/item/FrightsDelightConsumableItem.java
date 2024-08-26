@@ -2,6 +2,7 @@ package com.chefmooon.frightsdelight.common.item;
 
 import com.chefmooon.frightsdelight.common.Configuration;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -36,7 +37,7 @@ public class FrightsDelightConsumableItem extends ConsumableItem {
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
         if ((Boolean) Configuration.foodEffectTooltip()) {
             if (this.hasCustomTooltip) {
-                tooltip.add(FrightsDelight.tooltip("tooltip." + this).withStyle(ChatFormatting.BLUE));
+                tooltip.add(TextUtils.getTranslatable("tooltip." + this).withStyle(ChatFormatting.BLUE));
             }
             if (this.hasFoodEffectTooltip) {
                 if ((Boolean) Configuration.foodEffectChanceTooltip()) {

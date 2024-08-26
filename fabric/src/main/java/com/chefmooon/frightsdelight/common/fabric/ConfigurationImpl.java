@@ -81,10 +81,6 @@ public class ConfigurationImpl extends MidnightConfig {
         return foodEffectChanceTooltip;
     }
 
-    public static boolean foodEffectChanceTooltip() {
-        return foodEffectChanceTooltip;
-    }
-
     public static void init() {
         MidnightConfig.init(FrightsDelight.MOD_ID, ConfigurationImpl.class);
     }

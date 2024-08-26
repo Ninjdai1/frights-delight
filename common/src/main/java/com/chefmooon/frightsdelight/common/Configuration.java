@@ -69,12 +69,6 @@ public class Configuration {
         return false;
     }
 
-
-    @ExpectPlatform
-    public static boolean foodEffectChanceTooltip() {
-        return false;
-    }
-
     @ExpectPlatform
     public static boolean foodEffectChanceTooltip() {
         return false;

@@ -69,7 +69,8 @@ public class FoodValues {
     public static final FoodProperties COOKIE_SPIDER_EYE = foodProperty(2, 0.1f,  true, true, false,
             List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .75f)));
     public static final FoodProperties PUNCH_SLIME_APPLE = foodProperty(4, 0.4f,
-            List.of(new MobEffectInfo(MobEffects.GLOWING, MEDIUM_DURATION, .5f)));
+            List.of(new MobEffectInfo(MobEffects.GLOWING, MEDIUM_DURATION, .5f),
+                    new MobEffectInfo(SLIMED, BRIEF_DURATION, .75f)));
     public static final FoodProperties PUNCH_SPIDER_EYE = foodProperty(4, 0.4f,
             List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .5f)));
     public static final FoodProperties PUNCH_GHAST_TEAR = foodProperty(4, 0.4f,
