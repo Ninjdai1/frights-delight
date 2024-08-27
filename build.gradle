@@ -100,9 +100,7 @@ allprojects {
         archivesName = rootProject.archives_base_name
     }
 
-    def isBeta = true
-    def betaVersion = "-1"
-    def buildSuffix = isBeta ? "-beta" + betaVersion : ""
+    def buildSuffix = mod_version_type != "release" ? "-${mod_version_type}" + (mod_build_number != "0" ? "-${mod_build_number}" : "") : ""
 
     version = "${project.name}-${rootProject.minecraft_version}-${rootProject.mod_version}${buildSuffix}"
     group = rootProject.maven_group
