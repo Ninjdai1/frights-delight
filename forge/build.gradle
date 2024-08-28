@@ -1,7 +1,5 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
-    id "com.matthewprenger.cursegradle" version "1.4.0"
-    id "com.modrinth.minotaur" version "2.8.4"
 }
 
 architectury {
@@ -16,7 +14,7 @@ loom {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
 
-        mixinConfig "frightsdelight-common.mixins.json"
+        //mixinConfig "frightsdelight-common.mixins.json" // for future use
         mixinConfig "frightsdelight.mixins.json"
     }
 }
@@ -118,7 +116,7 @@ var env = System.getenv()
 
 var changelogFile = rootProject.file("changelog.md")
 var changelogText = changelogFile.exists() ? changelogFile.text : ""
-var vName = mod_name + project.version
+var vName = mod_name + " " + project.version
 
 if (env.MODRINTH_TOKEN) {
     modrinth {
@@ -129,7 +127,7 @@ if (env.MODRINTH_TOKEN) {
         versionType = mod_version_type // This is the default -- can also be `beta` or `alpha`
         changelog = changelogText
         uploadFile = remapJar // With Loom, this MUST be set to `remapJar` instead of `jar`!
-        gameVersions = minecraft_supported_versions.split(",").toList()
+        gameVersions = ["1.20.1"]
         loaders = ["forge","neoforge"]
         dependencies {
             // scope.type
@@ -138,6 +136,7 @@ if (env.MODRINTH_TOKEN) {
             required.project "farmers-delight"
             embedded.project "midnightlib"
             optional.project "jei"
+            optional.project "rei"
             optional.project "emi"
         }
     }
@@ -151,9 +150,7 @@ if (env.CURSEFORGE_TOKEN) {
             changelog = changelogText
             changelogType = 'markdown'
             releaseType = mod_version_type
-            for (String v : minecraft_supported_versions.split(",").toList()) {
-                addGameVersion v
-            }
+            addGameVersion "1.20.1"
             addGameVersion "Forge"
             addGameVersion "NeoForge"
 
@@ -165,6 +162,7 @@ if (env.CURSEFORGE_TOKEN) {
                 requiredDependency "farmers-delight"
                 embeddedLibrary "midnightlib"
                 optionalDependency "jei"
+                optionalDependency "roughly-enough-items"
                 optionalDependency "emi"
             }
         }

@@ -1,7 +1,5 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
-    id "com.matthewprenger.cursegradle" version "1.4.0"
-    id "com.modrinth.minotaur" version "2.8.4"
 }
 
 architectury {
@@ -134,7 +132,7 @@ var env = System.getenv()
 
 var changelogFile = rootProject.file("changelog.md")
 var changelogText = changelogFile.exists() ? changelogFile.text : ""
-var vName = mod_name + project.version
+var vName = mod_name + " " + project.version
 
 if (env.MODRINTH_TOKEN) {
     modrinth {

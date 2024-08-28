@@ -3,7 +3,7 @@
     <img src="banner.png" alt="Banner">
 </div>
 
-<h1 style="text-align: center;">Fabric/Quilt <br>
+<h1 style="text-align: center;">
     <a href="https://discord.gg/mbuDBHHUws">
         <img src="https://img.shields.io/discord/1159501560997498952?color=5865f2&label=Discord&style=flat" alt="Discord">
     </a>
@@ -22,7 +22,7 @@
 
 </h1>
 
-Fright’s Delight is an add-on mod for [Farmer’s Delight Fabric](https://modrinth.com/mod/farmers-delight-fabric) that adds food made from hostile mob drops. Dishes are created with a “Horror” theme, consume with caution.
+Fright’s Delight is an add-on mod for that adds food made from hostile mob drops. Dishes are created with a “Horror” theme, consume with caution.
 
 Detailed information can be found on the [Wiki](https://github.com/ChefMooon/frights-delight/wiki)
 

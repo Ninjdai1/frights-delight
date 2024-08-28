@@ -2,9 +2,7 @@ package com.chefmooon.frightsdelight.common.forge;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
 import eu.midnightdust.lib.config.MidnightConfig;
-import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber
 public class ConfigurationImpl extends MidnightConfig{
 
     @Entry(category = "common") public static boolean enableFrDCrates = true;
