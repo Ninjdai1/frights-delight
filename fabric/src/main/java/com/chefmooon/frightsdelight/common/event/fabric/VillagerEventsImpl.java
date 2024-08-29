@@ -27,7 +27,7 @@ public class VillagerEventsImpl {
 
         if (Configuration.wanderingTraderSellsFrdDItems()) {
             TradeOfferHelper.registerWanderingTraderOffers(1, (trades) -> {
-                trades.add(itemForEmeraldTrade(FrightsDelightItemsImpl.SOUL_BERRY,12, 1));
+                trades.add(itemForEmeraldTrade(FrightsDelightItemsImpl.SOUL_BERRY,1, 12));
             });
         }
     }

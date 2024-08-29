@@ -45,7 +45,7 @@ public class VillagerEventsImpl {
         if (!Configuration.wanderingTraderSellsFrdDItems()) return;
 
         List<VillagerTrades.ItemListing> trades = event.getGenericTrades();
-        trades.add(itemForEmeraldTrade(FrightsDelightItemsImpl.SOUL_BERRY.get(), 12, 1));
+        trades.add(itemForEmeraldTrade(FrightsDelightItemsImpl.SOUL_BERRY.get(), 1, 12));
     }
 
     public static BasicItemListing emeraldForItemsTrade(ItemLike item, int itemCount, int maxTrades, int xp) {
