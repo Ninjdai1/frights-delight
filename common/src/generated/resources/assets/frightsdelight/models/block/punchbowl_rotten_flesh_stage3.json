@@ -1,0 +1,8 @@
+{
+  "parent": "frightsdelight:block/template_drink_feast_stage3",
+  "textures": {
+    "inside": "frightsdelight:block/punchbowl_rotten_flesh",
+    "particle": "frightsdelight:block/punch_bowl",
+    "punch_bowl": "frightsdelight:block/punch_bowl"
+  }
+}

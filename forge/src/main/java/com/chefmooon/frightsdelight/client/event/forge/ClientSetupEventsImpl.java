@@ -38,6 +38,11 @@ public class ClientSetupEventsImpl {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void registerParticles(RegisterParticleProvidersEvent event) {
         Minecraft.getInstance().particleEngine.register(FrightsDelightParticleTypes.SLIME_BUBBLE.get(), SlimeBubbleParticle.Factory::new);
-        //Minecraft.getInstance().particleEngine.register(FrightsDelightParticleTypes.SLIME_POP.get(), SlimeBubbleParticle.Factory::new);
+        Minecraft.getInstance().particleEngine.register(FrightsDelightParticleTypes.ROTTEN_FLESH_BUBBLE.get(), SlimeBubbleParticle.Factory::new);
+        Minecraft.getInstance().particleEngine.register(FrightsDelightParticleTypes.SPIDER_EYE_BUBBLE.get(), SlimeBubbleParticle.Factory::new);
+        Minecraft.getInstance().particleEngine.register(FrightsDelightParticleTypes.SOUL_BERRY_BUBBLE.get(), SlimeBubbleParticle.Factory::new);
+        Minecraft.getInstance().particleEngine.register(FrightsDelightParticleTypes.WITHER_BERRY_BUBBLE.get(), SlimeBubbleParticle.Factory::new);
+        Minecraft.getInstance().particleEngine.register(FrightsDelightParticleTypes.COBWEB_BUBBLE.get(), SlimeBubbleParticle.Factory::new);
+        Minecraft.getInstance().particleEngine.register(FrightsDelightParticleTypes.GHAST_TEAR_BUBBLE.get(), SlimeBubbleParticle.Factory::new);
     }
 }

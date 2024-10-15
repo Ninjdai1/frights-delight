@@ -27,15 +27,22 @@ public class RecipeGenerator extends FabricRecipeProvider {
         crateToIngredient(FrightsDelightItemsImpl.POISONOUS_POTATO_CRATE, Items.POISONOUS_POTATO, exporter);
         crateToIngredient(FrightsDelightItemsImpl.ROTTEN_TOMATO_CRATE, ModItems.ROTTEN_TOMATO.get(), exporter);
 
-        cookie(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY, FrightsDelightItemsImpl.SOUL_BERRY, exporter);
         cookie(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH, Items.ROTTEN_FLESH, exporter);
+        cookie(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE, FrightsDelightItemsImpl.APPLE_SLIME, exporter);
+        cookie(FrightsDelightItemsImpl.COOKIE_SLIME, Items.SLIME_BALL, exporter);
         cookie(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE, Items.SPIDER_EYE, exporter);
+        cookie(FrightsDelightItemsImpl.COOKIE_GHAST_TEAR, Items.GHAST_TEAR, exporter);
+        cookie(FrightsDelightItemsImpl.COOKIE_COBWEB, Items.COBWEB, exporter);
+        cookie(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY, FrightsDelightItemsImpl.SOUL_BERRY, exporter);
+        cookie(FrightsDelightItemsImpl.COOKIE_WITHER_BERRY, FrightsDelightItemsImpl.WITHER_BERRY, exporter);
 
+        punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_ROTTEN_FLESH, FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH, exporter);
         punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_SLIMEAPPLE, FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE, exporter);
         punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE, FrightsDelightItemsImpl.PUNCH_SPIDEREYE, exporter);
         punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_GHASTTEAR, FrightsDelightItemsImpl.PUNCH_GHASTTEAR, exporter);
         punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY, FrightsDelightItemsImpl.PUNCH_SOUL_BERRY, exporter);
         punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY, FrightsDelightItemsImpl.PUNCH_WITHER_BERRY, exporter);
+        punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB, FrightsDelightItemsImpl.PUNCH_COBWEB, exporter);
     }
 
     private static void crateToIngredient(Item crate, Item ingredient, Consumer<FinishedRecipe> exporter) {

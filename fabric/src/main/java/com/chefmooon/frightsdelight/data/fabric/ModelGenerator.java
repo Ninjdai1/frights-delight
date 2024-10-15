@@ -5,6 +5,7 @@ import com.chefmooon.frightsdelight.common.block.DrinkableFeastBlock;
 import com.chefmooon.frightsdelight.common.block.FrightsDelightBushBlock;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
+import com.chefmooon.frightsdelight.common.utility.ModModels;
 import com.chefmooon.frightsdelight.common.utility.fabric.FrightsDelightModels;
 import com.chefmooon.frightsdelight.common.utility.fabric.FrightsDelightTextureSlots;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -39,11 +40,13 @@ public class ModelGenerator extends FabricModelProvider {
         registerCrateBlock(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE, blockStateModelGenerator);
         registerCrateBlock(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE, blockStateModelGenerator);
 
+        registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_ROTTEN_FLESH, blockStateModelGenerator);
         registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE, blockStateModelGenerator);
         registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE, blockStateModelGenerator);
         registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR, blockStateModelGenerator);
         registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY, blockStateModelGenerator);
         registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY, blockStateModelGenerator);
+        registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_COBWEB, blockStateModelGenerator);
 
         ResourceLocation SOUL_BERRY_BUSH_STAGE0 = registerBushModel("_stage0", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH, blockStateModelGenerator);
         ResourceLocation SOUL_BERRY_BUSH_STAGE1 = registerBushModel("_stage1", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH, blockStateModelGenerator);
@@ -66,46 +69,76 @@ public class ModelGenerator extends FabricModelProvider {
         ResourceLocation WITHER_BERRY_BUSH_STAGE0 = registerBushModel("_stage0", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH, blockStateModelGenerator);
         ResourceLocation WITHER_BERRY_BUSH_STAGE1 = registerBushModel("_stage1", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH, blockStateModelGenerator);
         ResourceLocation WITHER_BERRY_BUSH_STAGE2 = registerBushModel("_stage2", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH, blockStateModelGenerator);
+        ResourceLocation WITHER_BERRY_BUSH_STAGE2_GROW = registerBushModel("_stage2_grow", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH, blockStateModelGenerator);
         ResourceLocation WITHER_BERRY_BUSH_STAGE3 = registerBushModel("_stage3", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH, blockStateModelGenerator);
+        ResourceLocation WITHER_BERRY_BUSH_STAGE3_GROW = registerBushModel("_stage3_grow", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH, blockStateModelGenerator);
         blockStateModelGenerator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH)
-                .with(PropertyDispatch.property(BlockStateProperties.AGE_3)
-                        .select(0, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE0))
-                        .select(1, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE1))
-                        .select(2, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE2))
-                        .select(3, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE3))
+                .with(PropertyDispatch.properties(BlockStateProperties.AGE_3, FrightsDelightBushBlock.GROW_CONDITION)
+                        .select(0,false, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE0))
+                        .select(0,true, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE0))
+                        .select(1,false, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE1))
+                        .select(1,true, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE1))
+                        .select(2,false, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE2))
+                        .select(2,true, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE2_GROW))
+                        .select(3,false, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE3))
+                        .select(3,true, Variant.variant().with(VariantProperties.MODEL, WITHER_BERRY_BUSH_STAGE3_GROW))
                 ));
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.BONE_SHARD, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.SOUL_BERRY, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.WITHER_BERRY, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.APPLE_SLIME, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.UNDEAD_KEBAB, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.WEB_ON_STICK, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.UNDEAD_KEBAB, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.BONE_KEBAB_SPIDER_EYE, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.BONE_KEBAB_SLIMEAPPLE, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.BONE_KEBAB_SLIME, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.WEB_ON_STICK, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.BONE_KEBAB_GHAST_TEAR, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.BONE_KEBAB_SOUL_BERRY, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.BONE_KEBAB_WITHER_BERRY, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
 
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.MONSTER_MASH, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS, ModelTemplates.FLAT_ITEM);
+
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.SOUP_SPIDER_EYE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.SOUP_SLIME, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.SOUP_COBWEB, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.SOUP_GHAST_TEAR, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.SOUP_SOUL_BERRY, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.SOUP_WITHER_BERRY, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.COOKIE_SLIME, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.COOKIE_COBWEB, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.COOKIE_GHAST_TEAR, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.COOKIE_WITHER_BERRY, ModelTemplates.FLAT_ITEM);
 
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCH_SPIDEREYE, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCH_GHASTTEAR, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCH_COBWEB, ModelTemplates.FLAT_ITEM);
 
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_ROTTEN_FLESH, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_SLIMEAPPLE, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_GHASTTEAR, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB, ModelTemplates.FLAT_ITEM);
 
     }
 

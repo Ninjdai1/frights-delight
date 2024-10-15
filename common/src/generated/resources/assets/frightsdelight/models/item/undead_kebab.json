@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/handheld",
+  "parent": "frightsdelight:item/flat_handheld_item_flipped",
   "textures": {
     "layer0": "frightsdelight:item/undead_kebab"
   }

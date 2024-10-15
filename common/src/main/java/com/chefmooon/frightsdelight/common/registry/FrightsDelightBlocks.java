@@ -17,11 +17,13 @@ public class FrightsDelightBlocks {
     public static final ResourceLocation POISONOUS_POTATO_CRATE = block("poisonous_potato_crate");
     public static final ResourceLocation ROTTEN_TOMATO_CRATE = block("rotten_tomato_crate");
 
+    public static final ResourceLocation PUNCHBOWL_ROTTEN_FLESH = block("punchbowl_rotten_flesh");
     public static final ResourceLocation PUNCHBOWL_SLIMEAPPLE = block("punchbowl_slimeapple");
     public static final ResourceLocation PUNCHBOWL_SPIDEREYE = block("punchbowl_spidereye");
     public static final ResourceLocation PUNCHBOWL_GHASTTEAR = block("punchbowl_ghasttear");
     public static final ResourceLocation PUNCHBOWL_SOUL_BERRY = block("punchbowl_soul_berry");
     public static final ResourceLocation PUNCHBOWL_WITHER_BERRY = block("punchbowl_wither_berry");
+    public static final ResourceLocation PUNCHBOWL_COBWEB = block("punchbowl_cobweb");
 
     private static ResourceLocation block(String string) {
         return TextUtils.res(string);

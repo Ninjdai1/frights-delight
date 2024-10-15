@@ -24,9 +24,11 @@ public class FrightsDelightClientImpl implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
                 FrightsDelightBlocksImpl.SOUL_BERRY_BUSH,
                 FrightsDelightBlocksImpl.WITHER_BERRY_BUSH,
+                FrightsDelightBlocksImpl.PUNCHBOWL_ROTTEN_FLESH,
                 FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE,
                 FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE,
                 FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR,
+                FrightsDelightBlocksImpl.PUNCHBOWL_COBWEB,
                 FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY,
                 FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY);
 

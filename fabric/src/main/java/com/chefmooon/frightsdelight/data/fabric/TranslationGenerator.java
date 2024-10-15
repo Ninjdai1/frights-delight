@@ -31,6 +31,8 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH, "Wither Berry Bush");
         translationBuilder.add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH, "Soul Berry Bush");
 
+        translationBuilder.add(FrightsDelightItemsImpl.BONE_SHARD, "Bone Shard");
+
         translationBuilder.add(FrightsDelightItemsImpl.WITHER_BERRY, "Wither Berries");
         translationBuilder.add(FrightsDelightItemsImpl.SOUL_BERRY, "Soul Berries");
 
@@ -45,29 +47,51 @@ public class TranslationGenerator extends FabricLanguageProvider {
 
         translationBuilder.add(FrightsDelightItemsImpl.APPLE_SLIME, "Slime-Apple");
         translationBuilder.add(FrightsDelightItemsImpl.UNDEAD_KEBAB, "Undead Kebab");
-        translationBuilder.add(FrightsDelightItemsImpl.WEB_ON_STICK, "Cobweb on a Stick");
+
+        translationBuilder.add(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH, "Rotten Flesh Kebab");
+        translationBuilder.add(FrightsDelightItemsImpl.BONE_KEBAB_SPIDER_EYE, "Spider Eye Kebab");
+        translationBuilder.add(FrightsDelightItemsImpl.BONE_KEBAB_SLIMEAPPLE, "Slime-Apple Kebab");
+        translationBuilder.add(FrightsDelightItemsImpl.BONE_KEBAB_SLIME, "Slimeball Kebab");
+        translationBuilder.add(FrightsDelightItemsImpl.WEB_ON_STICK, "Cobweb Kebab");
+        translationBuilder.add(FrightsDelightItemsImpl.BONE_KEBAB_GHAST_TEAR, "Ghast Tear Kebab");
+        translationBuilder.add(FrightsDelightItemsImpl.BONE_KEBAB_SOUL_BERRY, "Soul Berry Kebab");
+        translationBuilder.add(FrightsDelightItemsImpl.BONE_KEBAB_WITHER_BERRY, "Wither Berry Kebab");
 
         translationBuilder.add(FrightsDelightItemsImpl.MONSTER_MASH, "Monster Mash");
         translationBuilder.add(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS, "Slimeball Spaghetti");
+
         translationBuilder.add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH, "Rotten Flesh Soup");
         translationBuilder.add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE, "Spider Eye Soup");
-        translationBuilder.add(FrightsDelightItemsImpl.SOUP_SLIME, "Slimeball Soup");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE, "Slimeball Soup");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUP_COBWEB, "Cobweb Soup");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR, "Ghast Tear Soup");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY, "Soul Berry Soup");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY, "Wither Berry Soup");
 
-        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY, "Soul Berry Cookie");
         translationBuilder.add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH, "Rotten Flesh Cookie");
         translationBuilder.add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE, "Spider Eye Cookie");
+        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE, "Slime-Apple Cookie");
+        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_SLIME, "Slimeball Cookie");
+        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_COBWEB, "Cobweb Cookie");
+        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_GHAST_TEAR, "Ghast Tear Cookie");
+        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY, "Soul Berry Cookie");
+        translationBuilder.add(FrightsDelightItemsImpl.COOKIE_WITHER_BERRY, "Wither Berry Cookie");
 
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH, "Rotten Flesh Punch");
         translationBuilder.add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE, "Slime-Apple Cider");
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE, "Spider-Eye Punch");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE, "Spider Eye Punch");
         translationBuilder.add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR, "Ghast Tear Punch");
         translationBuilder.add(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY, "Soul Berry Punch");
         translationBuilder.add(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY, "Wither Berry Punch");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCH_COBWEB, "Cobweb Punch");
 
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_ROTTEN_FLESH, "Rotten Flesh Punch Bowl");
         translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_SLIMEAPPLE, "Slime-Apple Cider Bowl");
-        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE, "Spider-Eye Punch Bowl");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE, "Spider Eye Punch Bowl");
         translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_GHASTTEAR, "Ghast Tear Punch Bowl");
         translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY, "Soul Berry Punch Bowl");
         translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY, "Wither Berry Punch Bowl");
+        translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB, "Cobweb Punch Bowl");
 
         translationBuilder.add(EFFECT + ".chills", "Chills");
         translationBuilder.add(EFFECT + ".cobwebbed", "Cobwebbed");
@@ -98,7 +122,14 @@ public class TranslationGenerator extends FabricLanguageProvider {
 
         translationBuilder.add(SUBTITLE + ".block_drinkable_feast.add", "Drink Added");
         translationBuilder.add(SUBTITLE + ".block_drinkable_feast.remove", "Drink Removed");
-        translationBuilder.add(SUBTITLE + ".block_drinkable_feast.bubble", "Slimy Bubble");
+
+        translationBuilder.add(SUBTITLE + ".block_drinkable_feast_rotten_flesh.bubble", "Fleshy Bubble");
+        translationBuilder.add(SUBTITLE + ".block_drinkable_feast_spider_eye.bubble", "Creepy Bubble");
+        translationBuilder.add(SUBTITLE + ".block_drinkable_feast_slimeapple.bubble", "Slimy Bubble");
+        translationBuilder.add(SUBTITLE + ".block_drinkable_feast_cobweb.bubble", "Sticky Bubble");
+        translationBuilder.add(SUBTITLE + ".block_drinkable_feast_ghast_tear.bubble", "Ghastly Bubble");
+        translationBuilder.add(SUBTITLE + ".block_drinkable_feast_soul_berry.bubble", "Shimmering Bubble");
+        translationBuilder.add(SUBTITLE + ".block_drinkable_feast_wither_berry.bubble", "Withered Bubble");
 
         translationBuilder.add(ADVANCEMENT + ".root", FORMATTED_MOD_ID);
         translationBuilder.add(ADVANCEMENT + ".root.desc", "Welcome to a world of unusual delights. Consume with caution.");
@@ -138,6 +169,9 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(CONFIG + "chillsOverlay", "Enable/Disable Chills Effect Overlay");
         translationBuilder.add(CONFIG + "foodEffectTooltip", "Should meal and drink tooltips display which effects they provide?");
         translationBuilder.add(CONFIG + "foodEffectChanceTooltip", "Should meal and drink tooltips display the chance the effect will be applied?");
+        translationBuilder.add(CONFIG + "drinkableFeastParticles", "Should Punch Bowl blocks emit bubble particles?");
+        translationBuilder.add(CONFIG + "punchConsumeSound", "Should Punch have a chance to play a sound when consumed?");
+        translationBuilder.add(CONFIG + "punchConsumeChance", "The chance a sound will be played while consuming a drink? (4 = 25%)");
 
         translationBuilder.add(REI + "info.soul_berry", "Found spawning naturally in the Nether or in Bastion chests. Growth requirement: Soul Essence source");
         translationBuilder.add(REI + "info.wither_berry", "Can be transformed from a Soul Berry Bush. Chance to transform on growth when: Soul Berry Bush at Max Growth, Wither Essence source very close, low light level.");

@@ -23,6 +23,10 @@ public class ConfigurationImpl extends MidnightConfig{
     @Entry(category = "client") public static boolean foodEffectTooltip = true;
     @Entry(category = "client") public static boolean foodEffectChanceTooltip = true;
 
+    @Entry(category = "client") public static boolean drinkableFeastParticles = true;
+    @Entry(category = "client") public static boolean punchConsumeSound = true;
+    @Entry(category = "client", isSlider = true,min=0,max=10) public static int punchConsumeChance = 4;
+
     public static boolean isEnableFrDCrates() {
         return enableFrDCrates;
     }
@@ -72,12 +76,26 @@ public class ConfigurationImpl extends MidnightConfig{
         return chillsOverlay;
     }
 
+
     public static boolean foodEffectTooltip() {
         return foodEffectTooltip;
     }
 
     public static boolean foodEffectChanceTooltip() {
         return foodEffectChanceTooltip;
+    }
+
+
+    public static boolean drinkableFeastParticles() {
+        return drinkableFeastParticles;
+    }
+
+    public static boolean punchConsumeSound() {
+        return punchConsumeSound;
+    }
+
+    public static int punchConsumeChance() {
+        return punchConsumeChance;
     }
 
     public static void init() {

@@ -1,10 +1,12 @@
 package com.chefmooon.frightsdelight.common.block;
 
+import com.chefmooon.frightsdelight.common.Configuration;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -158,16 +160,17 @@ public class DrinkableFeastBlock extends Block {
         return InteractionResult.FAIL;
     }
 
-    public void animate(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        if (particleData != null && state.getValue(getServingsProperty()) > 0) {
+    public void animate(BlockState state, Level level, BlockPos pos, SoundEvent soundEvent, RandomSource random) {
+        if (Configuration.drinkableFeastParticles() && particleData != null && state.getValue(getServingsProperty()) > 0) {
             double d = (double)pos.getX() + 0.5D;
-            double e = (double)pos.getY() + 0.03D + (double) state.getValue(getServingsProperty()) / 6;
+//            double e = (double)pos.getY() + 0.03D + (double) state.getValue(getServingsProperty()) / 6;
+            double e = (double)pos.getY() + 0.03D + (double) state.getValue(getServingsProperty()) / 8;
             double f = (double)pos.getZ() + 0.5D;
 
             for(int i = 0; i < 1; ++i) {
                 if (random.nextBoolean()) {
                     level.addParticle(particleData, d + (random.nextDouble() - 0.5) / 2.0, e + ((1.0 - random.nextDouble()) / 20.0), f + (random.nextDouble() - 0.5) / 2.0, 0.0, 0.0, 0.0);
-                    if (level.random.nextInt(10) == 0) level.playLocalSound(pos, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_BUBBLE.get(), SoundSource.BLOCKS, 0.2F, 0.8F, false);
+                    if (level.random.nextInt(10) == 0) level.playLocalSound(pos, soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F, false);
                 }
             }
         }

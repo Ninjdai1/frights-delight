@@ -59,7 +59,7 @@
             {
               "condition": "minecraft:match_tool",
               "predicate": {
-                "tag": "c:tools/knives"
+                "tag": "forge:tools/knives"
               }
             }
           ]
@@ -96,7 +96,7 @@
             {
               "condition": "minecraft:match_tool",
               "predicate": {
-                "tag": "c:tools/knives"
+                "tag": "forge:tools/knives"
               }
             }
           ]
@@ -133,7 +133,7 @@
             {
               "condition": "minecraft:match_tool",
               "predicate": {
-                "tag": "c:tools/knives"
+                "tag": "forge:tools/knives"
               }
             }
           ]

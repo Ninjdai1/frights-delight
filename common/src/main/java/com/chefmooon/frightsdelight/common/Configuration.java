@@ -75,6 +75,21 @@ public class Configuration {
     }
 
     @ExpectPlatform
+    public static boolean drinkableFeastParticles() {
+        return false;
+    }
+
+    @ExpectPlatform
+    public static boolean punchConsumeSound() {
+        return false;
+    }
+
+    @ExpectPlatform
+    public static int punchConsumeChance() {
+        return 4;
+    }
+
+    @ExpectPlatform
     public static void init() {
     }
 }

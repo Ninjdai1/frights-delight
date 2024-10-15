@@ -38,20 +38,44 @@ public class FoodValues {
     public static final FoodProperties APPLE_SLIME = foodProperty(5, 0.4f,
             List.of(new MobEffectInfo(SLIMED, SHORT_DURATION, .75f)));
 
+    // *** KEBABS *** //
+
     public static final FoodProperties UNDEAD_KEBAB = foodProperty(7, 0.6f,true, false, false,
             List.of(new MobEffectInfo(INFECTED, SHORT_DURATION, .65f),
+                    new MobEffectInfo(CHILLS, SHORT_DURATION, .65f),
                     new MobEffectInfo(HYSTERIA, SHORT_DURATION, .65f)));
 
+    public static final FoodProperties BONE_KEBAB_ROTTEN_FLESH = foodProperty(6, 0.5f,
+            List.of(new MobEffectInfo(INFECTED, SHORT_DURATION, .65f)));
+    public static final FoodProperties BONE_KEBAB_SPIDER_EYE = foodProperty(7, 0.6f,
+            List.of(new MobEffectInfo(HYSTERIA, SHORT_DURATION, .65f)));
+    public static final FoodProperties BONE_KEBAB_SLIMEAPPLE = foodProperty(8, 0.6f,
+            List.of(new MobEffectInfo(SLIMED, SHORT_DURATION, .65f)));
+    public static final FoodProperties BONE_KEBAB_SLIME = foodProperty(7, 0.6f,
+            List.of(new MobEffectInfo(SLIMED, SHORT_DURATION, .65f)));
     public static final FoodProperties WEB_ON_STICK = foodProperty(6, 0.5f,
             List.of(new MobEffectInfo(COBWEBBED, SHORT_DURATION, .65f)));
+    public static final FoodProperties BONE_KEBAB_GHAST_TEAR = foodProperty(7, 0.6f,
+            List.of(new MobEffectInfo(CHILLS, SHORT_DURATION, .65f)));
+
+    public static final FoodProperties BONE_KEBAB_SOUL_BERRY = foodProperty(6, 0.5f,
+            List.of(new MobEffectInfo(FORTIFIED_MIND, SHORT_DURATION, 1.f)));
+    public static final FoodProperties BONE_KEBAB_WITHER_BERRY = foodProperty(6, 0.5f,
+            List.of(new MobEffectInfo(UNDEAD_HUNGER, SHORT_DURATION, 1.f)));
+
+    // *** PLATES N' STUFF *** //
 
     public static final FoodProperties MONSTER_MASH = foodProperty(10, 0.6f, true, false, false,
-            List.of(new MobEffectInfo(INFECTED, MEDIUM_DURATION, .5f),
+            List.of(new MobEffectInfo(CHILLS, MEDIUM_DURATION, .5f),
+                    new MobEffectInfo(INFECTED, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(HYSTERIA, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(NOURISHMENT, LONG_DURATION, 1.f)));
     public static final FoodProperties PASTA_WITH_SLIMEBALLS = foodProperty(10, 0.6f,
             List.of(new MobEffectInfo(SLIMED, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(NOURISHMENT, LONG_DURATION, 1.f)));
+
+    // *** SOUP *** //
+
     public static final FoodProperties SOUP_ROTTEN_FLESH = foodProperty(8, 0.7f, true, false, false,
             List.of(new MobEffectInfo(INFECTED, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
@@ -61,18 +85,51 @@ public class FoodValues {
     public static final FoodProperties SOUP_SLIME = foodProperty(8, 0.7f,
             List.of(new MobEffectInfo(SLIMED, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+    public static final FoodProperties SOUP_COBWEB = foodProperty(8, 0.7f,
+            List.of(new MobEffectInfo(COBWEBBED, MEDIUM_DURATION, .5f),
+                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+    public static final FoodProperties SOUP_GHAST_TEAR = foodProperty(8, 0.7f,
+            List.of(new MobEffectInfo(CHILLS, MEDIUM_DURATION, .5f),
+                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
 
-    public static final FoodProperties COOKIE_SOUL_BERRY = foodProperty(2, 0.1f, false, true, false,
-            List.of(new MobEffectInfo(FORTIFIED_MIND, SHORT_DURATION, 1.f)));
+    public static final FoodProperties SOUP_SOUL_BERRY = foodProperty(8, 0.7f,
+            List.of(new MobEffectInfo(FORTIFIED_MIND, MEDIUM_DURATION, 1.f),
+                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+    public static final FoodProperties SOUP_WITHER_BERRY = foodProperty(8, 0.7f,
+            List.of(new MobEffectInfo(UNDEAD_HUNGER, MEDIUM_DURATION, 1.f),
+                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+
+    // *** COOKIES *** //
+
     public static final FoodProperties COOKIE_ROTTEN_FLESH = foodProperty(2, 0.1f, true, true, false,
             List.of(new MobEffectInfo(INFECTED, BRIEF_DURATION, .75f)));
     public static final FoodProperties COOKIE_SPIDER_EYE = foodProperty(2, 0.1f,  true, true, false,
             List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .75f)));
+    public static final FoodProperties COOKIE_SLIMEAPPLE = foodProperty(2, 0.2f,  false, true, false,
+            List.of(new MobEffectInfo(SLIMED, BRIEF_DURATION, .75f)));
+    public static final FoodProperties COOKIE_SLIME = foodProperty(2, 0.1f,  false, true, false,
+            List.of(new MobEffectInfo(SLIMED, BRIEF_DURATION, .75f)));
+    public static final FoodProperties COOKIE_COBWEB = foodProperty(2, 0.1f,  false, true, false,
+            List.of(new MobEffectInfo(COBWEBBED, BRIEF_DURATION, .75f)));
+    public static final FoodProperties COOKIE_GHAST_TEAR = foodProperty(2, 0.1f,  false, true, false,
+            List.of(new MobEffectInfo(CHILLS, BRIEF_DURATION, .75f)));
+
+    public static final FoodProperties COOKIE_SOUL_BERRY = foodProperty(2, 0.1f, false, true, false,
+            List.of(new MobEffectInfo(FORTIFIED_MIND, SHORT_DURATION, 1.f)));
+    public static final FoodProperties COOKIE_WITHER_BERRY = foodProperty(2, 0.1f, false, true, false,
+            List.of(new MobEffectInfo(UNDEAD_HUNGER, SHORT_DURATION, 1.f)));
+
+    // *** PUNCH *** //
+
+    public static final FoodProperties PUNCH_ROTTEN_FLESH = foodProperty(4, 0.4f,true, false, false,
+            List.of(new MobEffectInfo(INFECTED, BRIEF_DURATION, .5f)));
+    public static final FoodProperties PUNCH_SPIDER_EYE = foodProperty(4, 0.4f,
+            List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .5f)));
     public static final FoodProperties PUNCH_SLIME_APPLE = foodProperty(4, 0.4f,
             List.of(new MobEffectInfo(MobEffects.GLOWING, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(SLIMED, BRIEF_DURATION, .75f)));
-    public static final FoodProperties PUNCH_SPIDER_EYE = foodProperty(4, 0.4f,
-            List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .5f)));
+    public static final FoodProperties PUNCH_COBWEB = foodProperty(4, 0.4f,
+            List.of(new MobEffectInfo(COBWEBBED, BRIEF_DURATION, .5f)));
     public static final FoodProperties PUNCH_GHAST_TEAR = foodProperty(4, 0.4f,
             List.of(new MobEffectInfo(CHILLS, BRIEF_DURATION, .5f)));
 

@@ -1,0 +1,6 @@
+{
+  "parent": "frightsdelight:item/flat_handheld_item_flipped",
+  "textures": {
+    "layer0": "frightsdelight:item/bone_kebab_wither_berry"
+  }
+}

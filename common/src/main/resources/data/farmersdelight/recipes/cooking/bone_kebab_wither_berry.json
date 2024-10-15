@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "recipie_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "frightsdelight:wither_berry"
+    },
+    {
+      "item": "frightsdelight:wither_berry"
+    }
+  ],
+  "result": {
+    "item": "frightsdelight:bone_kebab_wither_berry",
+    "count": 1
+  },
+  "container": {
+    "item": "frightsdelight:bone_shard"
+  }
+}

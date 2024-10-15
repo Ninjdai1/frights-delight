@@ -1,7 +1,7 @@
-// 1.20.1	2024-07-24T15:48:32.075286	Fright's Delight/Tags for minecraft:item
-b5a064eac4d61c8cd04e1a2a579ee4b210172799 data\dehydration\tags\items\hydrating_drinks.json
-44e97bc38beee829520f0a65301ada4eb09fcae9 data\supplementaries\tags\items\cookies.json
-2b67b448046b94a01c8a0c1faeed6d9ece061b2b data\create\tags\items\upright_on_belt.json
-413615f5f4d0ad2f3fe8db972e374fa1716458ca data\origins\tags\items\meat.json
-43437a2148b8de63897be9401ff052ad22f98111 data\dehydration\tags\items\hydrating_stew.json
+// 1.20.1	2024-10-14T16:40:13.5733748	Fright's Delight/Tags for minecraft:item
+c1f0ceddd2576b9abe0204551353bd2d220d013f data\dehydration\tags\items\hydrating_drinks.json
+f6d90c8e58a23fb6ca1d5d1829a99378ebe01d97 data\supplementaries\tags\items\cookies.json
+1ef880cc8eee00bbf54420a7e28dd2686f3ffbc5 data\create\tags\items\upright_on_belt.json
+6ad8be1e40236e27855403a72da8fecb947ace7b data\origins\tags\items\meat.json
 aa7b1c963063b6451bb04ec08afae6b4f5374022 data\createaddition\tags\items\plant_foods.json
+5b0186beabb7e3d2d31f132fc9ed49089c01d364 data\dehydration\tags\items\hydrating_stew.json

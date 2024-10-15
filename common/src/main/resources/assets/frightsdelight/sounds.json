@@ -17,8 +17,62 @@
       }
     ]
   },
-  "block_drinkable_feast_bubble": {
-    "subtitle": "frightsdelight.subtitles.block_drinkable_feast.bubble",
+  "block_drinkable_feast_rotten_flesh_bubble": {
+    "subtitle": "frightsdelight.subtitles.block_drinkable_feast_rotten_flesh.bubble",
+    "sounds": [
+      {
+        "name": "block.bubble_column.bubble_pop",
+        "type": "event"
+      }
+    ]
+  },
+  "block_drinkable_feast_spider_eye_bubble": {
+    "subtitle": "frightsdelight.subtitles.block_drinkable_feast_spider_eye.bubble",
+    "sounds": [
+      {
+        "name": "block.bubble_column.bubble_pop",
+        "type": "event"
+      }
+    ]
+  },
+  "block_drinkable_feast_slimeapple_bubble": {
+    "subtitle": "frightsdelight.subtitles.block_drinkable_feast_slimeapple.bubble",
+    "sounds": [
+      {
+        "name": "block.bubble_column.bubble_pop",
+        "type": "event"
+      }
+    ]
+  },
+  "block_drinkable_feast_cobweb_bubble": {
+    "subtitle": "frightsdelight.subtitles.block_drinkable_feast_cobweb.bubble",
+    "sounds": [
+      {
+        "name": "block.bubble_column.bubble_pop",
+        "type": "event"
+      }
+    ]
+  },
+  "block_drinkable_feast_ghast_tear_bubble": {
+    "subtitle": "frightsdelight.subtitles.block_drinkable_feast_ghast_tear.bubble",
+    "sounds": [
+      {
+        "name": "block.bubble_column.bubble_pop",
+        "type": "event"
+      }
+    ]
+  },
+  "block_drinkable_feast_soul_berry_bubble": {
+    "subtitle": "frightsdelight.subtitles.block_drinkable_feast_soul_berry.bubble",
+    "sounds": [
+      {
+        "name": "block.bubble_column.bubble_pop",
+        "type": "event"
+      }
+    ]
+  },
+  "block_drinkable_feast_wither_berry_bubble": {
+    "subtitle": "frightsdelight.subtitles.block_drinkable_feast_wither_berry.bubble",
     "sounds": [
       {
         "name": "block.bubble_column.bubble_pop",

@@ -8,7 +8,7 @@
       "item": "minecraft:rotten_flesh"
     },
     {
-      "item": "minecraft:phantom_membrane"
+      "item": "minecraft:ghast_tear"
     },
     {
       "item": "minecraft:spider_eye"
@@ -19,6 +19,6 @@
     "count": 1
   },
   "container": {
-    "item": "minecraft:stick"
+    "item": "frightsdelight:bone_shard"
   }
 }

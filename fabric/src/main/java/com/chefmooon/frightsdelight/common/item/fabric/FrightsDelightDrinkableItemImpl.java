@@ -1,5 +1,7 @@
 package com.chefmooon.frightsdelight.common.item.fabric;
 
+import com.chefmooon.frightsdelight.FrightsDelight;
+import com.chefmooon.frightsdelight.common.Configuration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -16,29 +18,25 @@ import java.util.Random;
 @Deprecated(forRemoval = true)
 public class FrightsDelightDrinkableItemImpl extends FrightsDelightConsumableItemImpl {
     private final SoundEvent consumeSound;
-    private final int consumeSoundChance;
+    private final int defaultConsumeSoundChance = 4; // 25%
     public FrightsDelightDrinkableItemImpl(Properties properties) {
         super(properties);
         this.consumeSound = null;
-        this.consumeSoundChance = 0;
     }
 
     public FrightsDelightDrinkableItemImpl(Properties properties, boolean hasFoodEffectTooltip) {
         super(properties, hasFoodEffectTooltip);
         this.consumeSound = null;
-        this.consumeSoundChance = 0;
     }
 
     public FrightsDelightDrinkableItemImpl(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
         super(properties, hasFoodEffectTooltip, hasCustomTooltip);
         this.consumeSound = null;
-        this.consumeSoundChance = 0;
     }
 
-    public FrightsDelightDrinkableItemImpl(Properties settings, SoundEvent consumeSound, int consumeSoundChance, boolean hasFoodEffectTooltip) {
+    public FrightsDelightDrinkableItemImpl(Properties settings, SoundEvent consumeSound, boolean hasFoodEffectTooltip) {
         super(settings, hasFoodEffectTooltip);
         this.consumeSound = consumeSound;
-        this.consumeSoundChance = consumeSoundChance;
     }
 
     @Override
@@ -57,8 +55,9 @@ public class FrightsDelightDrinkableItemImpl extends FrightsDelightConsumableIte
         if (heldStack.isEdible()) {
             if (player.canEat(heldStack.getItem().getFoodProperties().canAlwaysEat())) {
                 player.startUsingItem(hand);
-                if (consumeSound != null) {
-                    if (new Random().nextInt(consumeSoundChance) == 0) { // 4 = 25% chance of sound on consume
+                if (Configuration.punchConsumeSound() && consumeSound != null) {
+                    // TODO : after testing decide if null check is needed, if not remove defaultConsumeSoundChance
+                    if (new Random().nextInt(Configuration.punchConsumeChance()) == 0) { // 4 = 25% chance of sound on consume
                         BlockPos pos = new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ());
                         level.playSound((Player)null, pos, consumeSound, SoundSource.HOSTILE, 0.5F, 0.8F + level.random.nextFloat() * 0.4F);
                     }

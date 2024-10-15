@@ -38,11 +38,13 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
 
     private void registerCommonBlockTags() {
         getOrCreateTagBuilder(CommonTags.C_MINEABLE_KNIFE)
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_ROTTEN_FLESH)
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE)
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE)
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR)
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY)
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY);
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY)
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_COBWEB);
     }
 
     private void registerMinecraftBlockTags() {

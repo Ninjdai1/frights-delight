@@ -6,7 +6,8 @@
         "items": [
           {
             "items": [
-              "minecraft:cobweb"
+              "minecraft:cobweb",
+              "frightsdelight:bone_shard"
             ]
           }
         ]
