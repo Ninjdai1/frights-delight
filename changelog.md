@@ -20,10 +20,17 @@ NeoForge, and Fabric
   - Food Items
     - Cookie → Wither Berry Cookie, Slimeball Cookie, Slime-Apple Cookie, Cobweb Cookie, Ghast Tear Cookie
     - Soup → Soul Berry Soup, Wither Berry Soup, Cobweb Soup, Ghast Tear Soup
-    - Punch(+Punch Bowl) → Rotten Flesh Punch, Cobweb Punch
-    - Bone Kebab → Rotten Flesh Kebab, Spider Eye Kebab, Soul Berry Kebab, Wither Berry Kebab, Slimeball Kebab, Cobweb Kebab, Ghast Tear Kebab
+    - Punch → Rotten Flesh Punch, Cobweb Punch
+    - Punch Bowl -> Rotten Flesh Punch Bowl, Cobweb Punch Bowl
+    - Bone Kebab → Rotten Flesh Kebab, Spider Eye Kebab, Soul Berry Kebab, Wither Berry Kebab, Slime-Apple Kebab, Slimeball Kebab, Ghast Tear Kebab
 - Blocks
   - Unique particles for each Punch Bowl
+- Entity
+  - Bone Shard Entity
+    - Can be thrown when right-clicked and shot out of dispensers
+- Advancements
+  - New Advancements for Bone Shard
+  - New Items added to advancements
 - Added Items to the following tags
 - supplementaries:cookies
   - Wither Berry Cookie
@@ -70,12 +77,14 @@ NeoForge, and Fabric
   - Rotten Flesh Soup, Spider Eye Soup, Slimeball Soup
   - Spider Eye Punch, Slime-Apple Cider, Ghast Tear Punch, Soul Berry Punch, Wither Berry Punch
   - Spider Eye Punch Bowl, Slime-Apple Cider Bowl, Ghast Tear Punch Bowl, Soul Berry Punch Bowl, Wither Berry Punch Bowl
+- Updated Advancement "Almost Edible"
+  - Now triggers when any plate, bowl, or drink food item is picked up
 
 ### Fixed
 
 - Wandering Trader trade xp and maxTrades corrected
 - Chance of sound while consuming Punch now works properly
-- Missing Advancement
+- Missing Recipe Advancement
   - Undead Kebab
 
 **Forge Only**

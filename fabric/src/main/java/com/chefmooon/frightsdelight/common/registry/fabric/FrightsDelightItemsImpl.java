@@ -1,7 +1,7 @@
 package com.chefmooon.frightsdelight.common.registry.fabric;
 
 import com.chefmooon.frightsdelight.common.FoodValues;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItem;
+import com.chefmooon.frightsdelight.common.item.fabric.BoneShardItemImpl;
 import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightConsumableItemImpl;
 import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightConsumableItemNameBlockItemImpl;
 import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightDrinkableItemImpl;
@@ -41,7 +41,7 @@ public class FrightsDelightItemsImpl {
             new BlockItem(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE, basicItem()));
 
     public static final Item BONE_SHARD = registerItemWithTab(FrightsDelightItems.BONE_SHARD,
-            new Item(basicItem()));
+            new BoneShardItemImpl(basicItem()));
 
     public static final Item SOUL_BERRY = registerItemWithTab(FrightsDelightItems.SOUL_BERRY,
             new FrightsDelightConsumableItemNameBlockItemImpl(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH, foodItem(FoodValues.SOUL_BERRY), true));
@@ -54,22 +54,22 @@ public class FrightsDelightItemsImpl {
             new FrightsDelightConsumableItemImpl(boneFoodItem(FoodValues.UNDEAD_KEBAB), true));
 
     public static final Item BONE_KEBAB_ROTTEN_FLESH = registerItemWithTab(FrightsDelightItems.BONE_KEBAB_ROTTEN_FLESH,
-            new FrightsDelightConsumableItem(boneFoodItem(FoodValues.BONE_KEBAB_ROTTEN_FLESH), true));
+            new FrightsDelightConsumableItemImpl(boneFoodItem(FoodValues.BONE_KEBAB_ROTTEN_FLESH), true));
     public static final Item BONE_KEBAB_SPIDER_EYE = registerItemWithTab(FrightsDelightItems.BONE_KEBAB_SPIDER_EYE,
-            new FrightsDelightConsumableItem(boneFoodItem(FoodValues.BONE_KEBAB_SPIDER_EYE), true));
+            new FrightsDelightConsumableItemImpl(boneFoodItem(FoodValues.BONE_KEBAB_SPIDER_EYE), true));
     public static final Item BONE_KEBAB_SLIMEAPPLE = registerItemWithTab(FrightsDelightItems.BONE_KEBAB_SLIMEAPPLE,
-            new FrightsDelightConsumableItem(boneFoodItem(FoodValues.BONE_KEBAB_SLIMEAPPLE), true));
+            new FrightsDelightConsumableItemImpl(boneFoodItem(FoodValues.BONE_KEBAB_SLIMEAPPLE), true));
     public static final Item BONE_KEBAB_SLIME = registerItemWithTab(FrightsDelightItems.BONE_KEBAB_SLIME,
-            new FrightsDelightConsumableItem(boneFoodItem(FoodValues.BONE_KEBAB_SLIME), true));
+            new FrightsDelightConsumableItemImpl(boneFoodItem(FoodValues.BONE_KEBAB_SLIME), true));
     public static final Item WEB_ON_STICK = registerItemWithTab(FrightsDelightItems.WEB_ON_STICK,
             new FrightsDelightConsumableItemImpl(boneFoodItem(FoodValues.WEB_ON_STICK), true));
     public static final Item BONE_KEBAB_GHAST_TEAR = registerItemWithTab(FrightsDelightItems.BONE_KEBAB_GHAST_TEAR,
-            new FrightsDelightConsumableItem(boneFoodItem(FoodValues.BONE_KEBAB_GHAST_TEAR), true));
+            new FrightsDelightConsumableItemImpl(boneFoodItem(FoodValues.BONE_KEBAB_GHAST_TEAR), true));
 
     public static final Item BONE_KEBAB_SOUL_BERRY = registerItemWithTab(FrightsDelightItems.BONE_KEBAB_SOUL_BERRY,
-            new FrightsDelightConsumableItem(boneFoodItem(FoodValues.BONE_KEBAB_SOUL_BERRY), true));
+            new FrightsDelightConsumableItemImpl(boneFoodItem(FoodValues.BONE_KEBAB_SOUL_BERRY), true));
     public static final Item BONE_KEBAB_WITHER_BERRY = registerItemWithTab(FrightsDelightItems.BONE_KEBAB_WITHER_BERRY,
-            new FrightsDelightConsumableItem(boneFoodItem(FoodValues.BONE_KEBAB_WITHER_BERRY), true));
+            new FrightsDelightConsumableItemImpl(boneFoodItem(FoodValues.BONE_KEBAB_WITHER_BERRY), true));
 
     public static final Item MONSTER_MASH = registerItemWithTab(FrightsDelightItems.MONSTER_MASH,
             new FrightsDelightConsumableItemImpl(bowlFoodItem(FoodValues.MONSTER_MASH), true));

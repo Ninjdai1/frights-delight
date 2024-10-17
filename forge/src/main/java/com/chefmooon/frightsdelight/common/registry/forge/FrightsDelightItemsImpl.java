@@ -5,6 +5,7 @@ import com.chefmooon.frightsdelight.common.FoodValues;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItemNameBlockItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableItem;
+import com.chefmooon.frightsdelight.common.item.forge.BoneShardItemImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.google.common.collect.Sets;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -51,7 +52,7 @@ public class FrightsDelightItemsImpl {
             () -> new BlockItem(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get(), basicItem()));
 
     public static final RegistryObject<Item> BONE_SHARD = registerItemWithTab(FrightsDelightItems.BONE_SHARD,
-            () -> new Item(basicItem()));
+            () -> new BoneShardItemImpl(basicItem()));
 
     public static final RegistryObject<Item> SOUL_BERRY = registerItemWithTab(FrightsDelightItems.SOUL_BERRY,
             () -> new FrightsDelightConsumableItemNameBlockItem(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), foodItem(FoodValues.SOUL_BERRY), true));

@@ -1,0 +1,53 @@
+{
+  "parent": "frightsdelight:main/craft_bone_shard",
+  "criteria": {
+    "hit_skeleton_with_bone_shard": {
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "frightsdelight:bone_shard"
+            },
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:is_projectile"
+              }
+            ]
+          }
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:skeleton"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_hurt_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "frightsdelight.advancement.hit_skeleton_with_bone_shard.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "frightsdelight:bone_shard"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "frightsdelight.advancement.hit_skeleton_with_bone_shard"
+    }
+  },
+  "requirements": [
+    [
+      "hit_skeleton_with_bone_shard"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -139,5 +139,23 @@
         "type": "event"
       }
     ]
+  },
+  "entity.bone_shard.throw": {
+    "subtitle": "frightsdelight.subtitles.entity.bone_shard.throw",
+    "sounds": [
+      {
+        "name": "entity.snowball.throw",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.bone_shard.hit": {
+    "subtitle": "frightsdelight.subtitles.entity.bone_shard.hit",
+    "sounds": [
+      {
+        "name": "entity.skeleton.hurt",
+        "type": "event"
+      }
+    ]
   }
 }

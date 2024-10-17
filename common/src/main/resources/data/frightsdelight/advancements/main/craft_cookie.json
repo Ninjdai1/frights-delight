@@ -24,6 +24,78 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_cobweb": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_cobweb"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_ghast_tear": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_ghast_tear"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_slimeapple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_slimeapple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_slime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_slime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_soul_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_soul_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_wither_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_wither_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -44,7 +116,13 @@
   "requirements": [
     [
       "has_cookie_flesh",
-      "has_cookie_spidereye"
+      "has_cookie_spidereye",
+      "has_cookie_cobweb",
+      "has_cookie_ghast_tear",
+      "has_cookie_slimeapple",
+      "has_cookie_slime",
+      "has_cookie_soul_berry",
+      "has_cookie_wither_berry"
     ]
   ],
   "sends_telemetry_event": true

@@ -3,11 +3,14 @@ package com.chefmooon.frightsdelight.client.event.forge;
 import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.client.particle.SlimeBubbleParticle;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightParticleTypes;
+import com.chefmooon.frightsdelight.common.registry.forge.FrightsDelightEntityTypesImpl;
 import eu.midnightdust.lib.config.MidnightConfig;
 import eu.midnightdust.lib.util.MidnightColorUtil;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.ConfigScreenHandler;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
@@ -44,5 +47,10 @@ public class ClientSetupEventsImpl {
         Minecraft.getInstance().particleEngine.register(FrightsDelightParticleTypes.WITHER_BERRY_BUBBLE.get(), SlimeBubbleParticle.Factory::new);
         Minecraft.getInstance().particleEngine.register(FrightsDelightParticleTypes.COBWEB_BUBBLE.get(), SlimeBubbleParticle.Factory::new);
         Minecraft.getInstance().particleEngine.register(FrightsDelightParticleTypes.GHAST_TEAR_BUBBLE.get(), SlimeBubbleParticle.Factory::new);
+    }
+
+    @SubscribeEvent
+    public static void onEntityRendererRegister(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(FrightsDelightEntityTypesImpl.BONE_SHARD.get(), ThrownItemRenderer::new);
     }
 }

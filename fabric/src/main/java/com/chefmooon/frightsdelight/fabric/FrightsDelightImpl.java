@@ -21,6 +21,7 @@ public class FrightsDelightImpl implements ModInitializer {
         FrightsDelightEffectsImpl.register();
         FrightsDelightParticleTypesImpl.register();
         FrightsDelightItemsImpl.register();
+        FrightsDelightEntityTypesImpl.register();
         FrightsDelightBiomeFeaturesImpl.register();
         FrightsDelightCreativeTabs.register();
         FrightsDelightPlacementModifiersImpl.register();

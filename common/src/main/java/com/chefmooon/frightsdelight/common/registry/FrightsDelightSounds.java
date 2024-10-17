@@ -24,6 +24,9 @@ public class FrightsDelightSounds {
     public static final Supplier<SoundEvent> BLOCK_DRINKABLE_FEAST_SOUL_BERRY_BUBBLE = registerSound("block_drinkable_feast_soul_berry_bubble");
     public static final Supplier<SoundEvent> BLOCK_DRINKABLE_FEAST_WITHER_BERRY_BUBBLE = registerSound("block_drinkable_feast_wither_berry_bubble");
 
+    public static final Supplier<SoundEvent> ENTITY_BONE_SHARD_THROW = registerSound("entity.bone_shard.throw");
+    public static final Supplier<SoundEvent> ENTITY_BONE_SHARD_HIT = registerSound("entity.bone_shard.hit");
+
     private static Supplier<SoundEvent> registerSound(String string) {
         return registerSound(TextUtils.res(string), () -> SoundEvent.createVariableRangeEvent(TextUtils.res(string)));
     }

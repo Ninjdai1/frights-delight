@@ -20,6 +20,7 @@ public class FrightsDelightClientImpl implements ClientModInitializer {
         FrightsDelightClient.init();
 
         ClientSetupEventsImpl.registerParticles();
+        ClientSetupEventsImpl.onEntityRendererRegister();
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
                 FrightsDelightBlocksImpl.SOUL_BERRY_BUSH,

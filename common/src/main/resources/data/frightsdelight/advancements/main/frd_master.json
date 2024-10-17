@@ -37,6 +37,90 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_bone_kebab_rotten_flesh": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:bone_kebab_rotten_flesh"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bone_kebab_spider_eye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:bone_kebab_spider_eye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bone_kebab_slimeapple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:bone_kebab_slimeapple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bone_kebab_slime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:bone_kebab_slime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bone_kebab_ghast_tear": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:bone_kebab_ghast_tear"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bone_kebab_soul_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:bone_kebab_soul_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bone_kebab_wither_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:bone_kebab_wither_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_monster_mash": {
       "conditions": {
         "items": [
@@ -97,12 +181,48 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_cookie_soul_berry": {
+    "has_soup_cobweb": {
       "conditions": {
         "items": [
           {
             "items": [
-              "frightsdelight:cookie_soul_berry"
+              "frightsdelight:soup_cobweb"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soup_ghast_tear": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_ghast_tear"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soup_soul_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_soul_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soup_wither_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_wither_berry"
             ]
           }
         ]
@@ -127,6 +247,90 @@
           {
             "items": [
               "frightsdelight:cookie_spidereye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_cobweb": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_cobweb"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_ghast_tear": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_ghast_tear"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_slimeapple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_slimeapple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_slime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_slime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_soul_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_soul_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_wither_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cookie_wither_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_rotten_flesh": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punch_rotten_flesh"
             ]
           }
         ]
@@ -163,6 +367,18 @@
           {
             "items": [
               "frightsdelight:punch_ghasttear"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_cobweb": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punch_cobweb"
             ]
           }
         ]
@@ -220,6 +436,27 @@
       "has_web_on_stick"
     ],
     [
+      "has_bone_kebab_rotten_flesh"
+    ],
+    [
+      "has_bone_kebab_spider_eye"
+    ],
+    [
+      "has_bone_kebab_slimeapple"
+    ],
+    [
+      "has_bone_kebab_slime"
+    ],
+    [
+      "has_bone_kebab_ghast_tear"
+    ],
+    [
+      "has_bone_kebab_soul_berry"
+    ],
+    [
+      "has_bone_kebab_wither_berry"
+    ],
+    [
       "has_monster_mash"
     ],
     [
@@ -235,13 +472,43 @@
       "has_soup_slime"
     ],
     [
-      "has_cookie_soul_berry"
+      "has_soup_cobweb"
+    ],
+    [
+      "has_soup_ghast_tear"
+    ],
+    [
+      "has_soup_soul_berry"
+    ],
+    [
+      "has_soup_wither_berry"
     ],
     [
       "has_cookie_flesh"
     ],
     [
       "has_cookie_spidereye"
+    ],
+    [
+      "has_cookie_cobweb"
+    ],
+    [
+      "has_cookie_ghast_tear"
+    ],
+    [
+      "has_cookie_slimeapple"
+    ],
+    [
+      "has_cookie_slime"
+    ],
+    [
+      "has_cookie_soul_berry"
+    ],
+    [
+      "has_cookie_wither_berry"
+    ],
+    [
+      "has_punch_rotten_flesh"
     ],
     [
       "has_punch_slimeapple"
@@ -251,6 +518,9 @@
     ],
     [
       "has_punch_ghasttear"
+    ],
+    [
+      "has_punch_cobweb"
     ],
     [
       "has_punch_soul_berry"

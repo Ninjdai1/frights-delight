@@ -1,24 +1,48 @@
 {
   "parent": "frightsdelight:main/craft_cookie",
   "criteria": {
-    "has_bowl": {
+    "has_plate_item": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:bowl"
+              "frightsdelight:monster_mash",
+              "frightsdelight:pasta_with_slimeballs"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },"has_bowl_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_rotten_flesh",
+              "frightsdelight:soup_spider_eye",
+              "frightsdelight:soup_slime",
+              "frightsdelight:soup_cobweb",
+              "frightsdelight:soup_ghast_tear",
+              "frightsdelight:soup_soul_berry",
+              "frightsdelight:soup_wither_berry"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_bottle": {
+    "has_bottle_item": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:glass_bottle"
+              "frightsdelight:punch_rotten_flesh",
+              "frightsdelight:punch_slimeapple",
+              "frightsdelight:punch_spidereye",
+              "frightsdelight:punch_ghasttear",
+              "frightsdelight:punch_soul_berry",
+              "frightsdelight:punch_wither_berry",
+              "frightsdelight:punch_cobweb"
             ]
           }
         ]
@@ -43,8 +67,9 @@
   },
   "requirements": [
     [
-      "has_bowl",
-      "has_bottle"
+      "has_plate_item",
+      "has_bowl_item",
+      "has_bottle_item"
     ]
   ],
   "sends_telemetry_event": true

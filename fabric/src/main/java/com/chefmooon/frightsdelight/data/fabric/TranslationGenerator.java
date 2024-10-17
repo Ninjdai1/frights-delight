@@ -2,6 +2,7 @@ package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
+import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightEntityTypesImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -27,6 +28,8 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add("itemGroup." + MOD_ID, FORMATTED_MOD_ID);
 
         translationBuilder.add(MOD_ID + ".container.punch_bowl", "Glass Bottle Required.");
+
+        translationBuilder.add(FrightsDelightEntityTypesImpl.BONE_SHARD.get(), "Bone Shard");
 
         translationBuilder.add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH, "Wither Berry Bush");
         translationBuilder.add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH, "Soul Berry Bush");
@@ -131,6 +134,9 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(SUBTITLE + ".block_drinkable_feast_soul_berry.bubble", "Shimmering Bubble");
         translationBuilder.add(SUBTITLE + ".block_drinkable_feast_wither_berry.bubble", "Withered Bubble");
 
+        translationBuilder.add(SUBTITLE + ".entity.bone_shard.throw", "Bone Shard flies");
+        translationBuilder.add(SUBTITLE + ".entity.bone_shard.hit", "Bone Shard shatters");
+
         translationBuilder.add(ADVANCEMENT + ".root", FORMATTED_MOD_ID);
         translationBuilder.add(ADVANCEMENT + ".root.desc", "Welcome to a world of unusual delights. Consume with caution.");
         translationBuilder.add(ADVANCEMENT + ".get_soul_berry", "Soul Berry Bush");
@@ -145,6 +151,10 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ADVANCEMENT + ".craft_best.desc", "Food in plates, bowls, and drinks seem to be the \"safest\" to consume");
         translationBuilder.add(ADVANCEMENT + ".craft_punch_bowl", "Something's in my Punch");
         translationBuilder.add(ADVANCEMENT + ".craft_punch_bowl.desc", "Drinks can be combined and placed. Grab a bottle and have a sip!");
+        translationBuilder.add(ADVANCEMENT + ".craft_bone_shard", "Bone Kebab");
+        translationBuilder.add(ADVANCEMENT + ".craft_bone_shard.desc", "Cut a Bone with a Knife on a Cutting Board. Can be used to protect, attack, or to make a light snack.");
+        translationBuilder.add(ADVANCEMENT + ".hit_skeleton_with_bone_shard", "Bone Shattering");
+        translationBuilder.add(ADVANCEMENT + ".hit_skeleton_with_bone_shard.desc", "Throw a Bone Shard at a skeleton!");
         translationBuilder.add(ADVANCEMENT + ".master_chef", "Master of Fright");
         translationBuilder.add(ADVANCEMENT + ".master_chef.desc", "Conquer all food and drink items in " + FORMATTED_MOD_ID);
 
