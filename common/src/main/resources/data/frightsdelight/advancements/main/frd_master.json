@@ -181,6 +181,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_soup_slimeapple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_slimeapple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_soup_cobweb": {
       "conditions": {
         "items": [
@@ -470,6 +482,9 @@
     ],
     [
       "has_soup_slime"
+    ],
+    [
+      "has_soup_slimeapple"
     ],
     [
       "has_soup_cobweb"

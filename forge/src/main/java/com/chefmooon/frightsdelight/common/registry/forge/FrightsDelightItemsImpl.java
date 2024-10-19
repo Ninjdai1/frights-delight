@@ -15,7 +15,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -92,6 +91,8 @@ public class FrightsDelightItemsImpl {
     public static final RegistryObject<Item> SOUP_SPIDER_EYE = registerItemWithTab(FrightsDelightItems.SOUP_SPIDER_EYE,
             () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_SPIDER_EYE), true));
     public static final RegistryObject<Item> SOUP_SLIMEAPPLE = registerItemWithTab(FrightsDelightItems.SOUP_SLIMEAPPLE,
+            () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_SLIMEAPPLE), true));
+    public static final RegistryObject<Item> SOUP_SLIME = registerItemWithTab(FrightsDelightItems.SOUP_SLIME,
             () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_SLIME), true));
     public static final RegistryObject<Item> SOUP_COBWEB = registerItemWithTab(FrightsDelightItems.SOUP_COBWEB,
             () -> new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_COBWEB), true));

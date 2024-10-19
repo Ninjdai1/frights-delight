@@ -1,9 +1,8 @@
-Before updating, please **back-up** your world. This is a beta version and 
-may contain some instability. Greatly appreciate any bug reports on the 
+Before updating, please **back-up** your world. Greatly appreciate any bug reports on the 
 [Github](https://github.com/ChefMooon/frights-delight/issues), I'll be 
 actively watching the issues page to resolve any bugs as soon as possible.
 This mod is compatible with Minecraft 1.20-1.20.1 and Farmer's Delight Forge,
-NeoForge, and Fabric
+NeoForge, and Fabric 
 ([details](https://github.com/ChefMooon/frights-delight/wiki#compatible-versions)).
 
 ***
@@ -19,7 +18,7 @@ NeoForge, and Fabric
     - Bone Shard
   - Food Items
     - Cookie → Wither Berry Cookie, Slimeball Cookie, Slime-Apple Cookie, Cobweb Cookie, Ghast Tear Cookie
-    - Soup → Soul Berry Soup, Wither Berry Soup, Cobweb Soup, Ghast Tear Soup
+    - Soup → Soul Berry Soup, Wither Berry Soup, Cobweb Soup, Ghast Tear Soup, Slime-Apple Soup
     - Punch → Rotten Flesh Punch, Cobweb Punch
     - Punch Bowl -> Rotten Flesh Punch Bowl, Cobweb Punch Bowl
     - Bone Kebab → Rotten Flesh Kebab, Spider Eye Kebab, Soul Berry Kebab, Wither Berry Kebab, Slime-Apple Kebab, Slimeball Kebab, Ghast Tear Kebab
@@ -43,6 +42,7 @@ NeoForge, and Fabric
   - Cobweb Punch
 - dehydration:hydrating_stew
   - Slime-Apple Soup
+  - Slimeball Soup
   - Cobweb Soup
   - Ghast Tear Soup
   - Soul Berry Soup
@@ -77,6 +77,7 @@ NeoForge, and Fabric
   - Rotten Flesh Soup, Spider Eye Soup, Slimeball Soup
   - Spider Eye Punch, Slime-Apple Cider, Ghast Tear Punch, Soul Berry Punch, Wither Berry Punch
   - Spider Eye Punch Bowl, Slime-Apple Cider Bowl, Ghast Tear Punch Bowl, Soul Berry Punch Bowl, Wither Berry Punch Bowl
+  - Spider Eye Punch Bowl Block, Slime-Apple Cider Bowl Block, Ghast Tear Punch Bowl Block, Soul Berry Punch Bowl Block, Wither Berry Punch Bowl Block
 - Updated Advancement "Almost Edible"
   - Now triggers when any plate, bowl, or drink food item is picked up
 

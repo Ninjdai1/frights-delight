@@ -69,7 +69,8 @@ public class FrightsDelightItems {
 
     public static final ResourceLocation SOUP_ROTTEN_FLESH = item("soup_rotten_flesh");
     public static final ResourceLocation SOUP_SPIDER_EYE = item("soup_spider_eye");
-    public static final ResourceLocation SOUP_SLIMEAPPLE = item("soup_slime");
+    public static final ResourceLocation SOUP_SLIME = item("soup_slime");
+    public static final ResourceLocation SOUP_SLIMEAPPLE = item("soup_slimeapple");
     public static final ResourceLocation SOUP_COBWEB = item("soup_cobweb");
     public static final ResourceLocation SOUP_GHAST_TEAR = item("soup_ghast_tear");
     public static final ResourceLocation SOUP_SOUL_BERRY = item("soup_soul_berry");

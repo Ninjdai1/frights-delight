@@ -85,6 +85,9 @@ public class FoodValues {
     public static final FoodProperties SOUP_SLIME = foodProperty(8, 0.7f,
             List.of(new MobEffectInfo(SLIMED, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+    public static final FoodProperties SOUP_SLIMEAPPLE = foodProperty(8, 0.7f,
+            List.of(new MobEffectInfo(SLIMED, MEDIUM_DURATION, .5f),
+                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
     public static final FoodProperties SOUP_COBWEB = foodProperty(8, 0.7f,
             List.of(new MobEffectInfo(COBWEBBED, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));

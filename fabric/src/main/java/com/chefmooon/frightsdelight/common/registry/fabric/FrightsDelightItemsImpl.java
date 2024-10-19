@@ -81,6 +81,8 @@ public class FrightsDelightItemsImpl {
     public static final Item SOUP_SPIDER_EYE = registerItemWithTab(FrightsDelightItems.SOUP_SPIDER_EYE,
             new FrightsDelightConsumableItemImpl(bowlFoodItem(FoodValues.SOUP_SPIDER_EYE), true));
     public static final Item SOUP_SLIMEAPPLE = registerItemWithTab(FrightsDelightItems.SOUP_SLIMEAPPLE,
+            new FrightsDelightConsumableItemImpl(bowlFoodItem(FoodValues.SOUP_SLIMEAPPLE), true));
+    public static final Item SOUP_SLIME = registerItemWithTab(FrightsDelightItems.SOUP_SLIME,
             new FrightsDelightConsumableItemImpl(bowlFoodItem(FoodValues.SOUP_SLIME), true));
     public static final Item SOUP_COBWEB = registerItemWithTab(FrightsDelightItems.SOUP_COBWEB,
             new FrightsDelightConsumableItemImpl(bowlFoodItem(FoodValues.SOUP_COBWEB), true));
