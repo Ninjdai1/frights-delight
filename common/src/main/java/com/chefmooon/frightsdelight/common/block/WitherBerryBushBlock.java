@@ -83,7 +83,7 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!level.isClientSide()) {
-            updateCondition(state, (ServerLevel)level, pos);
+            updateCondition(state, level, pos);
         }
         int i = (Integer)state.getValue(AGE);
         boolean bl = i == 3;
@@ -104,20 +104,20 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        updateCondition(state, (ServerLevel)level, pos);
+        updateCondition(state, level, pos);
         super.performBonemeal(level, random, pos, state);
     }
 
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         if (!level.isClientSide()) {
-            updateCondition(state, (ServerLevel)level, pos);
+            updateCondition(state, level, pos);
         }
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
 
     public void updateCondition(BlockState state, LevelAccessor level, BlockPos pos) {
-        updateGrowthCondition(state, (ServerLevel)level, pos, GROW_RANGE, GROW_CONDITION_BLOCK, state.getValue(GROW_CONDITION));
+        updateGrowthCondition(state, level, pos, GROW_RANGE, GROW_CONDITION_BLOCK, state.getValue(GROW_CONDITION));
     }
 
     public static boolean hasGrowBrightness(int lightLevel) {

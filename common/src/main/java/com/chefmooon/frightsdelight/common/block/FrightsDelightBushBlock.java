@@ -1,5 +1,6 @@
 package com.chefmooon.frightsdelight.common.block;
 
+import com.chefmooon.frightsdelight.FrightsDelight;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -77,6 +78,7 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
 
     @Override
     public boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
+//        FrightsDelight.loggerInfo("Block: " + state.getBlock() + " | Can Place: " + state.is(BlockTags.SOUL_SPEED_BLOCKS));
         return state.is(BlockTags.SOUL_SPEED_BLOCKS);
     }
 
@@ -96,7 +98,8 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
         return false;
     }
 
-    public void updateGrowthCondition(BlockState state, ServerLevel level, BlockPos pos, int range, TagKey<Block> growCondition, boolean oldCondition) {
+    // todo - test this change more before release, LevelAccessor was ServerLevel
+    public void updateGrowthCondition(BlockState state, LevelAccessor level, BlockPos pos, int range, TagKey<Block> growCondition, boolean oldCondition) {
         boolean newCondition = hasGrowthCondition(level, pos, range, growCondition);
         if (newCondition != oldCondition) {
             level.setBlock(pos, (BlockState)state.setValue(GROW_CONDITION, newCondition), 2);
