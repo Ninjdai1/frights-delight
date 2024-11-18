@@ -88,6 +88,12 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
     }
 
     @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockPos blockPos = pos.below();
+        return this.mayPlaceOn(level.getBlockState(blockPos), level, blockPos);
+    }
+
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
         builder.add(AGE, GROW_CONDITION);

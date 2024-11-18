@@ -12,7 +12,7 @@ Update for Minecraft 1.21-1.21.1
 
 ### Changed
 
-- Soul Berries less likely to spawn in bastion chests
+- Soul Berries chance to spawn bastion chests adjusted
 
 ### Fixed
 
