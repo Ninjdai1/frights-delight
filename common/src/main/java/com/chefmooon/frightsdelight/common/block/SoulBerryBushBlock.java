@@ -1,5 +1,6 @@
 package com.chefmooon.frightsdelight.common.block;
 
+import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.chefmooon.frightsdelight.common.tag.FrightsDelightTags;
@@ -141,11 +142,9 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     }
 
     public void updateConditions(BlockState state, LevelAccessor level, BlockPos pos) {
-        // todo - review me
-        if (level instanceof ServerLevel serverLevel) {
-            updateGrowthCondition(state, serverLevel, pos, GROW_RANGE, GROW_CONDITION_BLOCK, state.getValue(GROW_CONDITION));
-            updateTransformCondition(state, level, pos, state.getValue(TRANSFORM_CONDITION));
-        }
+        updateGrowthCondition(state, level, pos, GROW_RANGE, GROW_CONDITION_BLOCK, state.getValue(GROW_CONDITION));
+        updateTransformCondition(state, level, pos, state.getValue(TRANSFORM_CONDITION));
+//        if (!(level instanceof ServerLevel)) FrightsDelight.loggerInfo("I should have crashed"); // todo - test/review this change
     }
 
     public static boolean hasGrowBrightness(int lightLevel) {

@@ -55,7 +55,7 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         int i = (Integer)state.getValue(AGE);
-        updateCondition(state, (ServerLevel)level, pos);
+        updateCondition(state, level, pos);
         if (state.getValue(GROW_CONDITION)) {
             if (i < 3 && random.nextInt(5) == 0 && hasGrowBrightness(level.getRawBrightness(pos.above(), 0))) {
                 BlockState blockState = (BlockState)state.setValue(AGE, i + 1);
@@ -84,7 +84,7 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
     @Override
     public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (!level.isClientSide()) {
-            updateCondition(state, (ServerLevel)level, pos);
+            updateCondition(state, level, pos);
         }
         InteractionHand hand = player.getUsedItemHand();
         int i = (Integer)state.getValue(AGE);
@@ -106,20 +106,20 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        updateCondition(state, (ServerLevel)level, pos);
+        updateCondition(state, level, pos);
         super.performBonemeal(level, random, pos, state);
     }
 
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         if (!level.isClientSide()) {
-            updateCondition(state, (ServerLevel)level, pos);
+            updateCondition(state, level, pos);
         }
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
 
     public void updateCondition(BlockState state, LevelAccessor level, BlockPos pos) {
-        updateGrowthCondition(state, (ServerLevel)level, pos, GROW_RANGE, GROW_CONDITION_BLOCK, state.getValue(GROW_CONDITION));
+        updateGrowthCondition(state, level, pos, GROW_RANGE, GROW_CONDITION_BLOCK, state.getValue(GROW_CONDITION));
     }
 
     public static boolean hasGrowBrightness(int lightLevel) {
