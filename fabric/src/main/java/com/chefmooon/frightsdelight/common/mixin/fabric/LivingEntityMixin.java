@@ -21,10 +21,10 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(method = "Lnet/minecraft/world/entity/LivingEntity;addEffect(Lnet/minecraft/world/effect/MobEffectInstance;Lnet/minecraft/world/entity/Entity;)Z", at = @At("RETURN"))
     private void onAddEffect(MobEffectInstance effectInstance, Entity entity, CallbackInfoReturnable<Boolean> cir) {
-        if (effectInstance.getEffect() == FrightsDelightEffects.CHILLS.get()) {
+        if (effectInstance.getEffect() == FrightsDelightEffects.CHILLS) {
             LivingEntity livingEntity = (LivingEntity) (Object) this;
             if (livingEntity instanceof Player player) {
-                if (player.hasEffect(FrightsDelightEffects.CHILLS.get())) {
+                if (player.hasEffect(FrightsDelightEffects.CHILLS)) {
                     player.displayClientMessage(TextUtils.getTranslatable("effect.chills.start"), true);
                 }
             }

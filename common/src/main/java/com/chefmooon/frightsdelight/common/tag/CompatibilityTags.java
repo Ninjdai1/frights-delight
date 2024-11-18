@@ -26,9 +26,9 @@ public class CompatibilityTags {
     public static final TagKey<Item> CREATE_ADDITION_PLANT_FOODS = getItemTagKey(CREATE_ADDITION, "plant_foods");
 
     public static TagKey<Item> getItemTagKey(String namespace, String path) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation(namespace, path));
+        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(namespace, path));
     }
     public static TagKey<Block> getBlockTagKey(String namespace, String path) {
-        return TagKey.create(Registries.BLOCK, new ResourceLocation(namespace, path));
+        return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(namespace, path));
     }
 }

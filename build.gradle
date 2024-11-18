@@ -1,6 +1,6 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.5+" apply false
+    id "dev.architectury.loom" version "1.7-SNAPSHOT" apply false
     id "com.matthewprenger.cursegradle" version "1.4.0"
     id "com.modrinth.minotaur" version "2.8.4"
 }
@@ -26,7 +26,11 @@ subprojects {
         // for more information about repositories.
         maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
 
-        maven { url 'https://maven.greenhouseteam.dev/releases/' } // Farmers Delight Refabricated
+        maven { url 'https://maven.neoforged.net/releases' } // NeoForge
+
+
+        maven { url 'https://repo.greenhouse.house/releases/' } // Farmers Delight Refabricated
+        maven { url 'https://repo.greenhouse.house/snapshots/' } // Temporary Porting Lib Fork for 1.21
         maven { url "https://mvn.devos.one/releases/" } // Porting Lib
         maven {
             url "https://maven.jamieswhiteshirt.com/libs-release" // Reach Entity Attributes (Required by Porting Lib)
@@ -63,8 +67,8 @@ subprojects {
         // The following line declares the yarn mappings you may select this one as well.
         // mappings "net.fabricmc:yarn:1.20.1+build.10:v2"
         mappings(loom.layered {
-            it.parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
             it.officialMojangMappings { nameSyntheticMembers = false }
+            it.parchment("org.parchmentmc.data:parchment-${parchment_version}@zip")
         })
     }
 
@@ -89,7 +93,7 @@ subprojects {
 
         inputs.properties replaceProperties
 
-        filesMatching(["META-INF/mods.toml", "fabric.mod.json", "pack.mcmeta"]) {
+        filesMatching(["META-INF/neoforge.mods.toml", "fabric.mod.json", "pack.mcmeta"]) {
             expand replaceProperties + [project: project]
         }
     }
@@ -119,7 +123,7 @@ allprojects {
 
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
-        options.release = 17
+        options.release = 21
     }
 
     java {

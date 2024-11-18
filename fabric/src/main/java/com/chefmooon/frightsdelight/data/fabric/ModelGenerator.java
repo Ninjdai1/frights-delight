@@ -1,11 +1,11 @@
 package com.chefmooon.frightsdelight.data.fabric;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.block.DrinkableFeastBlock;
 import com.chefmooon.frightsdelight.common.block.FrightsDelightBushBlock;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.utility.ModModels;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import com.chefmooon.frightsdelight.common.utility.fabric.FrightsDelightModels;
 import com.chefmooon.frightsdelight.common.utility.fabric.FrightsDelightTextureSlots;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -145,18 +145,18 @@ public class ModelGenerator extends FabricModelProvider {
     private static void registerCrateBlock(Block block, BlockModelGenerators blockStateModelGenerator) {
         blockStateModelGenerator.createTrivialBlock(block,
                 (new TextureMapping())
-                        .put(TextureSlot.SIDE, new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_side"))
-                        .put(TextureSlot.TOP, new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_top"))
-                        .put(TextureSlot.BOTTOM, FrightsDelight.res("block/crate_bottom")),
+                        .put(TextureSlot.SIDE, ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_side"))
+                        .put(TextureSlot.TOP, ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_top"))
+                        .put(TextureSlot.BOTTOM, ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/crate_bottom")),
                 ModelTemplates.CUBE_BOTTOM_TOP);
     }
 
     private static void registerDrinkFeast(Block block, BlockModelGenerators blockStateModelGenerator) {
-        ResourceLocation punchBowl = FrightsDelight.res("block/punch_bowl");
+        ResourceLocation punchBowl = TextUtils.res("block/punch_bowl");
         TextureMapping textureMapping = TextureMapping.particle(punchBowl)
                 .put(FrightsDelightTextureSlots.DRINK_FEAST_INSIDE, TextureMapping.getBlockTexture(block))
                 .put(FrightsDelightTextureSlots.PUNCH_BOWL, punchBowl);
-        FrightsDelightModels.TEMPLATE_DRINK_FEAST_LEFTOVER.create(new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_leftover"),
+        FrightsDelightModels.TEMPLATE_DRINK_FEAST_LEFTOVER.create(ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_leftover"),
                 textureMapping, blockStateModelGenerator.modelOutput);
 
         List<ModelTemplate> stages = List.of(
@@ -168,24 +168,24 @@ public class ModelGenerator extends FabricModelProvider {
             TextureMapping textureMappingstage = TextureMapping.particle(punchBowl)
                     .put(FrightsDelightTextureSlots.DRINK_FEAST_INSIDE, TextureMapping.getBlockTexture(block))
                     .put(FrightsDelightTextureSlots.PUNCH_BOWL, punchBowl);
-            stages.get(i).create(new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_stage" + i),
+            stages.get(i).create(ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_stage" + i),
                     textureMappingstage, blockStateModelGenerator.modelOutput);
         }
 
         blockStateModelGenerator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block)
                 .with(BlockModelGenerators.createHorizontalFacingDispatch())
                 .with(PropertyDispatch.property(DrinkableFeastBlock.SERVINGS)
-                        .select(0, Variant.variant().with(VariantProperties.MODEL, new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_leftover")))
-                        .select(1, Variant.variant().with(VariantProperties.MODEL, new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_stage3")))
-                        .select(2, Variant.variant().with(VariantProperties.MODEL, new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_stage2")))
-                        .select(3, Variant.variant().with(VariantProperties.MODEL, new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_stage1")))
-                        .select(4, Variant.variant().with(VariantProperties.MODEL, new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_stage0")))
+                        .select(0, Variant.variant().with(VariantProperties.MODEL, ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_leftover")))
+                        .select(1, Variant.variant().with(VariantProperties.MODEL, ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_stage3")))
+                        .select(2, Variant.variant().with(VariantProperties.MODEL, ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_stage2")))
+                        .select(3, Variant.variant().with(VariantProperties.MODEL, ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_stage1")))
+                        .select(4, Variant.variant().with(VariantProperties.MODEL, ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_stage0")))
                 ));
     }
 
     private static ResourceLocation registerBushModel(String stage, Block block, BlockModelGenerators blockStateModelGenerator) {
-        return FrightsDelightModels.TEMPLATE_CROP_CROSS.create(new ResourceLocation(ModelLocationUtils.getModelLocation(block) + stage),
-                TextureMapping.cross(new ResourceLocation(ModelLocationUtils.getModelLocation(block) + stage)), blockStateModelGenerator.modelOutput);
+        return FrightsDelightModels.TEMPLATE_CROP_CROSS.create(ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + stage),
+                TextureMapping.cross(ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + stage)), blockStateModelGenerator.modelOutput);
     }
 
 }

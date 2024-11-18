@@ -20,6 +20,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -33,7 +34,7 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     public static final TagKey<Block> GROW_CONDITION_BLOCK = FrightsDelightTags.SOUL_BERRY_BUSH_GROW_CONDITIION;
     public static final BooleanProperty TRANSFORM_CONDITION = BooleanProperty.create("transform_condition");
     public SoulBerryBushBlock() {
-        super(Block.Properties.copy(Blocks.SWEET_BERRY_BUSH));
+        super(Block.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH));
     }
 
     @Override
@@ -48,7 +49,7 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
         return new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.SOUL_BERRY));
     }
 
@@ -79,10 +80,11 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (!level.isClientSide()) {
             updateConditions(state, level, pos);
         }
+        InteractionHand hand = player.getUsedItemHand();
         int i = (Integer)state.getValue(AGE);
         boolean bl = i == 3;
         if (!bl && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
@@ -96,7 +98,7 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockState));
             return InteractionResult.sidedSuccess(level.isClientSide);
         } else {
-            return super.use(state, level, pos, player, hand, hit);
+            return super.useWithoutItem(state, level, pos, player, hit);
         }
     }
 
@@ -139,8 +141,11 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     }
 
     public void updateConditions(BlockState state, LevelAccessor level, BlockPos pos) {
-        updateGrowthCondition(state, (ServerLevel)level, pos, GROW_RANGE, GROW_CONDITION_BLOCK, state.getValue(GROW_CONDITION));
-        updateTransformCondition(state, level, pos, state.getValue(TRANSFORM_CONDITION));
+        // todo - review me
+        if (level instanceof ServerLevel serverLevel) {
+            updateGrowthCondition(state, serverLevel, pos, GROW_RANGE, GROW_CONDITION_BLOCK, state.getValue(GROW_CONDITION));
+            updateTransformCondition(state, level, pos, state.getValue(TRANSFORM_CONDITION));
+        }
     }
 
     public static boolean hasGrowBrightness(int lightLevel) {

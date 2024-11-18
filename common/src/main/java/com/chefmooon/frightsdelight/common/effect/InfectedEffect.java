@@ -12,9 +12,9 @@ public class InfectedEffect extends MobEffect {
         super(MobEffectCategory.HARMFUL, 0x4f8c29);
     }
 
-    public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
-        if (livingEntity.hasEffect(FrightsDelightEffects.UNDEAD_HUNGER.get())) {
-            return;
+    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
+        if (livingEntity.hasEffect(FrightsDelightEffects.UNDEAD_HUNGER)) {
+            return false;
         }
         if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
             if (player.hasEffect(MobEffects.HUNGER)) {
@@ -22,10 +22,11 @@ public class InfectedEffect extends MobEffect {
             }
             ((Player)livingEntity).causeFoodExhaustion(0.01F * (float)(amplifier + 1));
         }
+        return true;
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
 }

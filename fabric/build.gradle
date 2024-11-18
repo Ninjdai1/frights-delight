@@ -41,7 +41,7 @@ dependencies {
     //modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
 
     // FD Refabricated
-    modImplementation ("vectorwing:FarmersDelight:${minecraft_version}-${fdrf_version}") {
+    modImplementation ("vectorwing:FarmersDelight:${fdrf_version}") {
         exclude(group: "net.fabricmc")
     }
 
@@ -59,7 +59,10 @@ dependencies {
 
     // Recipe Viewers
     // EMI
-    modCompileOnly("dev.emi:emi-fabric:$emi_version+${minecraft_version}:api") { transitive = false }
+    modCompileOnly("dev.emi:emi-fabric:$emi_version:api") {
+        transitive = false
+        exclude(group: "net.fabricmc.fabric-api")
+    }
     // JEI
     modCompileOnly("mezz.jei:jei-$minecraft_version-common-api:$jei_version") { transitive = false }
     modCompileOnly("mezz.jei:jei-$minecraft_version-fabric-api:$jei_version") { transitive = false }
@@ -70,7 +73,7 @@ dependencies {
     switch (recipe_viewer.toLowerCase(Locale.ROOT)) {
         case "jei": modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}"); break
         case "rei": modLocalRuntime("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"); break
-        case "emi": modLocalRuntime("dev.emi:emi-fabric:${emi_version}+${minecraft_version}"); break
+        case "emi": modLocalRuntime("dev.emi:emi-fabric:${emi_version}"); break
         case "disabled": break
         default: println("Unknown recipe viewer specified: ${recipe_viewer}. Must be JEI, REI, EMI, or disabled.")
     }
@@ -85,7 +88,6 @@ dependencies {
 }
 
 processResources {
-
 }
 
 shadowJar {
@@ -139,7 +141,7 @@ if (env.MODRINTH_TOKEN) {
         token = System.getenv("MODRINTH_TOKEN") // This is the default. Remember to have the MODRINTH_TOKEN environment variable set or else this will fail, or set it to whatever you want - just make sure it stays private!
         projectId = modrinth_project_id // This can be the project ID or the slug. Either will work!
         versionName = vName
-        versionNumber = project.version // You don't need to set this manually. Will fail if Modrinth has this version already
+        versionNumber = mod_version // You don't need to set this manually. Will fail if Modrinth has this version already
         versionType = mod_version_type // This is the default -- can also be `beta` or `alpha`
         changelog = changelogText
         uploadFile = remapJar // With Loom, this MUST be set to `remapJar` instead of `jar`!

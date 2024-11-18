@@ -24,14 +24,14 @@ public class FrightsDelightConsumableItemNameBlockItem extends ItemNameBlockItem
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-        super.appendHoverText(stack, level, tooltip, isAdvanced);
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
+        super.appendHoverText(stack, context, tooltip, isAdvanced);
         if ((Boolean) Configuration.foodEffectTooltip()) {
             if (this.hasFoodEffectTooltip) {
                 if ((Boolean) Configuration.foodEffectChanceTooltip()) {
-                    TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip, 1.0F);
+                    TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip::add, 1.0F, context.tickRate());
                 } else {
-                    TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+                    TextUtils.addFoodEffectTooltip(stack, tooltip::add, 1.0F, context.tickRate());
                 }
             }
         }

@@ -12,19 +12,20 @@ public class UndeadHungerEffect extends MobEffect {
         super(MobEffectCategory.NEUTRAL, 0x6f4d1b);
     }
 
-    public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
+    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
-            if (player.hasEffect(FrightsDelightEffects.INFECTED.get())) {
-                player.removeEffect(FrightsDelightEffects.INFECTED.get());
+            if (player.hasEffect(FrightsDelightEffects.INFECTED)) {
+                player.removeEffect(FrightsDelightEffects.INFECTED);
             }
             if (player.hasEffect(MobEffects.HUNGER)) {
                 player.removeEffect(MobEffects.HUNGER);
             }
         }
+        return true;
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
 }

@@ -1,10 +1,10 @@
 package com.chefmooon.frightsdelight.common;
 
 
-import com.chefmooon.frightsdelight.FrightsDelight;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightEffects;
 import com.chefmooon.frightsdelight.common.utility.MobEffectInfo;
 import dev.architectury.injectables.annotations.ExpectPlatform;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -17,16 +17,17 @@ public class FoodValues {
     public static final int MEDIUM_DURATION = 3600;    // 3 minutes
     public static final int LONG_DURATION = 6000;    // 5 minutes
 
-    private static final MobEffect COMFORT = getComfort();
-    private static final MobEffect NOURISHMENT = getNourishment();
+    private static final Holder<MobEffect> COMFORT = getComfort();
+    private static final Holder<MobEffect> NOURISHMENT = getNourishment();
 
-    private static final MobEffect FORTIFIED_MIND = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("fortified_mind"));
-    private static final MobEffect CHILLS = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("chills"));
-    private static final MobEffect INFECTED = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("infected"));
-    private static final MobEffect UNDEAD_HUNGER = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("undead_hunger"));
-    private static final MobEffect HYSTERIA = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("hysteria"));
-    private static final MobEffect COBWEBBED = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("cobwebbed"));
-    private static final MobEffect SLIMED = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("slimed"));
+    private static final Holder<MobEffect> FORTIFIED_MIND = FrightsDelightEffects.FORTIFIED_MIND;
+    private static final Holder<MobEffect> CHILLS = FrightsDelightEffects.CHILLS;
+    private static final Holder<MobEffect> INFECTED = FrightsDelightEffects.INFECTED;
+    private static final Holder<MobEffect> UNDEAD_HUNGER = FrightsDelightEffects.UNDEAD_HUNGER;
+    private static final Holder<MobEffect> HYSTERIA = FrightsDelightEffects.HYSTERIA;
+    private static final Holder<MobEffect> COBWEBBED = FrightsDelightEffects.COBWEBBED;
+    private static final Holder<MobEffect> SLIMED = FrightsDelightEffects.SLIMED;
+
 
     public static final FoodProperties SOUL_BERRY = foodProperty(2, 0.4f,
             List.of(new MobEffectInfo(FORTIFIED_MIND, BRIEF_DURATION, 1.f)));
@@ -40,7 +41,7 @@ public class FoodValues {
 
     // *** KEBABS *** //
 
-    public static final FoodProperties UNDEAD_KEBAB = foodProperty(7, 0.6f,true, false, false,
+    public static final FoodProperties UNDEAD_KEBAB = foodProperty(7, 0.6f, false, false,
             List.of(new MobEffectInfo(INFECTED, SHORT_DURATION, .65f),
                     new MobEffectInfo(CHILLS, SHORT_DURATION, .65f),
                     new MobEffectInfo(HYSTERIA, SHORT_DURATION, .65f)));
@@ -65,7 +66,7 @@ public class FoodValues {
 
     // *** PLATES N' STUFF *** //
 
-    public static final FoodProperties MONSTER_MASH = foodProperty(10, 0.6f, true, false, false,
+    public static final FoodProperties MONSTER_MASH = foodProperty(10, 0.6f, false, false,
             List.of(new MobEffectInfo(CHILLS, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(INFECTED, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(HYSTERIA, MEDIUM_DURATION, .5f),
@@ -76,10 +77,10 @@ public class FoodValues {
 
     // *** SOUP *** //
 
-    public static final FoodProperties SOUP_ROTTEN_FLESH = foodProperty(8, 0.7f, true, false, false,
+    public static final FoodProperties SOUP_ROTTEN_FLESH = foodProperty(8, 0.7f, false, false,
             List.of(new MobEffectInfo(INFECTED, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
-    public static final FoodProperties SOUP_SPIDER_EYE = foodProperty(8, 0.7f, true, false, false,
+    public static final FoodProperties SOUP_SPIDER_EYE = foodProperty(8, 0.7f, false, false,
             List.of(new MobEffectInfo(HYSTERIA, MEDIUM_DURATION, .5f),
                     new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
     public static final FoodProperties SOUP_SLIME = foodProperty(8, 0.7f,
@@ -101,27 +102,27 @@ public class FoodValues {
 
     // *** COOKIES *** //
 
-    public static final FoodProperties COOKIE_ROTTEN_FLESH = foodProperty(2, 0.1f, true, true, false,
+    public static final FoodProperties COOKIE_ROTTEN_FLESH = foodProperty(2, 0.1f, true, false,
             List.of(new MobEffectInfo(INFECTED, BRIEF_DURATION, .75f)));
-    public static final FoodProperties COOKIE_SPIDER_EYE = foodProperty(2, 0.1f,  true, true, false,
+    public static final FoodProperties COOKIE_SPIDER_EYE = foodProperty(2, 0.1f, true, false,
             List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .75f)));
-    public static final FoodProperties COOKIE_SLIMEAPPLE = foodProperty(2, 0.2f,  false, true, false,
+    public static final FoodProperties COOKIE_SLIMEAPPLE = foodProperty(2, 0.2f, true, false,
             List.of(new MobEffectInfo(SLIMED, BRIEF_DURATION, .75f)));
-    public static final FoodProperties COOKIE_SLIME = foodProperty(2, 0.1f,  false, true, false,
+    public static final FoodProperties COOKIE_SLIME = foodProperty(2, 0.1f, true, false,
             List.of(new MobEffectInfo(SLIMED, BRIEF_DURATION, .75f)));
-    public static final FoodProperties COOKIE_COBWEB = foodProperty(2, 0.1f,  false, true, false,
+    public static final FoodProperties COOKIE_COBWEB = foodProperty(2, 0.1f, true, false,
             List.of(new MobEffectInfo(COBWEBBED, BRIEF_DURATION, .75f)));
-    public static final FoodProperties COOKIE_GHAST_TEAR = foodProperty(2, 0.1f,  false, true, false,
+    public static final FoodProperties COOKIE_GHAST_TEAR = foodProperty(2, 0.1f, true, false,
             List.of(new MobEffectInfo(CHILLS, BRIEF_DURATION, .75f)));
 
-    public static final FoodProperties COOKIE_SOUL_BERRY = foodProperty(2, 0.1f, false, true, false,
+    public static final FoodProperties COOKIE_SOUL_BERRY = foodProperty(2, 0.1f, true, false,
             List.of(new MobEffectInfo(FORTIFIED_MIND, SHORT_DURATION, 1.f)));
-    public static final FoodProperties COOKIE_WITHER_BERRY = foodProperty(2, 0.1f, false, true, false,
+    public static final FoodProperties COOKIE_WITHER_BERRY = foodProperty(2, 0.1f, true, false,
             List.of(new MobEffectInfo(UNDEAD_HUNGER, SHORT_DURATION, 1.f)));
 
     // *** PUNCH *** //
 
-    public static final FoodProperties PUNCH_ROTTEN_FLESH = foodProperty(4, 0.4f,true, false, false,
+    public static final FoodProperties PUNCH_ROTTEN_FLESH = foodProperty(4, 0.4f, false, false,
             List.of(new MobEffectInfo(INFECTED, BRIEF_DURATION, .5f)));
     public static final FoodProperties PUNCH_SPIDER_EYE = foodProperty(4, 0.4f,
             List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .5f)));
@@ -133,34 +134,34 @@ public class FoodValues {
     public static final FoodProperties PUNCH_GHAST_TEAR = foodProperty(4, 0.4f,
             List.of(new MobEffectInfo(CHILLS, BRIEF_DURATION, .5f)));
 
-    public static final FoodProperties PUNCH_SOUL_BERRY = foodProperty(4, 0.4f, false, false, true,
+    public static final FoodProperties PUNCH_SOUL_BERRY = foodProperty(4, 0.4f, false, true,
             List.of(new MobEffectInfo(FORTIFIED_MIND, MEDIUM_DURATION, 1.0f)));
 
-    public static final FoodProperties PUNCH_WITHER_BERRY = foodProperty(4, 0.4f, false, false, true,
+    public static final FoodProperties PUNCH_WITHER_BERRY = foodProperty(4, 0.4f, false, true,
             List.of(new MobEffectInfo(UNDEAD_HUNGER, MEDIUM_DURATION, 1.0f)));
 
     public static FoodProperties foodProperty(int nutrition, float saturation, List<MobEffectInfo> effects) {
-        return foodProperty(nutrition, saturation, false, false, false, effects);
+        return foodProperty(nutrition, saturation, false, false, effects);
     }
     @ExpectPlatform
-    public static FoodProperties foodProperty(int nutrition, float saturation, boolean isMeat, boolean isFast, boolean alwaysEat, List<MobEffectInfo> effects) {
+    public static FoodProperties foodProperty(int nutrition, float saturation, boolean isFast, boolean alwaysEat, List<MobEffectInfo> effects) {
         throw new AssertionError();
     }
 
     // In Dev only? stops null pointer before effects are fully registered, I think.
     // The below methods[getComfort()/getNourishment()] may fix this
     // TODO: continue testing, keep an eye on for bug
-    public static MobEffect nonNullEffect(MobEffect effect) {
+    public static Holder<MobEffect> nonNullEffect(Holder<MobEffect> effect) {
         return effect != null ? effect : MobEffects.HEAL;
     }
 
     @ExpectPlatform
-    public static MobEffect getComfort() {
+    public static Holder<MobEffect> getComfort() {
         throw new AssertionError();
     }
 
     @ExpectPlatform
-    public static MobEffect getNourishment() {
+    public static Holder<MobEffect> getNourishment() {
         throw new AssertionError();
     }
 }

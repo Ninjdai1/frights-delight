@@ -1,0 +1,91 @@
+{
+  "parent": "frightsdelight:main/root",
+  "criteria": {
+    "has_punchbowl_slimeapple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punchbowl_slimeapple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punchbowl_spidereye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punchbowl_spidereye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punchbowl_ghasttear": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punchbowl_ghasttear"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punchbowl_soul_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punchbowl_soul_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punchbowl_wither_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punchbowl_wither_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "frightsdelight.advancement.craft_punch_bowl.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "frightsdelight:punchbowl_spidereye"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "frightsdelight.advancement.craft_punch_bowl"
+    }
+  },
+  "requirements": [
+    [
+      "has_punchbowl_slimeapple",
+      "has_punchbowl_spidereye",
+      "has_punchbowl_ghasttear",
+      "has_punchbowl_soul_berry",
+      "has_punchbowl_wither_berry"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

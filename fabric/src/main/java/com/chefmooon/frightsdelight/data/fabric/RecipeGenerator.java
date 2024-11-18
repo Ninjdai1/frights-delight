@@ -1,22 +1,25 @@
 package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
+import com.chefmooon.frightsdelight.data.fabric.recipe.CookingRecipes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
-import java.util.function.Consumer;
+import java.util.concurrent.CompletableFuture;
 
 public class RecipeGenerator extends FabricRecipeProvider {
-    public RecipeGenerator(FabricDataOutput output) {
-        super(output);
+    public RecipeGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
+        super(output, registryLookup);
     }
 
     @Override
-    public void buildRecipes(Consumer<FinishedRecipe> exporter) {
+    public void buildRecipes(RecipeOutput exporter) {
+        CookingRecipes.register(exporter);
 
         crateToIngredient(FrightsDelightItemsImpl.FLESH_CRATE, Items.ROTTEN_FLESH, exporter);
         crateToIngredient(FrightsDelightItemsImpl.BONE_CRATE, Items.BONE, exporter);
@@ -45,14 +48,14 @@ public class RecipeGenerator extends FabricRecipeProvider {
         punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB, FrightsDelightItemsImpl.PUNCH_COBWEB, exporter);
     }
 
-    private static void crateToIngredient(Item crate, Item ingredient, Consumer<FinishedRecipe> exporter) {
+    private static void crateToIngredient(Item crate, Item ingredient, RecipeOutput exporter) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ingredient, 9)
                 .requires(crate)
                 .unlockedBy(RecipeProvider.getHasName(crate), RecipeProvider.has(crate))
                 .save(exporter, RecipeProvider.getSimpleRecipeName(ingredient) + "_from_" + RecipeProvider.getSimpleRecipeName(crate));
     }
 
-    private static void cookie(Item cookie, Item ingredient, Consumer<FinishedRecipe> exporter) {
+    private static void cookie(Item cookie, Item ingredient, RecipeOutput exporter) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, cookie, 8)
                 .requires(ingredient)
                 .requires(Items.WHEAT, 2)
@@ -61,7 +64,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .save(exporter, RecipeProvider.getSimpleRecipeName(cookie));
     }
 
-    private static void punchbowlFromPunch(Item punchbowl, Item punch, Consumer<FinishedRecipe> exporter) {
+    private static void punchbowlFromPunch(Item punchbowl, Item punch, RecipeOutput exporter) {
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, punchbowl)
                 .pattern(" A ")
                 .pattern("A A")

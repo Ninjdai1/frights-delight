@@ -11,19 +11,20 @@ public class FortifiedMindEffect extends MobEffect {
         super(MobEffectCategory.BENEFICIAL, 0x66d0e9);
     }
 
-    public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
+    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
-            if (player.hasEffect(FrightsDelightEffects.HYSTERIA.get())) {
-                player.removeEffect(FrightsDelightEffects.HYSTERIA.get());
+            if (player.hasEffect(FrightsDelightEffects.HYSTERIA)) {
+                player.removeEffect(FrightsDelightEffects.HYSTERIA);
             }
-            if (player.hasEffect(FrightsDelightEffects.CHILLS.get())) {
-                player.removeEffect(FrightsDelightEffects.CHILLS.get());
+            if (player.hasEffect(FrightsDelightEffects.CHILLS)) {
+                player.removeEffect(FrightsDelightEffects.CHILLS);
             }
         }
+        return true;
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
 }

@@ -16,12 +16,12 @@ public class HysteriaEffect extends MobEffect {
         super(MobEffectCategory.HARMFUL, 0x5b4538);
     }
 
-    public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
-        if (livingEntity.hasEffect(FrightsDelightEffects.FORTIFIED_MIND.get())) {
-            return;
+    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
+        if (livingEntity.hasEffect(FrightsDelightEffects.FORTIFIED_MIND)) {
+            return false;
         }
         if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
-            if (!player.hasEffect(FrightsDelightEffects.FORTIFIED_MIND.get())) {
+            if (!player.hasEffect(FrightsDelightEffects.FORTIFIED_MIND)) {
                 Random random = new Random();
                 int soundChance = 200 - player.getFoodData().getFoodLevel() * 5;
                 if (random.nextInt(soundChance) == 0) {
@@ -49,10 +49,11 @@ public class HysteriaEffect extends MobEffect {
                 }
             }
         }
+        return true;
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
 }

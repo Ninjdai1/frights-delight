@@ -1,5 +1,6 @@
 package com.chefmooon.frightsdelight.common.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -34,8 +35,14 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
     private static final VoxelShape SAPLING_SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 8.0, 13.0);
     private static final VoxelShape MID_GROWTH_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
     public static final BooleanProperty GROW_CONDITION = BooleanProperty.create("grow_condition");
+    public static final MapCodec<FrightsDelightBushBlock> CODEC = simpleCodec(FrightsDelightBushBlock::new);
     public FrightsDelightBushBlock(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    protected MapCodec<? extends BushBlock> codec() {
+        return CODEC;
     }
 
     @Override
@@ -96,6 +103,7 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
         return false;
     }
 
+    // todo - change this to LevelAccessor?
     public void updateGrowthCondition(BlockState state, ServerLevel level, BlockPos pos, int range, TagKey<Block> growCondition, boolean oldCondition) {
         boolean newCondition = hasGrowthCondition(level, pos, range, growCondition);
         if (newCondition != oldCondition) {
@@ -104,7 +112,7 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return (Integer)state.getValue(AGE) < 3;
     }
 

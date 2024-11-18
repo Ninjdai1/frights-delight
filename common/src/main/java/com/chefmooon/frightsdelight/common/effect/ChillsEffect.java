@@ -15,12 +15,12 @@ public class ChillsEffect extends MobEffect {
         super(MobEffectCategory.HARMFUL, 0x000000);
     }
 
-    public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
-        if (livingEntity.hasEffect(FrightsDelightEffects.FORTIFIED_MIND.get())) {
-            return;
+    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
+        if (livingEntity.hasEffect(FrightsDelightEffects.FORTIFIED_MIND)) {
+            return false;
         }
         if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
-            int duration = Objects.requireNonNull(player.getEffect(FrightsDelightEffects.CHILLS.get())).getDuration();
+            int duration = Objects.requireNonNull(player.getEffect(FrightsDelightEffects.CHILLS)).getDuration();
             if (duration == 1) {
                 player.displayClientMessage(TextUtils.getTranslatable("effect.chills.end"), true);
             }
@@ -34,10 +34,11 @@ public class ChillsEffect extends MobEffect {
                 }
             }
         }
+        return true;
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
 }

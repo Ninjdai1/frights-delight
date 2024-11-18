@@ -6,14 +6,17 @@ import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightEntityT
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.core.HolderLookup;
+
+import java.util.concurrent.CompletableFuture;
 
 public class TranslationGenerator extends FabricLanguageProvider {
-    public TranslationGenerator(FabricDataOutput dataOutput) {
-        super(dataOutput, "en_us");
+    public TranslationGenerator(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+        super(dataOutput, "en_us", registryLookup);
     }
 
     @Override
-    public void generateTranslations(TranslationBuilder translationBuilder) {
+    public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
 
         String MOD_ID = FrightsDelight.MOD_ID;
         String SUBTITLE = MOD_ID + ".subtitles";

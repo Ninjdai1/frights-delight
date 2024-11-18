@@ -7,7 +7,6 @@ import net.minecraft.world.level.block.ComposterBlock;
 public class CommonSetup {
 
     public static void init() {
-        registerCompostables();
     }
 
     public static void registerCompostables() {

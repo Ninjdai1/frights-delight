@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_punch_ghasttear": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:punch_ghasttear"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:punchbowl_ghasttear"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_punch_ghasttear"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:punchbowl_ghasttear"
+    ]
+  }
+}

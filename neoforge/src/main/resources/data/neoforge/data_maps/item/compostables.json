@@ -1,0 +1,19 @@
+{
+  "values": {
+    "frightsdelight:soul_berry": {
+      "chance": 0.3
+    },
+    "frightsdelight:wither_berry": {
+      "chance": 0.3
+    },
+    "frightsdelight:cookie_soul_berry": {
+      "chance": 0.85
+    },
+    "frightsdelight:cookie_flesh": {
+      "chance": 0.85
+    },
+    "frightsdelight:cookie_spidereye": {
+      "chance": 0.85
+    }
+  }
+}

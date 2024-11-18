@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_punch_spidereye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:punch_spidereye"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:punchbowl_spidereye"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_punch_spidereye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:punchbowl_spidereye"
+    ]
+  }
+}

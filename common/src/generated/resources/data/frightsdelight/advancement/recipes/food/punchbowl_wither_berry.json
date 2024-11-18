@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_punch_wither_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:punch_wither_berry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:punchbowl_wither_berry"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_punch_wither_berry"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:punchbowl_wither_berry"
+    ]
+  }
+}

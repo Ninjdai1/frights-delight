@@ -3,6 +3,7 @@ package com.chefmooon.frightsdelight.client.fabric;
 import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.client.FrightsDelightClient;
 import com.chefmooon.frightsdelight.client.event.fabric.ClientSetupEventsImpl;
+import com.chefmooon.frightsdelight.client.gui.fabric.FrightsDelightGUIImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -22,6 +23,8 @@ public class FrightsDelightClientImpl implements ClientModInitializer {
         ClientSetupEventsImpl.registerParticles();
         ClientSetupEventsImpl.onEntityRendererRegister();
 
+        FrightsDelightGUIImpl.register();
+
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
                 FrightsDelightBlocksImpl.SOUL_BERRY_BUSH,
                 FrightsDelightBlocksImpl.WITHER_BERRY_BUSH,
@@ -39,7 +42,7 @@ public class FrightsDelightClientImpl implements ClientModInitializer {
     public static void onBuiltinPackRegistration() {
         if (isModLoaded("presencefootsteps")) {
             FabricLoader.getInstance().getModContainer(FrightsDelight.MOD_ID).ifPresent(frdpresencefootsteps ->
-                    ResourceManagerHelper.registerBuiltinResourcePack(new ResourceLocation("frdpresencefootsteps"), frdpresencefootsteps, ResourcePackActivationType.DEFAULT_ENABLED));
+                    ResourceManagerHelper.registerBuiltinResourcePack(ResourceLocation.parse("frdpresencefootsteps"), frdpresencefootsteps, ResourcePackActivationType.DEFAULT_ENABLED));
         }
     }
 

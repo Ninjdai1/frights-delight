@@ -20,6 +20,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -33,7 +34,7 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
     public static final int GROW_RANGE = 1;
     public static final TagKey<Block> GROW_CONDITION_BLOCK = FrightsDelightTags.WITHER_BERRY_BUSH_GROW_CONDITIION;
     public WitherBerryBushBlock() {
-        super(Block.Properties.copy(Blocks.SWEET_BERRY_BUSH));
+        super(Block.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH));
     }
 
     @Override
@@ -47,7 +48,7 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
         return new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.WITHER_BERRY));
     }
 
@@ -81,10 +82,11 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (!level.isClientSide()) {
             updateCondition(state, (ServerLevel)level, pos);
         }
+        InteractionHand hand = player.getUsedItemHand();
         int i = (Integer)state.getValue(AGE);
         boolean bl = i == 3;
         if (!bl && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
@@ -98,7 +100,7 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockState));
             return InteractionResult.sidedSuccess(level.isClientSide);
         } else {
-            return super.use(state, level, pos, player, hand, hit);
+            return super.useWithoutItem(state, level, pos, player, hit);
         }
     }
 

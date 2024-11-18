@@ -2,26 +2,23 @@ package com.chefmooon.frightsdelight.common.fabric;
 
 import com.chefmooon.frightsdelight.common.FoodValues;
 import com.chefmooon.frightsdelight.common.utility.MobEffectInfo;
-import com.nhoryzon.mc.farmersdelight.registry.EffectsRegistry;
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
+import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.List;
 
 public class FoodValuesImpl {
 
-    public static FoodProperties foodProperty(int nutrition, float saturation, boolean isMeat, boolean isFast, boolean alwaysEat, List<MobEffectInfo> effects) {
+    public static FoodProperties foodProperty(int nutrition, float saturation, boolean isFast, boolean alwaysEat, List<MobEffectInfo> effects) {
         FoodProperties.Builder builder = new FoodProperties.Builder()
                 .nutrition(nutrition)
-                .saturationMod(saturation);
+                .saturationModifier(saturation);
 
         for (MobEffectInfo effectInfo : effects) {
             builder.effect(new MobEffectInstance(FoodValues.nonNullEffect(effectInfo.effect()), effectInfo.duration()), effectInfo.probability());
-        }
-
-        if (isMeat) {
-            builder.meat();
         }
 
         if (isFast) {
@@ -29,17 +26,17 @@ public class FoodValuesImpl {
         }
 
         if (alwaysEat) {
-            builder.alwaysEat();
+            builder.alwaysEdible();
         }
 
         return builder.build();
     }
 
-    public static MobEffect getComfort() {
-        return EffectsRegistry.COMFORT.get();
+    public static Holder<MobEffect> getComfort() {
+        return ModEffects.COMFORT;
     }
 
-    public static MobEffect getNourishment() {
-        return EffectsRegistry.NOURISHMENT.get();
+    public static Holder<MobEffect> getNourishment() {
+        return ModEffects.NOURISHMENT;
     }
 }

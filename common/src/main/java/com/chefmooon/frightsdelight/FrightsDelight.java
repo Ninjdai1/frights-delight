@@ -5,17 +5,9 @@ import com.chefmooon.frightsdelight.common.registry.FrightsDelightEffects;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightParticleTypes;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import dev.architectury.injectables.annotations.ExpectPlatform;
-import net.minecraft.resources.ResourceLocation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class FrightsDelight {
     public static final String MOD_ID = "frightsdelight";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-
-    public static ResourceLocation res(String path) {
-        return new ResourceLocation(MOD_ID, path);
-    }
 
     public static void init() {
         FrightsDelightSounds.init();

@@ -14,12 +14,12 @@ import java.util.function.Supplier;
 
 public class FrightsDelightEntityTypesImpl {
     public static final Supplier<EntityType<BoneShardEntityImpl>> BONE_SHARD = Suppliers.memoize(() ->
-            Registry.register(BuiltInRegistries.ENTITY_TYPE, FrightsDelightEntityTypes.BONE_SHARD,
-                    FabricEntityTypeBuilder.<BoneShardEntityImpl>create(MobCategory.MISC, BoneShardEntityImpl::new)
-                            .dimensions(EntityDimensions.fixed(0.25f, 0.25f))
-                            .trackRangeBlocks(4)
-                            .trackedUpdateRate(10).build())
-    );
+        Registry.register(BuiltInRegistries.ENTITY_TYPE, FrightsDelightEntityTypes.BONE_SHARD,
+                EntityType.Builder.<BoneShardEntityImpl>of(BoneShardEntityImpl::new, MobCategory.MISC)
+                        .sized(0.25F, 0.25F)
+                        .clientTrackingRange(4)
+                        .updateInterval(10)
+                        .build(FrightsDelightEntityTypes.BONE_SHARD.getPath())));
 
     public static void register() {
     }

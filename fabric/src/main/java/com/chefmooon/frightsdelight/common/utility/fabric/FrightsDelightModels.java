@@ -1,6 +1,6 @@
 package com.chefmooon.frightsdelight.common.utility.fabric;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.data.models.model.ModelTemplate;
 import net.minecraft.data.models.model.TextureSlot;
 
@@ -21,6 +21,6 @@ public class FrightsDelightModels {
     public static final ModelTemplate TEMPLATE_CROP_CROSS = block("template_crop_cross", TextureSlot.CROSS);
 
     private static ModelTemplate block(String parent, TextureSlot... textureSlots) {
-        return new ModelTemplate(Optional.of(FrightsDelight.res("block/" + parent)), Optional.empty(), textureSlots);
+        return new ModelTemplate(Optional.of(TextUtils.res("block/" + parent)), Optional.empty(), textureSlots);
     }
 }

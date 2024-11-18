@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "bottom": "frightsdelight:block/crate_bottom",
+    "bottom": "farmersdelight:block/crate_bottom",
     "side": "frightsdelight:block/poisonous_potato_crate_side",
     "top": "frightsdelight:block/poisonous_potato_crate_top"
   }

@@ -34,16 +34,16 @@ public class FrightsDelightConsumableItem extends ConsumableItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
         if ((Boolean) Configuration.foodEffectTooltip()) {
             if (this.hasCustomTooltip) {
                 tooltip.add(TextUtils.getTranslatable("tooltip." + this).withStyle(ChatFormatting.BLUE));
             }
             if (this.hasFoodEffectTooltip) {
                 if ((Boolean) Configuration.foodEffectChanceTooltip()) {
-                    TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip, 1.0F);
+                    TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip::add, 1.0F, context.tickRate());
                 } else {
-                    TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+                    TextUtils.addFoodEffectTooltip(stack, tooltip::add, 1.0F, context.tickRate());
                 }
             }
         }

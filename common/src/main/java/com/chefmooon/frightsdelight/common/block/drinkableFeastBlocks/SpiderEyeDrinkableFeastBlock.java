@@ -1,12 +1,11 @@
 package com.chefmooon.frightsdelight.common.block.drinkableFeastBlocks;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.block.DrinkableFeastBlock;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
@@ -21,7 +20,7 @@ public class SpiderEyeDrinkableFeastBlock extends DrinkableFeastBlock {
 
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        particleData = (SimpleParticleType) BuiltInRegistries.PARTICLE_TYPE.get(new ResourceLocation(FrightsDelight.MOD_ID, "spider_eye_bubble"));
+        particleData = (SimpleParticleType) BuiltInRegistries.PARTICLE_TYPE.get(TextUtils.res("spider_eye_bubble"));
         animate(state, level, pos, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_SPIDER_EYE_BUBBLE.get(), random);
     }
 }
