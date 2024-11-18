@@ -78,8 +78,13 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
 
     @Override
     public boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
-//        FrightsDelight.loggerInfo("Block: " + state.getBlock() + " | Can Place: " + state.is(BlockTags.SOUL_SPEED_BLOCKS));
         return state.is(BlockTags.SOUL_SPEED_BLOCKS);
+    }
+
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockPos blockPos = pos.below();
+        return this.mayPlaceOn(level.getBlockState(blockPos), level, blockPos);
     }
 
     @Override

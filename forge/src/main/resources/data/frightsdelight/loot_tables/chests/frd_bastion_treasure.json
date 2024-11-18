@@ -21,6 +21,10 @@
             }
           ],
           "name": "frightsdelight:soul_berry"
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 6
         }
       ]
     }

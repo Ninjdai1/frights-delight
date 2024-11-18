@@ -7,12 +7,15 @@ NeoForge, and Fabric
 
 ***
 
+Now available for Minecraft 1.21-1.21.1
+
 ### Changed
 
-- Minor ru_ru translation update
+- Soul Berries chance to spawn bastion chests adjusted
 
 ### Fixed
 
-- Fix server crash on Soul Berry Bush Generation (Apologies)
+**Forge Only**
+- Soul & Wither Berry Bushes can no longer be planted on dirt and farmland
 
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)
