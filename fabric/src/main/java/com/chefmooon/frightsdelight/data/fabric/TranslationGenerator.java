@@ -68,7 +68,8 @@ public class TranslationGenerator extends FabricLanguageProvider {
 
         translationBuilder.add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH, "Rotten Flesh Soup");
         translationBuilder.add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE, "Spider Eye Soup");
-        translationBuilder.add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE, "Slimeball Soup");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE, "Slime-Apple Soup");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUP_SLIME, "Slimeball Soup");
         translationBuilder.add(FrightsDelightItemsImpl.SOUP_COBWEB, "Cobweb Soup");
         translationBuilder.add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR, "Ghast Tear Soup");
         translationBuilder.add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY, "Soul Berry Soup");

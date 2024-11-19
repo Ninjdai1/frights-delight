@@ -119,7 +119,8 @@ public class CookingRecipes {
 
         soupRecipe(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH, Items.ROTTEN_FLESH, recipeOutput);
         soupRecipe(FrightsDelightItemsImpl.SOUP_SPIDER_EYE, Items.SPIDER_EYE, recipeOutput);
-        soupRecipe(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE, Items.SLIME_BALL, recipeOutput);
+        soupRecipe(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE, FrightsDelightItemsImpl.APPLE_SLIME, recipeOutput);
+        soupRecipe(FrightsDelightItemsImpl.SOUP_SLIME, Items.SLIME_BALL, recipeOutput);
         soupRecipe(FrightsDelightItemsImpl.SOUP_COBWEB, Items.COBWEB, recipeOutput);
         soupRecipe(FrightsDelightItemsImpl.SOUP_GHAST_TEAR, Items.GHAST_TEAR, recipeOutput);
         soupRecipe(FrightsDelightItemsImpl.SOUP_SOUL_BERRY, FrightsDelightItemsImpl.SOUL_BERRY, recipeOutput);

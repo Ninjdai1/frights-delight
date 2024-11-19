@@ -15,6 +15,8 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 
+import java.util.function.Supplier;
+
 import static com.chefmooon.frightsdelight.common.registry.FrightsDelightItems.*;
 
 public class FrightsDelightItemsImpl {
@@ -81,6 +83,8 @@ public class FrightsDelightItemsImpl {
     public static final Item SOUP_SPIDER_EYE = registerItemWithTab(FrightsDelightItems.SOUP_SPIDER_EYE,
             new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_SPIDER_EYE), true));
     public static final Item SOUP_SLIMEAPPLE = registerItemWithTab(FrightsDelightItems.SOUP_SLIMEAPPLE,
+            new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_SLIME), true));
+    public static final Item SOUP_SLIME = registerItemWithTab(FrightsDelightItems.SOUP_SLIME,
             new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_SLIME), true));
     public static final Item SOUP_COBWEB = registerItemWithTab(FrightsDelightItems.SOUP_COBWEB,
             new FrightsDelightConsumableItem(bowlFoodItem(FoodValues.SOUP_COBWEB), true));
