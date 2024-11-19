@@ -11,6 +11,13 @@ Now available for Minecraft 1.21-1.21.1
 
 ### Changed
 
+- Origin's tags updated
+  - added to "meat"
+    - Slimeball Kebab, Slime-Apple Kebab, Slimeball Cookie, Slime-Apple Cookie, Slimeball Soup,
+        Slime-Apple Soup, Slime-Apple Cider
+  - added to "ignores_diet"
+    - Ghast Tear Kebab, Cobweb Kebab, Ghast Tear Cookie, Cobweb Cookie, Ghast Tear Soup, Cobweb Soup,
+        Ghast Tear Soup, Cobweb Punch
 - Soul Berries chance to spawn bastion chests adjusted
 
 ### Fixed

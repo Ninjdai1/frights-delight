@@ -93,12 +93,30 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.MONSTER_MASH)
                 .add(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH)
                 .add(FrightsDelightItemsImpl.BONE_KEBAB_SPIDER_EYE)
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIME)
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIMEAPPLE)
                 .add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH)
                 .add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE)
+                .add(FrightsDelightItemsImpl.COOKIE_SLIME)
+                .add(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE)
                 .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH)
                 .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE)
+                .add(FrightsDelightItemsImpl.SOUP_SLIME)
+                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE)
                 .add(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH)
                 .add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE)
+                .add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE)
+        ;
+
+        getOrCreateTagBuilder(CompatibilityTags.ORIGINS_IGNORE_DIET)
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_GHAST_TEAR)
+                .add(FrightsDelightItemsImpl.WEB_ON_STICK)
+                .add(FrightsDelightItemsImpl.COOKIE_GHAST_TEAR)
+                .add(FrightsDelightItemsImpl.COOKIE_COBWEB)
+                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR)
+                .add(FrightsDelightItemsImpl.SOUP_COBWEB)
+                .add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR)
+                .add(FrightsDelightItemsImpl.PUNCH_COBWEB)
         ;
     }
 }
