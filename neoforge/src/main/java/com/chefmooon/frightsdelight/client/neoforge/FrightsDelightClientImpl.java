@@ -51,12 +51,6 @@ public class FrightsDelightClientImpl {
                             Optional.of(new KnownPack(FrightsDelight.MOD_ID, modFile.findResource("resourcepacks/" + folder).toString(), "15"))),
                     new EmptyPackResources.EmptyResourcesSupplier(new PackMetadataSection(Component.literal(FrightsDelight.MOD_ID + "/" + folder),
                             SharedConstants.getCurrentVersion().getPackVersion(PackType.CLIENT_RESOURCES))),
-    // todo - test this, from ubes delight
-//                    path, // Pack ID
-//                    name, // Pack name
-//                    false,
-//                    (p) -> new PathPackResources(path, true, modFile.findResource("resourcepacks/" + folder)), // Your custom resource pack provider
-//                    new Pack.Info(Component.literal(FrightsDelight.MOD_ID + "/" + folder), 15, FeatureFlagSet.of()), // Pack description and compatibility version
                     PackType.CLIENT_RESOURCES,
                     new PackSelectionConfig(
                             false,

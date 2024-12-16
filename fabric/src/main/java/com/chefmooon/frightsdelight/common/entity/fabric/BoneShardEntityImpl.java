@@ -68,15 +68,4 @@ public class BoneShardEntityImpl extends ThrowableItemProjectile {
             this.discard();
         }
     }
-
-    // todo - code review
-//    @Override
-//    public @UnknownNullability CompoundTag serializeNBT(HolderLookup.Provider provider) {
-//        return new CompoundTag();
-//    }
-//
-//    @Override
-//    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag compoundTag) {
-//
-//    }
 }
