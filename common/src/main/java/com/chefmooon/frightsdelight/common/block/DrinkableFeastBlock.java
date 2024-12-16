@@ -160,10 +160,22 @@ public class DrinkableFeastBlock extends Block {
         return InteractionResult.FAIL;
     }
 
+    public boolean addDrinkFromDispenser(Level world, BlockPos pos, BlockState state) {
+        int servings = state.getValue(getServingsProperty());
+
+        if (servings < MAX_SERVINGS) {
+            world.setBlock(pos, state.setValue(getServingsProperty(), servings + 1), 3);
+            world.playSound(null, pos, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_REMOVE.get(), SoundSource.PLAYERS, 0.8F, 0.8F);
+
+            return true;
+        }
+
+        return false;
+    }
+
     public void animate(BlockState state, Level level, BlockPos pos, SoundEvent soundEvent, RandomSource random) {
         if (Configuration.drinkableFeastParticles() && particleData != null && state.getValue(getServingsProperty()) > 0) {
             double d = (double)pos.getX() + 0.5D;
-//            double e = (double)pos.getY() + 0.03D + (double) state.getValue(getServingsProperty()) / 6;
             double e = (double)pos.getY() + 0.03D + (double) state.getValue(getServingsProperty()) / 8;
             double f = (double)pos.getZ() + 0.5D;
 

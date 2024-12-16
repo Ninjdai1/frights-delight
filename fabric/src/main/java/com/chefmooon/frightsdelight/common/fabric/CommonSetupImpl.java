@@ -2,9 +2,11 @@ package com.chefmooon.frightsdelight.common.fabric;
 
 import com.chefmooon.frightsdelight.common.CommonSetup;
 import com.chefmooon.frightsdelight.common.Configuration;
+import com.chefmooon.frightsdelight.common.block.entity.dispenser.DrinkableFeastDispenseBehavior;
 import com.chefmooon.frightsdelight.common.crafting.condition.FrDVanillaCrateEnabledCondition;
 import com.chefmooon.frightsdelight.common.entity.fabric.BoneShardEntityImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
+import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
@@ -31,5 +33,13 @@ public class CommonSetupImpl {
                     }
                 }
         );
+
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH, new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE, new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_SPIDEREYE, new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_GHASTTEAR, new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY, new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY, new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_COBWEB, new DrinkableFeastDispenseBehavior());
     }
 }
