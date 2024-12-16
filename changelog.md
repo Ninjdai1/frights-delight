@@ -8,6 +8,11 @@ NeoForge, and Fabric
 
 ***
 
+### Added
+
+- Punch Bowl Dispenser Interaction
+  - Punch can be added from a dispenser
+
 ### Changed
 
 - Made more food items compostable
