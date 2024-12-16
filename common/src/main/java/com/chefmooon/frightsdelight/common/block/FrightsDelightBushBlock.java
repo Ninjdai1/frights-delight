@@ -109,7 +109,6 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
         return false;
     }
 
-    // todo - test this change more before release, LevelAccessor was ServerLevel
     public void updateGrowthCondition(BlockState state, LevelAccessor level, BlockPos pos, int range, TagKey<Block> growCondition, boolean oldCondition) {
         boolean newCondition = hasGrowthCondition(level, pos, range, growCondition);
         if (newCondition != oldCondition) {

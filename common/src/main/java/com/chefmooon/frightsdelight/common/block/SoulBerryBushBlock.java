@@ -142,7 +142,6 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     public void updateConditions(BlockState state, LevelAccessor level, BlockPos pos) {
         updateGrowthCondition(state, level, pos, GROW_RANGE, GROW_CONDITION_BLOCK, state.getValue(GROW_CONDITION));
         updateTransformCondition(state, level, pos, state.getValue(TRANSFORM_CONDITION));
-//        if (!(level instanceof ServerLevel)) FrightsDelight.loggerInfo("I should have crashed"); // todo - test/review this change
     }
 
     public static boolean hasGrowBrightness(int lightLevel) {
