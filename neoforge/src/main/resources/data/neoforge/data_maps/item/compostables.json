@@ -6,13 +6,31 @@
     "frightsdelight:wither_berry": {
       "chance": 0.3
     },
+    "frightsdelight:apple_slime": {
+      "chance": 0.65
+    },
     "frightsdelight:cookie_soul_berry": {
+      "chance": 0.85
+    },
+    "frightsdelight:cookie_wither_berry": {
       "chance": 0.85
     },
     "frightsdelight:cookie_flesh": {
       "chance": 0.85
     },
     "frightsdelight:cookie_spidereye": {
+      "chance": 0.85
+    },
+    "frightsdelight:cookie_slimeapple": {
+      "chance": 0.85
+    },
+    "frightsdelight:cookie_slime": {
+      "chance": 0.85
+    },
+    "frightsdelight:cookie_cobweb": {
+      "chance": 0.85
+    },
+    "frightsdelight:cookie_ghast_tear": {
       "chance": 0.85
     }
   }

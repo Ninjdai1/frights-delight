@@ -8,10 +8,10 @@ NeoForge, and Fabric
 
 ***
 
-Update for Minecraft 1.21-1.21.1
-
 ### Changed
 
+- Made more food items compostable
+  - Slime-Apple, Wither Berry Cookie, Slime-Apple Cookie, Slimeball Cookie, Cobweb Cookie, Ghast Tear Cookie
 - Origin's tags updated
   - added to "meat"
     - Slimeball Kebab, Slime-Apple Kebab, Slimeball Cookie, Slime-Apple Cookie, Slimeball Soup,

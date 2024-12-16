@@ -25,6 +25,7 @@ public class FrightsDelightClientImpl implements ClientModInitializer {
 
         FrightsDelightGUIImpl.register();
 
+        // todo - code review
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
                 FrightsDelightBlocksImpl.SOUL_BERRY_BUSH,
                 FrightsDelightBlocksImpl.WITHER_BERRY_BUSH,

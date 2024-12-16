@@ -1,6 +1,5 @@
 package com.chefmooon.frightsdelight.common.block;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.chefmooon.frightsdelight.common.tag.FrightsDelightTags;
@@ -18,7 +17,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;

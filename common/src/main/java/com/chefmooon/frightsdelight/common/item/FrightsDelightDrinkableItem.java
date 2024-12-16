@@ -1,6 +1,5 @@
 package com.chefmooon.frightsdelight.common.item;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.Configuration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
