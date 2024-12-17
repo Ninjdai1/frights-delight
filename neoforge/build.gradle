@@ -126,7 +126,7 @@ if (env.MODRINTH_TOKEN) {
         versionType = mod_version_type // This is the default -- can also be `beta` or `alpha`
         changelog = changelogText
         uploadFile = remapJar // With Loom, this MUST be set to `remapJar` instead of `jar`!
-        gameVersions = ["1.20.1"]
+        gameVersions = minecraft_supported_versions.split(",").toList()
         loaders = ["forge","neoforge"]
         dependencies {
             // scope.type
@@ -149,12 +149,13 @@ if (env.CURSEFORGE_TOKEN) {
             changelog = changelogText
             changelogType = 'markdown'
             releaseType = mod_version_type
-            addGameVersion "1.20.1"
-            addGameVersion "Forge"
+            for (String v : minecraft_supported_versions.split(",").toList()) {
+                addGameVersion v
+            }
             addGameVersion "NeoForge"
 
             mainArtifact(remapJar) {
-                displayName = dName
+                displayName = vName
             }
 
             relations {
