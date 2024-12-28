@@ -2,7 +2,7 @@
   "type": "farmersdelight:cooking",
   "cookingtime": 75,
   "experience": 2.0,
-  "recipie_book_tab": "meals",
+  "recipe_book_tab": "meals",
   "ingredients": [
     {
       "item": "minecraft:phantom_membrane"

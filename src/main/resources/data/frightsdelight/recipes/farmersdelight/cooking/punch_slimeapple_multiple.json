@@ -2,7 +2,7 @@
   "type": "farmersdelight:cooking",
   "cookingtime": 50,
   "experience": 1.0,
-  "recipie_book_tab": "drinks",
+  "recipe_book_tab": "drinks",
   "ingredients": [
     {
       "item": "frightsdelight:apple_slime"
